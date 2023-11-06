@@ -5,20 +5,20 @@
 	<!-- 컨텐츠 -->
 		<div class="contents">
 					<!-- 게시물 업로드 박스 -->
-						<h2 class="tit">무인마켓 회원가입</h2>
+						<h2 class="tit">게시글 작성</h2>
 						<form action="" method="" >
 							<div class="uploadBox">
 								<div class="uploadFlex">
-									<label for="fileup2">사진 업로드</label>
-									<input type="file" name="fileup2" >	
+									<label for="image2">사진 업로드</label>
+									<input type="file" name="image2" >	
 								</div>	
 								<div class="uploadFlex">
 									<label for="title">타이틀</label>
 									<input type="text" name="title" >	
 								</div>
 								<div class="uploadFlex">
-									<label for="name">가격</label>
-									<input type="number" name="name" >	
+									<label for="price">가격</label>
+									<input type="number" name="price" >	
 								</div>
 								<div class="uploadFlex">
 									<label for="name">글작성</label>

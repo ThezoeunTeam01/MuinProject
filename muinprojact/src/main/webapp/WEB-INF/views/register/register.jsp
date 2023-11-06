@@ -14,12 +14,16 @@
 					<input type="text" name="id1" id="id">
 				</div>
 				<div class="regiFlex">
+					<label for="pw">비밀번호</label>
+					<input type="password" name="pw1" id="pw">
+				</div>
+				<div class="regiFlex">
 					<label for="name">이름</label>
 					<input type="text" name="name1" id="name">
 				</div>
 				<div class="regiFlex">
-					<label for="pw">비밀번호</label>
-					<input type="password" name="pw1" id="pw">
+					<label for="birth">생년월일</label>
+					<input type="text" name="birth" id="birth">
 				</div>
 				<div class="regiFlex">
 					<label for="address">주소</label>
@@ -31,8 +35,8 @@
 					<input type="text" name="phone1" id="phone">
 				</div>
 				<div class="regiFlex">
-					<label for="fileup">사진 업로드</label>
-					<input type="file" name="fileup1" id="fileup">
+					<label for="profile">사진 업로드</label>
+					<input type="file" name="profile1" id="profile">
 				</div>
 			</div><!-- // register_box -->
 			<div class="btnBox">
