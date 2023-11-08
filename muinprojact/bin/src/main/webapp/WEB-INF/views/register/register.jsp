@@ -11,15 +11,15 @@
 			<div class="registerBox">
 				<div class="regiFlex">
 					<label for="id">아이디</label>
-					<input type="text" name="id" id="id">
+					<input type="text" name="id1" id="id">
 				</div>
 				<div class="regiFlex">
 					<label for="pw">비밀번호</label>
-					<input type="password" name="pw" id="pw">
+					<input type="password" name="pw1" id="pw">
 				</div>
 				<div class="regiFlex">
 					<label for="name">이름</label>
-					<input type="text" name="name" id="name">
+					<input type="text" name="name1" id="name">
 				</div>
 				<div class="regiFlex">
 					<label for="birth">생년월일</label>
@@ -27,16 +27,16 @@
 				</div>
 				<div class="regiFlex">
 					<label for="address">주소</label>
-					<input type="text" name="address" id="address">
+					<input type="text" name="address1" id="address">
 				</div>
 				<!-- 핸드폰 설정 시 - 사용할 건지? 확인 필요 -->
 				<div class="regiFlex">
 					<label for="phone">핸드폰</label>
-					<input type="text" name="phone" id="phone">
+					<input type="text" name="phone1" id="phone">
 				</div>
 				<div class="regiFlex">
 					<label for="profile">사진 업로드</label>
-					<input type="file" name="profile" id="profile">
+					<input type="file" name="profile1" id="profile">
 				</div>
 			</div><!-- // register_box -->
 			<div class="btnBox">
