@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 	<!-- Include header.html -->
-    <jsp:include page="include/header.jsp" />
+    <jsp:include page="../include/header.jsp" />
         <!-- 카테고리메뉴 -->
         <div>
             <ul>
@@ -37,5 +37,5 @@
             </ul>
         </div>
 	<!-- Include footer.html -->
-    <jsp:include page="include/footer.jsp" />
+    <jsp:include page="../include/footer.jsp" />
 	 

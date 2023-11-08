@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 	<!-- Include header.html -->
-    <jsp:include page="include/header.jsp" />
+    <jsp:include page="../include/header.jsp" />
 	<!-- 컨텐츠 -->
 	
 		<div class="contents">
@@ -46,5 +46,5 @@
 		</form>
 	</div>
 	<!-- Include footer.html -->
-    <jsp:include page="include/footer.jsp" />
+    <jsp:include page="../include/footer.jsp" />
 	 
