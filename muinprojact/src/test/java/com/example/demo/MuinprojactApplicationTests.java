@@ -9,5 +9,5 @@ class MuinprojactApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
+	// 테스트 업로드
 }
