@@ -6,7 +6,7 @@
 	
 		<div class="contents">
 		<h2 class="tit">무인마켓 회원가입</h2>
-		<form action="" method="">
+		<form action="register" method="post">
 			<!-- 회원가입 박스 -->
 			<div class="registerBox">
 				<div class="regiFlex">
