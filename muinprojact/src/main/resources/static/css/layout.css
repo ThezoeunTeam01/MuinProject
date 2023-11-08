@@ -41,7 +41,7 @@
 
 	/*-- buttons --*/
 	/*공통으로 사용할 수 있는 부분 - 협의 필요*/
-	.btn{cursor:pointer; margin:10px;}
+	.btn{cursor:pointer; font-size: 16px;}
 	.submitBtn{min-width: 120px; width: calc(100% - 10px); background:#289158; color:#fff; font-size:16px; border:0px solid transparent; padding:15px; }
 	.submitBtn:hover, .submitBtn:focus{background:#0b562d;}
 	.backBtn{ min-width: 120px; width: calc(100% - 10px);  background:#289158; color:#fff; font-size:16px; border:0px solid transparent; padding:15px; }
@@ -49,4 +49,12 @@
 	.backBtn:focus{background:#ddd}
 	.btnBox{border:1px solid red; display:flex; flex-direction: row; align-items: center; justify-content: space-evenly; width:100%; max-width:600px; margin:20px auto auto auto;}
 	.tit{font-size:20px;  text-align:center; font-weight:700; margin-top:25px; margin-bottom:25px; }
-
+	.checkBtn{max-width:80px; height: 45px; width: calc(100% - 10px); background:#289158; color:#fff; border:0px solid transparent; padding: 5px;}
+	.checkBtn:hover, .checkBtn:focus{background:#0b562d;}
+	
+	
+    
+    
+    
+    
+	

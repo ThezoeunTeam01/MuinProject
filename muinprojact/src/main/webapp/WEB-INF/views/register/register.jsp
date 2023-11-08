@@ -13,7 +13,7 @@
 					<label for="id">아이디</label>
 					<input type="text" name="id" id="id">
 					
-					<button type ="button" class="">
+					<button type ="button" class="checkBtn btn">
 						중복확인
 					</button>
 					
