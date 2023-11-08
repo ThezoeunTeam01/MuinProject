@@ -12,11 +12,22 @@
 				<div class="regiFlex">
 					<label for="id">아이디</label>
 					<input type="text" name="id" id="id">
+					
+					<button type ="button" class="">
+						중복확인
+					</button>
+					
 				</div>
+				
 				<div class="regiFlex">
 					<label for="pw">비밀번호</label>
 					<input type="password" name="pw" id="pw">
 				</div>
+				<div class="regiFlex">
+					<label for="pwCheck">비밀번호확인</label>
+					<input type="password" name="pwCheck" id="pwCheck">
+				</div>				
+				
 				<div class="regiFlex">
 					<label for="name">이름</label>
 					<input type="text" name="name" id="name">

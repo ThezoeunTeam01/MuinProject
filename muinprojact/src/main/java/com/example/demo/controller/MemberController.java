@@ -19,6 +19,7 @@ public class MemberController {
 	@PostMapping("register")
 	public String muinRegister(MemberVO vo, RedirectAttributes RA) {
 		System.out.println(vo);
+		System.out.println("dddddddddddddd"+vo.getProfile());
 		int result = memberService.register(vo);
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+result);	
 		
