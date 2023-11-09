@@ -17,4 +17,8 @@ public class MemberServiceImpl implements MemberService {
 		if(vo.getProfile()=="") vo.setProfile("null.png");
 		return memberMapper.register(vo);
 	}
+	@Override
+	   public int idCheck(String id) {
+	      return memberMapper.idCheck(id);
+	   }
 }

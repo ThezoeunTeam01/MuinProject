@@ -20,6 +20,8 @@
 		<link rel="stylesheet" href="css/layout.css">
 		<!-- Script -->
 		<script src="script.js"></script>
+		
+		
 	</head>
 
 	<body>

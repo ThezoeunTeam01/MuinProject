@@ -10,4 +10,7 @@
 		insert into muinMember(id, pw, name, birth, address, phone, profile, registerdate)
 		 values (#{id}, #{pw}, #{name}, #{birth}, #{address}, #{phone}, #{profile}, sysdate)
 	</insert>
+	<select id="idCheck" resultType="int">
+      select count(*) from muinMember where id = #{id}
+   </select>
 </mapper>
