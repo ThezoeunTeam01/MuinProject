@@ -52,9 +52,13 @@
 	.checkBtn{max-width:80px; height: 45px; width: calc(100% - 10px); background:#289158; color:#fff; border:0px solid transparent; padding: 5px;}
 	.checkBtn:hover, .checkBtn:focus{background:#0b562d;}
 	
+	/* notice */
+	.notice_red{color:red; font-size:16px;}
 	
+	/*align*/
+	.alignBoxRight{display:flex;  justify-content: flex-end; }
     
-    
+    /**/
     
     
 	
