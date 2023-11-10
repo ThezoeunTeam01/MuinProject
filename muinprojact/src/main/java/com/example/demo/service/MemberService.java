@@ -8,4 +8,5 @@ import com.example.demo.command.MemberVO;
 public interface MemberService {
 	public int register(MemberVO vo);
 	public int idCheck(String id);
+	public int login(MemberVO vo);
 }

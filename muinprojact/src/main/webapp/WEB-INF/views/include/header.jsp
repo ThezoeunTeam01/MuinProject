@@ -19,7 +19,7 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/layout.css">
 		<!-- Script -->
-		<script src="script.js"></script>
+		<script src="../js/script.js"></script>
 		
 		
 	</head>

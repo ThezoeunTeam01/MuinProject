@@ -11,7 +11,7 @@
         <div>
             <form action="login" method="post">
                 <input type="text" name="id" id="id" placeholder="아이디 입력">
-                <input type="password" name="" id="id" placeholder="비밀번호 입력">
+                <input type="password" name="pw" id="pw" placeholder="비밀번호 입력">
                 <!-- 버튼 컨테이너 -->
                 <div>
                     <!-- 로그인 버튼 -->

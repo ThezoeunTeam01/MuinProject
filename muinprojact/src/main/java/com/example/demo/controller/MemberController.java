@@ -20,8 +20,18 @@ public class MemberController {
 	@PostMapping("register")
 	public String muinRegister(MemberVO vo, RedirectAttributes RA) {
 		int result = memberService.register(vo);
-		return null;
+		return "redirect:/login";
 	}
-
+	@PostMapping("login")
+	public String muinLogin(MemberVO vo, RedirectAttributes RA) {
+		System.out.println(vo.toString());
+		int result = memberService.login(vo);
+		System.out.println(result);
+		if(result == 0) {
+			return "login/login";
+		}else {
+			return "redirect:/";
+		}
+	}
 	
 }
