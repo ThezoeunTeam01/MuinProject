@@ -23,5 +23,5 @@ public class AjaxController {
       int result = memberService.idCheck(id);
       return result;
    }
-
+   
 }
