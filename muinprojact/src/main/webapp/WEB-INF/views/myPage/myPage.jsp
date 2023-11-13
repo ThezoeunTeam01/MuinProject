@@ -3,7 +3,7 @@
 	<!-- Include header.html -->
     <jsp:include page="../include/header.jsp" />
 	<!-- 유저 프로필 -->
-		<<div>
+		<div>
             <ul>
                 <li>
                     <img src="" alt="">
@@ -13,6 +13,7 @@
                 </li>
             </ul>
         </div>
+        <input type="button" name="logout" id="logout" value="로그아웃" />
         <!-- 컨텐츠 -->
         <div>
             <h2>컨텐츠 <span>타이틀</span><img alt="" src=""></h2>

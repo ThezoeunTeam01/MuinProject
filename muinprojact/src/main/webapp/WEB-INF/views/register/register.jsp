@@ -63,62 +63,7 @@
         </div>
     </form>
 </div><!-- // contents -->
-   <script src="../js/member.js"></script>
-   <script type="text/javascript">
-       $(document).ready(function() {
-          
-          // 비밀번호 일치 여부 확인
-          function checkPasswordMatch() {
-              var pw = $('#pw').val();
-              var pwCheck = $('#pwCheck').val();
-           
-              if(pw==''){
-                 alert("비밀번호를 입력해주세요");
-              }              
-              else if (pw === pwCheck) {
-                  $('#pwMatchStatus').text('비밀번호 일치');
-              } else {
-                  $('#pwMatchStatus').text('비밀번호 불일치');
-                  $("#pwCheck").focus();
-              }
-          };
 
-          
-
-          // #checkPasswordBtn 클릭 이벤트 처리
-          $('#checkPasswordBtn').click(checkPasswordMatch);
-           
-       }); 
-       
-    // joinCheck 함수
-       function regiCheck() {
-       if (!$("#id").attr("readonly")) {
-           alert("아이디 중복체크를 해야 합니다.");
-       } else if ($("#pw").val().length < 1) {
-           alert("비밀번호를 입력하세요!");
-       } else if ($("#pw").val() !== $("#pwCheck").val()) {
-           alert("비밀번호 확인란을 확인해 주세요!");
-           $("#pwCheck").focus();
-       } else if ($("#name").val().length < 1) {
-           alert("이름을 입력하세요!");
-           $("#name").focus();
-       } else if ($("#birth").val().length < 8) {
-           alert("생년월일을 입력하세요!");
-           $("#birth").focus();
-       } else if ($("#address").val() === "") {
-           alert("프로필 파일을 업로드 하세요!");
-           $("#address").focus();
-       } else if ($("#phone").val() === "") {
-           alert("번호를 입력하세요!");
-           $("#phone").focus();
-       } else if ($("#profile").val() === "") {
-           alert("프로필 파일을 업로드 하세요!");
-           $("#profile").focus();
-       }else  if (confirm("회원 가입을 하시겠습니까?")) {
-               $("#muinRegiForm").submit();
-       }
-   };
-   </script>
 
    <!-- Include header.html -->
     <jsp:include page="../include/footer.jsp" />
