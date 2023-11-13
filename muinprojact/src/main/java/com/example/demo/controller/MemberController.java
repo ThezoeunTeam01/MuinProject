@@ -36,5 +36,13 @@ public class MemberController {
          
          return "login/login";
       }
+    }
+   @PostMapping("/logout")
+   public String muinLogout(HttpSession session) {
+	   
+	   System.out.println("ddddddddddddddddddddddddddddddddddddddddddddddddd");
+	   session.getAttribute("id");
+	   session.invalidate();
+	   return "redirect:/";
    }
 }

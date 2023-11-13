@@ -18,6 +18,9 @@
       <!-- CSS -->
       <link rel="stylesheet" href="css/reset.css">
       <link rel="stylesheet" href="css/layout.css">
+       <%
+      String sessionId = (String)session.getAttribute("id");
+	   %>
       <!-- Script -->
       <script src="../js/script.js"></script>
      

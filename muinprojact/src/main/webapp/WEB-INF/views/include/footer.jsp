@@ -1,18 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%
-      String sessionId = (String)session.getAttribute("id");
-	   %>
-      <script>
-        $(document).ready(function(){
-            var session = '<%= sessionId %>';
-            if(session === "null"){
-                $('#myPage').hide();
-            } else {
-                $('#login').hide();
-            }
-        });
-     </script>
+  
 </div><!-- // contents -->
 			<!-- 풋터 -->
 			<footer>

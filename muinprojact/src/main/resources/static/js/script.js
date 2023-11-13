@@ -1,4 +1,31 @@
    $(document).ready(function() {
+	   		//세션을 이용한 로그인 확인	
+            var session = '<%= sessionId %>';
+            if(session === "null"){
+                $('#myPage').hide();
+            } else {
+                $('#login').hide();
+            }
+            $('#logout').click(function(){
+	  		 var session = '<%= sessionId %>';
+            if(session === "null"){
+				alert("로그인해")
+            } else {
+				alert("로그인됨")
+			$.ajax({
+	            url: '/logout', // 로그아웃을 처리하는 서버의 엔드포인트에 맞게 수정
+	            method: 'POST', // 로그아웃 요청은 주로 POST 방식을 사용
+	            success: function(response) {
+                // 로그아웃이 성공하면 서버에서 세션을 만료시킬 것이므로 필요한 후속 작업을 수행
+                console.log('로그아웃 성공');
+            },
+          		error: function(error) {
+                console.error('로그아웃 실패', error);
+            }
+        });
+                };
+     		 });   
+            
           // 비밀번호 일치 여부 확인
           function checkPasswordMatch() {
               var pw = $('#pw').val();
@@ -78,3 +105,8 @@
                $("#muinRegiForm").submit();
        }
    };
+   			
+   			
+   
+   
+   
