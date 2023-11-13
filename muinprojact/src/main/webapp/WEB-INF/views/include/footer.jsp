@@ -15,7 +15,7 @@
 									<span>로그인</span>
 								</a>
 						</li>
-						<li><a href="myPage">
+						<li id="myPage"><a href="myPage">
 									<span><i class="fas fa-user-plus"></i></span>
 									<span>마이페이지</span>
 								</a>
