@@ -27,10 +27,8 @@
 			dataType: 'json',
 			success: function(result){
 				if(result.length<=0){
-					alert("이미지 파일 아님");
-					
-				}else{
-					alert("이미지 파일이야");
+				   alert("이미지 파일을 업로드 해주세요");
+				   document.getElementById('profile').value = null;					
 				}
 			},
 			error: function(xhr, status, error) {

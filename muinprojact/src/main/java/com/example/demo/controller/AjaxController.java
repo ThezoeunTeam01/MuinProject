@@ -59,7 +59,7 @@ public class AjaxController {
 		   
 		   try {
 			   fileDTO.setUuid(uuidFileName);
-			   fileDTO.setUploadPath(uploadFolder);	   			   
+			   fileDTO.setUploadPath(uploadFolder); 			   
 			   
 			   if(fileService.imageCheck(fileSave)) {
 				   multipartFile.transferTo(fileSave);
