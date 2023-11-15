@@ -38,7 +38,7 @@ public class AjaxController {
       int result = memberService.idCheck(id);
       return result;
    }
-   @PostMapping(value = "/uploadAjax", produces = MediaType.APPLICATION_JSON_VALUE)
+   @PostMapping(value = "/uploadAjax", produces = MediaType.APPLICATION_JSON_VALUE)	// 기존은 responseBody가 있었음
    public ResponseEntity<List<FileDTO>> uploadAjax(MultipartFile[] uploadFile) {
 	   
 	   List<FileDTO> list = new ArrayList<>();
@@ -52,11 +52,10 @@ public class AjaxController {
 		   fileDTO.setFileName(multipartFile.getOriginalFilename());
 		   
 		   UUID uuid = UUID.randomUUID();
-		   String uuidFileName = uuid.toString()+"_"+multipartFile.getOriginalFilename();
-		 
+		   String uuidFileName = uuid.toString()+"_"+multipartFile.getOriginalFilename();		 
 		   
 		   File fileSave = new File(uploadFolder, uuidFileName);
-		   
+		   		   
 		   try {
 			   fileDTO.setUuid(uuidFileName);
 			   fileDTO.setUploadPath(uploadFolder); 			   
@@ -67,7 +66,6 @@ public class AjaxController {
 			   }
 			   
 			} catch (IllegalStateException | IOException e) {
-				// TODO Auto-generated catch block
 				log.error(e.getMessage());
 			}
 	   }

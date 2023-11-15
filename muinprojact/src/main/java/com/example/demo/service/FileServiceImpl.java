@@ -13,13 +13,13 @@ public class FileServiceImpl implements FileService {
 
 	@Override
 	public boolean imageCheck(File file) {
-		
+		 
 		try {
 			String contentType = Files.probeContentType(file.toPath());
 			log.info("현재 파일 타입 : "+contentType);
 			return contentType.startsWith("image");
-		} catch (Exception e) {
-			
+		} catch (Exception e) {			
+			e.printStackTrace();
 		}		
 		return false;
 	}

@@ -6,6 +6,7 @@
 	
 	// change start
 	$("input[type='file']").change(function(e){
+		
 		var form = new FormData();
 		var inputFile = $("input[name='profile']");
 		
@@ -13,11 +14,14 @@
 		
 		for(var i=0;i<files.length;i++){
 			
-			console.log(files[i]);
-			
-			form.append("uploadFile",files[i]);
+			if(!checkExtension(files[i].name, files[i].size)){
+				document.getElementById('profile').value = null;
+				return false;
+			}else{
+				console.log(files[i]);
+				form.append("uploadFile",files[i]);
+			}																	
 		}
-		
 		$.ajax({
 			url:'../ajax/uploadAjax',
 			processData: false,
@@ -25,10 +29,10 @@
 			data: form,
 			type: 'POST',
 			dataType: 'json',
-			success: function(result){
+			success: function(result){	// fileDTO list 
 				if(result.length<=0){
 				   alert("이미지 파일을 업로드 해주세요");
-				   document.getElementById('profile').value = null;					
+				   document.getElementById('profile').value = null;
 				}
 			},
 			error: function(xhr, status, error) {
@@ -37,7 +41,24 @@
     				console.error("XHR:", xhr);
     				console.error("Server Response:", xhr.responseText);
             }
-			
+            			
 		});
 	});	// change end
+	
+	// 업로드 제한
+	var regex =  new RegExp("(.*?)\.(exe|sh|zip|alz)$");
+	var maxSize = 10000000;
+	
+	function checkExtension(fileName, fileSize){
+		if(fileSize >= maxSize){
+			alert("최대 사이즈는 10MB입니다.");
+			return false;
+		}
+		else if(regex.test(fileName)){
+			alert("이미지 파일만 업로드 할 수 있습니다.");
+			return false;
+		}
+		return true;
+	}
+	
 });	// ready end

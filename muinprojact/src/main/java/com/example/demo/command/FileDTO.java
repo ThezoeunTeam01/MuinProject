@@ -6,5 +6,6 @@ import lombok.Data;
 public class FileDTO {
 	private String fileName;
 	private String Uuid;
-	private String uploadPath;
+	private String uploadPath;	
 }
+
