@@ -26,23 +26,17 @@ public class MemberController {
    }
    @PostMapping("login")
    public String muinLogin(MemberVO vo, HttpSession session) {
-      System.out.println(vo.toString());
       int result = memberService.login(vo);
-      System.out.println(result);
       if(result == 1) {
-         session.setAttribute("id", vo.getId()); 
-         
+         session.setAttribute("id", vo.getId());         
          return "redirect:/";
-      }else {
-         
+      }else {         
          return "login/login";
       }
     }
    @PostMapping("/logout")
    public String logout(HttpServletRequest request) {
-       // 현재 요청의 세션을 가져옴
-	   
-
+       // 현재 요청의 세션을 가져옴	   
 	   HttpSession session = request.getSession(false);
 	   if (session != null) {
 	       session.invalidate();

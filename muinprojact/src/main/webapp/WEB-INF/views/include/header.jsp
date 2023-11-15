@@ -60,6 +60,7 @@
 	   
 	   </script>
       <script src="../js/script.js"></script>
+      <script src="../js/file.js"></script>
      
    </head>
    <body>

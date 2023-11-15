@@ -17,7 +17,7 @@
                     <!-- 로그인 버튼 -->
                     <input type="submit" value="로그인">
                     <!-- 회원가입 버튼 -->
-                    <input type="button" value="회원가입">
+                    <a href="register"><input type="button" value="회원가입"></a>
                 </div>
             </form>
         </div>

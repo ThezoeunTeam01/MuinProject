@@ -6,7 +6,7 @@
 <div class="contents">
     <h2 class="tit">무인마켓 회원가입</h2>
     
-    <form action="register" method="post" id="muinRegiForm">
+    <form action="register" method="post" id="muinRegiForm" enctype="multipart/form-data">
         <!-- 회원가입 박스 -->
         <div class="registerBox">
             <div class="alignBoxRight">
