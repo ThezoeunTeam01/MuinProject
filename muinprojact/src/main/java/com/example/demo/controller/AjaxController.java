@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ import com.example.demo.service.FileService;
 import com.example.demo.service.MemberService;
 
 import lombok.extern.log4j.Log4j2;
+import net.coobird.thumbnailator.Thumbnailator;
 
 @Log4j2
 @RestController
@@ -62,7 +64,13 @@ public class AjaxController {
 			   
 			   if(fileService.imageCheck(fileSave)) {
 				   multipartFile.transferTo(fileSave);
-				   list.add(fileDTO);
+				   
+				   FileOutputStream thumbnail = new FileOutputStream(new File(uploadFolder, "s_"+uuidFileName));
+				   Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumbnail,100,100);
+				   thumbnail.close();
+				   log.info("dddddddddddddddddddddddddddddddd");
+				   log.info(fileDTO);
+				   list.add(fileDTO);			   
 			   }
 			   
 			} catch (IllegalStateException | IOException e) {

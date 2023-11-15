@@ -55,6 +55,12 @@
                 <label for="profile">사진 업로드</label>
                 <input type="file" name="profile" id="profile">
             </div>
+            <div class="showProfile">
+            	<ul>
+            	
+            	</ul>
+            </div>
+            
         </div><!-- // register_box -->
         <div class="btnBox">
             <button type="button" class="backBtn btn">뒤로가기</button>

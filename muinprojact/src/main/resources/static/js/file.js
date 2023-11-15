@@ -31,9 +31,12 @@
 			dataType: 'json',
 			success: function(result){	// fileDTO list 
 				if(result.length<=0){
+					
 				   alert("이미지 파일을 업로드 해주세요");
 				   document.getElementById('profile').value = null;
 				}
+				console.log(result);
+				showList(result);
 			},
 			error: function(xhr, status, error) {
                     // 오류가 발생했을 때 수행할 동작
@@ -59,6 +62,23 @@
 			return false;
 		}
 		return true;
+	}
+	
+	// 업로드 결과 보여주기
+	function showList(list){
+		var str = "";
+		
+		/*$(list).each(function(i, li){
+			var fileCallPath = encodeURIComponent(li.uploadPath+"/s_"+obj.Uuid+"_"+obj.fileName);
+			
+			str += "<li data-path='"+li.uploadPath+"' data-uuid='"+li.Uuid+"' data-filename='"+li.fileName+"'>";
+			str += "<div>";
+			str += "<span>"+li.fileName+"</span>";
+			str += "<img src='"+fileCallPath+"'>";
+			str += "</div>";
+			str += "</li>";
+			
+		});*/
 	}
 	
 });	// ready end

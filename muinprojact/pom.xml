@@ -83,8 +83,16 @@
           <groupId>com.google.code.gson</groupId>
           <artifactId>gson</artifactId>
       </dependency>
+      <!-- 썸네일 구현 -->
+      <!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
+      <dependency>
+		    <groupId>net.coobird</groupId>
+		    <artifactId>thumbnailator</artifactId>
+		    <version>0.4.20</version>
+		</dependency>
 	</dependencies>
-
+	
+	
 	<build>
 		<plugins>
 			<plugin>
