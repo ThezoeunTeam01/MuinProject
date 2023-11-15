@@ -66,19 +66,21 @@
 	
 	// 업로드 결과 보여주기
 	function showList(list){
+		var uploadUL = $(".showProfile ul");
 		var str = "";
 		
-		/*$(list).each(function(i, li){
-			var fileCallPath = encodeURIComponent(li.uploadPath+"/s_"+obj.Uuid+"_"+obj.fileName);
-			
-			str += "<li data-path='"+li.uploadPath+"' data-uuid='"+li.Uuid+"' data-filename='"+li.fileName+"'>";
+		$(list).each(function(i, li){
+			var fileCallPath = encodeURIComponent(li.uploadPath+"/s_"+li.uuid+"_"+li.fileName);
+			console.log(fileCallPath);
+			str += "<li data-path='"+li.uploadPath+"' data-uuid='"+li.uuid+"' data-filename='"+li.fileName+"'>";
 			str += "<div>";
 			str += "<span>"+li.fileName+"</span>";
-			str += "<img src='"+fileCallPath+"'>";
+			str += "<img src='"+ /*여기에 경로를 설정해야 함*/ +"'>";
 			str += "</div>";
 			str += "</li>";
 			
-		});*/
+		});
+		uploadUL.append(str);
 	}
 	
 });	// ready end

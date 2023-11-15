@@ -68,8 +68,7 @@ public class AjaxController {
 				   FileOutputStream thumbnail = new FileOutputStream(new File(uploadFolder, "s_"+uuidFileName));
 				   Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumbnail,100,100);
 				   thumbnail.close();
-				   log.info("dddddddddddddddddddddddddddddddd");
-				   log.info(fileDTO);
+				   
 				   list.add(fileDTO);			   
 			   }
 			   

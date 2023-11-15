@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class FileDTO {
 	private String fileName;
-	private String Uuid;
+	private String uuid;
 	private String uploadPath;	
 }
 
