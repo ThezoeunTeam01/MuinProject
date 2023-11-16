@@ -65,7 +65,7 @@
         <div class="btnBox">
             <button type="button" class="backBtn btn">뒤로가기</button>
             <!--서밋을 버튼으로 변경 -->
-            <button type="button" class="submitBtn btn" onclick="regiCheck()">회원가입</button>
+            <button type="button" id="register" class="submitBtn btn">회원가입</button>
         </div>
     </form>
 </div><!-- // contents -->

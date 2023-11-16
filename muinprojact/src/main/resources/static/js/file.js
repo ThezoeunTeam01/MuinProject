@@ -72,15 +72,42 @@
 		$(list).each(function(i, li){
 			var fileCallPath = encodeURIComponent(li.uploadPath+"/s_"+li.uuid+"_"+li.fileName);
 			console.log(fileCallPath);
-			str += "<li data-path='"+li.uploadPath+"' data-uuid='"+li.uuid+"' data-filename='"+li.fileName+"'>";
+			str += "<li data-uploadpath='"+li.uploadPath+"' data-uuid='"+li.uuid+"' data-filename='"+li.fileName+"'>";
 			str += "<div>";
 			str += "<span>"+li.fileName+"</span>";
 			str += "<img src='"+ /*여기에 경로를 설정해야 함*/ +"'>";
 			str += "</div>";
 			str += "</li>";
-			
+			console.log("showList str");
+			console.log(str);
 		});
 		uploadUL.append(str);
 	}
 	
+	var regiForm = $("#muinRegiForm");
+	
+	
+	$("#register").on("click", function(e){
+		
+		var id = $("#id").val();
+		console.log("ddddddddddddd");	
+		console.log(id);
+		
+		var str = "";
+		
+		$(".showProfile ul li").each(function(i, li){
+			var jli = $(li);
+			
+			str += "<input type='hidden' name='fileList["+i+"].fileName' value='"+jli.data("filename")+"'>";
+			str += "<input type='hidden' name='fileList["+i+"].uuid' value='"+jli.data("uuid")+"'>";
+			str += "<input type='hidden' name='fileList["+i+"].uploadPath' value='"+jli.data("uploadpath")+"'>";
+			str += "<input type='hidden' name='fileList["+i+"].id' value='"+id+"'>";
+			console.log("regiForm str");
+			console.log(str);			
+		});
+		regiForm.append(str);
+		regiCheck();
+	});
+	
 });	// ready end
+	

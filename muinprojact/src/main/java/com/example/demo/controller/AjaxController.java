@@ -54,13 +54,14 @@ public class AjaxController {
 		   fileDTO.setFileName(multipartFile.getOriginalFilename());
 		   
 		   UUID uuid = UUID.randomUUID();
-		   String uuidFileName = uuid.toString()+"_"+multipartFile.getOriginalFilename();		 
-		   
+		   String uuidFileName = uuid.toString()+"_"+multipartFile.getOriginalFilename();
+		   System.out.println("ssssssssssssssssssssssssssss");
+		   System.out.println(uuidFileName);
 		   File fileSave = new File(uploadFolder, uuidFileName);
 		   		   
 		   try {
 			   fileDTO.setUuid(uuidFileName);
-			   fileDTO.setUploadPath(uploadFolder); 			   
+			   fileDTO.setUploadPath(uploadFolder);
 			   
 			   if(fileService.imageCheck(fileSave)) {
 				   multipartFile.transferTo(fileSave);

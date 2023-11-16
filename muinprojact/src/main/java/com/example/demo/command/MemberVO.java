@@ -2,6 +2,7 @@ package com.example.demo.command;
 
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,6 +18,7 @@ public class MemberVO {
 	private String birth;
 	private String address;
 	private String phone;
-	private String profile;
 	private Timestamp registerdate;
+	
+	private List<FileVO> fileList;
 }

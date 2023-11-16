@@ -7,11 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.command.MemberVO;
 import com.example.demo.service.MemberService;
 
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
 @Controller
 @RequestMapping("/*")
 public class MemberController {
@@ -20,7 +22,13 @@ public class MemberController {
    MemberService memberService;
    
    @PostMapping("register")
-   public String muinRegister(MemberVO vo, RedirectAttributes RA) {
+   public String muinRegister(MemberVO vo) {
+	   System.out.println("0000000000000000000000000000");
+	   System.out.println(vo);
+	   
+	   if(vo.getFileList()!=null) {
+		   vo.getFileList().forEach(list -> log.info(list));
+	   }	   
       memberService.register(vo);
       return "redirect:/login";
    }
