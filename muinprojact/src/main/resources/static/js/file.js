@@ -109,5 +109,31 @@
 		regiCheck();
 	});
 	
+	
+	//처음 이미지 가져오기
+    let photo_path = $('.profile-photo').attr('src');
+    let my_photo; //회원이 업로드할 이미지 담을 변수
+    $('#upload').change(function(){
+        my_photo = this.files[0];
+        if(!my_photo){
+            $('.profile-photo').attr('src', photo_path);
+            return
+        }
+        if(my_photo.size > 1024*1024){
+            alert(Math.round(my_photo.size/1024/1024) + 'MB(1MB까지만 업로드 가능)');
+            $('.profile-photo').attr('src',photo_path);
+            $(this).val('');
+            return;			
+        }
+        //이미지 미리보기 처리
+        let reader = new FileReader();
+        reader.readAsDataURL(my_photo);
+
+        reader.onload = function(){
+            $('.profile-photo').attr('src', reader.result);
+        };
+    });
+	
+	
 });	// ready end
 	

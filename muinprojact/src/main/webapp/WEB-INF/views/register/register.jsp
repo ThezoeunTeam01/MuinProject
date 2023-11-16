@@ -51,7 +51,7 @@
                 <label for="phone">핸드폰</label>
                 <input type="text" name="phone" id="phone">
             </div>
-            <div class="regiFlex">
+            <div class="regiFlex uploadDiv">
                 <label for="profile">사진 업로드</label>
                 <input type="file" name="profile" id="profile">
             </div>
@@ -61,11 +61,38 @@
             	</ul>
             </div>
             
+            <!--페이지에 표시되는 프로필이미지-->
+			<a href="#profile-change" data-bs-toggle="modal">
+			   <img src = "${pageContext.request.contextPath}/mypage/photoView.do" class = "profile-photo">
+			</a>
+			
+			<!--모달창-->
+			<div id="profile-change" class="modal fade" tabindex="-1" data-bs-backdrop="static" class="modal-dialog modal-dialog-centered">
+		      <div class="modal-header">
+		        <h5 class="modal-title">프로필 사진 미리보기</h5>
+		        <button type="button" class="btn-close photo-reset" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        <p>
+		            <img src = "${pageContext.request.contextPath}/mypage/photoView.do" class = "profile-photo">
+		            <!--multiple 속성 추가-->
+					<input type = "file" id = "upload" accept = "image/gif, image/png, image/jpeg" multiple="multiple">
+		        </p>
+		      </div>
+		      
+		      <div class="modal-footer justify-content-center" style = "align-items: center;">
+		     	<!--    <button type="button" class="btn photo-reset" id = "photo_reset" data-bs-dismiss="modal">닫기</button> -->
+		        <button type="button" class="btn" id = "photo_submit">변경</button>
+		      </div>
+			</div>
+            
+            
+            
         </div><!-- // register_box -->
         <div class="btnBox">
             <button type="button" class="backBtn btn">뒤로가기</button>
             <!--서밋을 버튼으로 변경 -->
-            <button type="button" id="register" class="submitBtn btn">회원가입</button>
+            <button type="button" class="submitBtn btn" onclick="regiCheck()">회원가입</button>
         </div>
     </form>
 </div><!-- // contents -->
