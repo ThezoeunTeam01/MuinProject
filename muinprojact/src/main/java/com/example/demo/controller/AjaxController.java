@@ -6,8 +6,12 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -102,7 +106,18 @@ public class AjaxController {
 	   }
 	   return new ResponseEntity<>(list, HttpStatus.OK);
    }
-   
+   @GetMapping("/getSessionId")
+   public Map<String, String> getSessionId(HttpSession session) {
+      
+      Map<String, String> returnId = new HashMap<>();
+      
+      String id = (String) session.getAttribute("id");
+      
+      returnId.put("id", id);
+      
+      return returnId;
+      
+   }
    
 
    

@@ -1,19 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-	<!-- Include header.html -->
+   <!-- Include header.html -->
+   
+
+   
     <jsp:include page="../include/header.jsp" />
-	<!-- 유저 프로필 -->
-		<div>
+    
+   <!-- 유저 프로필 -->
+       <div>파일 업로드</div>
+      <div class="fileUpload">
             <ul>
                 <li>
                     <img src="" alt="">
                 </li>
                 <li>
-                    <p>유저 네임</p>
+                    <p>${sessionScope.id }</p>
                 </li>
             </ul>
         </div>
         <input type="button" name="logout" id="logout" value="로그아웃" />
+        <a href="update"><input type="button" name="update" id="update" value="수정" /></a>
         <!-- 컨텐츠 -->
         <div>
             <h2>컨텐츠 <span>타이틀</span><img alt="" src=""></h2>
@@ -34,6 +40,6 @@
                 </li>
             </ul>
         </div>
-	<!-- Include footer.html -->
+   <!-- Include footer.html -->
     <jsp:include page="../include/footer.jsp" />
-	 
+    
