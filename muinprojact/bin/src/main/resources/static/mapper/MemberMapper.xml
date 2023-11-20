@@ -10,20 +10,12 @@
 		insert into muinMember(id, pw, name, birth, address, phone, registerdate)
 		 values (#{id}, #{pw}, #{name}, #{birth}, #{address}, #{phone}, sysdate)
 	</insert>
-	
 	<select id="idCheck" resultType="int">
       select count(*) from muinMember where id = #{id}
    </select>
-   
    <select id="login" parameterType="com.example.demo.command.MemberVO" resultType="int">
        select count(*) as result 
     	from muinMember
     	where id = #{id} and pw = #{pw}
    </select>
-   
-   <select id="memberList" resultType="com.example.demo.command.MemberVO">
-   	select *from muinMember where id = #{id}
-   </select>
-   
-   
 </mapper>

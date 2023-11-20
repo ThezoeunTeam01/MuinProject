@@ -11,7 +11,7 @@
 	        <div class="registerBox">
 	            <div class="regiFlex">
 	                <label for="id">아이디</label>
-	                <input type="text" name="id" id="id" readonly="readonly" value=${memberList[0].id }>
+	                <input type="text" name="id" id="id" readonly="readonly">
 	            </div>
 	            <div class="regiFlex">
 	                <label for="pw">비밀번호</label>
@@ -29,20 +29,20 @@
 	
 	            <div class="regiFlex">
 	                <label for="name">이름</label>
-	                <input type="text" name="name" id="name" value=${memberList[0].name }>
+	                <input type="text" name="name" id="name">
 	            </div>
 	            <div class="regiFlex">
 	                <label for="birth">생년월일</label>
-	                <input type="text" name="birth" id="birth" value=${memberList[0].birth }>
+	                <input type="text" name="birth" id="birth">
 	            </div>
 	            <div class="regiFlex">
 	                <label for="address">주소</label>
-	                <input type="text" name="address" id="address" value=${memberList[0].address }>
+	                <input type="text" name="address" id="address">
 	            </div>
 	            <!-- 핸드폰 설정 시 - 사용할 건지? 확인 필요 -->
 	            <div class="regiFlex">
 	                <label for="phone">핸드폰</label>
-	                <input type="text" name="phone" id="phone" value=${memberList[0].phone }>
+	                <input type="text" name="phone" id="phone">
 	            </div>
 	            <!--  프로필 업로드 하는 부분 -->
 	            <div class="regiFlex uploadDiv profile-photo">
@@ -59,7 +59,7 @@
 	        
 	        <div class="btnBox">
 	          <button type="button" class="backBtn btn">뒤로가기</button>
-     	      <button type="submit" class="submitBtn btn" id="register">회원정보 변경하기</button>
+     	      <button type="submit" class="submitBtn btn" onclick="location.href=''">회원정보 변경하기</button>
 	        </div>
 	    </form>
 	</div><!-- // contents -->

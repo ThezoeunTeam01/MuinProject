@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +32,15 @@ public class MemberController {
    @Autowired
    MemberService memberService;
    
+   @GetMapping("memberUpdate")
+   public String update(HttpSession session, Model model) {
+	   
+	   List<MemberVO> memberList = memberService.memberList((String)session.getAttribute("id"));
+	   
+	   model.addAttribute("memberList", memberList);
+	   System.out.println(memberList);
+	   return "myPage/update";
+   }
    
    
    @PostMapping("register")

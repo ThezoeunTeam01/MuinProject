@@ -18,7 +18,7 @@
             </ul>
         </div>
         <input type="button" name="logout" id="logout" value="로그아웃" />
-        <a href="memberUpdate"><input type="button" name="update" id="update" value="수정" /></a>
+        <a href="update"><input type="button" name="update" id="update" value="수정" /></a>
         <!-- 컨텐츠 -->
         <div>
             <h2>컨텐츠 <span>타이틀</span><img alt="" src=""></h2>
