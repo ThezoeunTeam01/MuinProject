@@ -45,8 +45,13 @@ public class MemberController {
    public String update(HttpSession session, Model model) {
 	   
 	   String id = (String)session.getAttribute("id");
+	   
+	   
 	   List<MemberFileVO> fileList =  fileService.fileList(id);
+	   fileList.forEach(file -> file.setUploadPath(file.getUploadPath().replace("\\", "/")));
+	   
 	   List<MemberVO> memberList = memberService.memberList(id);	   
+	   
 	   
 	   
 	   System.out.println("filelist~~~~~~~~~~~~~~~~~~~~~~");
