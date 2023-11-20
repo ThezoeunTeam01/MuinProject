@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.command.MemberFileVO;
 import com.example.demo.command.MemberVO;
+import com.example.demo.service.FileService;
 import com.example.demo.service.MemberService;
 
 import lombok.extern.log4j.Log4j2;
@@ -33,15 +35,30 @@ public class MemberController {
    @Autowired
    MemberService memberService;
    
+   @Autowired
+   FileService fileService;
+   
    @Value("${upload.path}") // application.properties의 변수
    private String uploadFolder;
    
    @GetMapping("memberUpdate")
    public String update(HttpSession session, Model model) {
 	   
-	   List<MemberVO> memberList = memberService.memberList((String)session.getAttribute("id"));
+	   String id = (String)session.getAttribute("id");
+	   List<MemberFileVO> fileList =  fileService.fileList(id);
+	   List<MemberVO> memberList = memberService.memberList(id);	   
 	   
-	   model.addAttribute("memberList", memberList);
+	   
+	   System.out.println("filelist~~~~~~~~~~~~~~~~~~~~~~");
+	   System.out.println(fileList);
+	   
+	   
+	   
+	   model.addAttribute("memberList", memberList);	   
+	   
+	   model.addAttribute("fileList",fileList);
+	   
+	   System.out.println("memberlist~~~~~~~~~~~~~~~~~~");
 	   System.out.println(memberList);
 	   return "myPage/update";
    }

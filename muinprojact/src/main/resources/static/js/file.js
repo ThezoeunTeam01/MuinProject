@@ -68,6 +68,7 @@
    function showList(list){
       var uploadUL = $(".imgRatioBox ul");
       var str = "";
+      uploadUL.empty();
       
       $(list).each(function(i, li){
          var fileCallPath = encodeURIComponent(li.uploadPath+"/s_"+li.uuid+"_"+li.fileName);

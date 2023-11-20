@@ -6,8 +6,12 @@
 <mapper namespace="com.example.demo.mapper.FileMapper">
 	
 	<insert id="fileInsert">
-		insert into profileImage (id, filename, uuid, filepath)
+		insert into profileImage (id, filename, uuid, uploadPath)
 		values (#{id}, #{fileName}, #{uuid}, #{uploadPath})
 	</insert>
+	
+	<select id="fileList" resultType="com.example.demo.command.MemberFileVO">
+		select * from profileimage where id = #{id}
+	</select>
 	
 </mapper>   

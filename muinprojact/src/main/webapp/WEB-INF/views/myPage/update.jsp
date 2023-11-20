@@ -53,7 +53,7 @@
 	            <div class="showProfile">
 	            	<div class="imgRatioBox">
 	           			<ul>
-	           			
+	           				<img src="/display?fileName=${fileList[0].uploadPath }/s_${fileList[0].uuid }_${fileList[0].fileName }">
 	           			</ul>
 	           		</div>
 	            </div>

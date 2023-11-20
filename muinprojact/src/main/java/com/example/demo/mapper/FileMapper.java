@@ -1,10 +1,13 @@
 package com.example.demo.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
-import com.example.demo.command.FileVO;
+import com.example.demo.command.MemberFileVO;
 
 @Mapper
 public interface FileMapper {
-	public void fileInsert(FileVO vo);
+	public void fileInsert(MemberFileVO vo);
+	public List<MemberFileVO> fileList(String id);
 }

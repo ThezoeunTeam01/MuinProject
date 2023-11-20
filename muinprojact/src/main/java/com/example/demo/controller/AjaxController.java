@@ -2,7 +2,6 @@ package com.example.demo.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,20 +14,17 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.example.demo.command.FileDTO;
+import com.example.demo.command.MemberFileDTO;
 import com.example.demo.service.FileService;
 import com.example.demo.service.MemberService;
 
@@ -63,10 +59,10 @@ public class AjaxController {
 		return str.replace("-", File.separator);
 	}
    @PostMapping(value = "/uploadAjax", produces = MediaType.APPLICATION_JSON_VALUE)	// 기존은 responseBody가 있었음
-   public ResponseEntity<List<FileDTO>> uploadAjax(MultipartFile[] uploadFile) {
+   public ResponseEntity<List<MemberFileDTO>> uploadAjax(MultipartFile[] uploadFile) {
 	   
 	   
-	   List<FileDTO> list = new ArrayList<>();
+	   List<MemberFileDTO> list = new ArrayList<>();
    		//#2. 경로 정보를 얻기 위한 메서드 구현... 
  		String uploadFolerPath = getFolder();  //년월일 폴더 생성... 
  		File uploadPath = new File(uploadFolder, uploadFolerPath);
@@ -77,7 +73,7 @@ public class AjaxController {
 	   
 	   for(MultipartFile multipartFile: uploadFile) {
 		   
-		   FileDTO fileDTO = new FileDTO();
+		   MemberFileDTO fileDTO = new MemberFileDTO();
 		   String uploadFileName = multipartFile.getOriginalFilename();
 		   
 		   

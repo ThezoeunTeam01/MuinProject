@@ -20,5 +20,5 @@ public class MemberVO {
 	private String phone;
 	private Timestamp registerdate;
 	
-	private List<FileVO> fileList;
+	private List<MemberFileVO> fileList;
 }
