@@ -6,13 +6,13 @@
         <div>
             <ul>
                 <li>
-                    <a href="">카테고리1</a>
+                    <a href="">디지털</a>
                 </li>
                 <li>
-                    <a href="">카테고리2</a>
+                    <a href="">패션</a>
                 </li>
                 <li>
-                    <a href="">카테고리3</a>
+                    <a href="">etc</a>
                 </li>
             </ul>
         </div>

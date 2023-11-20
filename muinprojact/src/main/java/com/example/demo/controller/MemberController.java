@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,9 @@ public class MemberController {
    
    @Autowired
    MemberService memberService;
+   
+   @Value("${upload.path}") // application.properties의 변수
+   private String uploadFolder;
    
    @GetMapping("memberUpdate")
    public String update(HttpSession session, Model model) {
@@ -82,7 +86,7 @@ public class MemberController {
        log.info("fileName : "+fileName);
 
        // 파일 경로를 지정하여 File 객체 생성
-       File file = new File("/Users/eongdeong-ihaejeogdan/Desktop/springboot/test/"+fileName);
+       File file = new File(uploadFolder+"/"+fileName);
        log.info("file : "+file);
 
        // ResponseEntity 객체 생성

@@ -20,7 +20,7 @@
 									<span>마이페이지</span>
 								</a>
 						</li>
-						<li><a href="#">
+						<li><a href="upload">
 									<span><i class="fas fa-plus-circle"></i></span>
 									<span>등록</span>
 								</a>

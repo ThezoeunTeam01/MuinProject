@@ -14,6 +14,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -44,6 +45,9 @@ public class AjaxController {
    
    @Autowired
    FileService fileService;
+   
+   @Value("${upload.path}") // application.properties의 변수
+   private String uploadFolder;
   
    
    @PostMapping("/idCheck")
@@ -63,7 +67,6 @@ public class AjaxController {
 	   
 	   
 	   List<FileDTO> list = new ArrayList<>();
-	    String uploadFolder = "/Users/eongdeong-ihaejeogdan/Desktop/springboot/test";
    		//#2. 경로 정보를 얻기 위한 메서드 구현... 
  		String uploadFolerPath = getFolder();  //년월일 폴더 생성... 
  		File uploadPath = new File(uploadFolder, uploadFolerPath);

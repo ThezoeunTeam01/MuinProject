@@ -52,7 +52,9 @@
 	            <!--  수정된 프로필이 노출되는 부분 -->
 	            <div class="showProfile">
 	            	<div class="imgRatioBox">
-	           			<img src = "" class = "profile-photo" />
+	           			<ul>
+	           			
+	           			</ul>
 	           		</div>
 	            </div>
 	        </div><!-- // register_box -->

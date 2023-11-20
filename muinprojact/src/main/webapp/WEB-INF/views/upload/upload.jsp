@@ -11,7 +11,7 @@
                            <input type="hidden" name="id" value="${sessionScope.id}" >
                         <div class="uploadFlex">
                            <label for="image2">사진 업로드</label>
-                           <input type="file" name="image2" >   
+                           <input type="file" name="image2" multiple="multiple">   
                         </div>
                         <div class="uploadFlex">
                            <label for="category">카테고리</label>
