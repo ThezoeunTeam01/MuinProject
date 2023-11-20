@@ -5,10 +5,9 @@
     
    <!-- 컨텐츠 -->
    <div class="contents">
-   
-   		<!-- 유저 프로필 -->
+   	   <!-- 유저 프로필 -->
        <div>파일 업로드</div>
-      <div class="fileUpload">
+       <div class="fileUpload">
             <ul>
                 <li>
                     <img src="" alt="">
