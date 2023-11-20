@@ -6,7 +6,7 @@
 <mapper namespace="com.example.demo.mapper.FileMapper">
 	
 	<insert id="fileInsert">
-		insert into profileimage (id, filename, uuid, filepath)
+		insert into profileImage (id, filename, uuid, filepath)
 		values (#{id}, #{fileName}, #{uuid}, #{uploadPath})
 	</insert>
 	
