@@ -5,7 +5,7 @@
    
 <mapper namespace="com.example.demo.mapper.BoardMapper">
    <insert id="boardRegister">
-      insert into muinBoard( id, category, title, price, content) 
-      values(#{id}, #{category}, #{title}, #{price}, #{content})
+      insert into muinBoard( id, category, title, price, content, contentDate) 
+      values(#{id}, #{category}, #{title}, #{price}, #{content}, sysdate)
    </insert>   
 </mapper>
