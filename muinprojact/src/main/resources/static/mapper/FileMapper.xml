@@ -14,4 +14,12 @@
 		select * from profileimage where id = #{id}
 	</select>
 	
+	<update id="fileUpdate">
+		update profileimage set filename=#{fileName}, uuid=#{uuid}, uploadPath=#{uploadPath} where id=#{id}
+	</update>
+	
+	<delete id="fileDelete">
+		delete from profileimage where id=#{id}
+	</delete>
+	
 </mapper>   

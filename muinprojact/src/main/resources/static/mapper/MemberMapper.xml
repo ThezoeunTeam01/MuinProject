@@ -25,5 +25,12 @@
    	select *from muinMember where id = #{id}
    </select>
    
+   <update id="memberUpdate" parameterType="com.example.demo.command.MemberVO">
+   	update muinMember set pw=#{pw}, name=#{name}, birth=#{birth}, address=#{address}, phone=#{phone}, registerdate=sysdate where id=#{id}
+   </update>
+   
+   <delete id="memberDelete">
+   	delete from muinMember where id=#{id}
+   </delete>
    
 </mapper>

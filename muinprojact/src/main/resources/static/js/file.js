@@ -103,5 +103,23 @@
       regiForm.append(str);
       regiCheck();
    });
+   
+   var updateForm = $("#memberUpdateForm");
+   
+   $("#memberUpdate").on("click", function(e){
+      var id = $("#id").val();
+      var str = "";
+      
+      $(".imgRatioBox ul li").each(function(i, li){
+         var jli = $(li);
+         
+         str += "<input type='hidden' name='fileList["+i+"].fileName' value='"+jli.data("filename")+"'>";
+         str += "<input type='hidden' name='fileList["+i+"].uuid' value='"+jli.data("uuid")+"'>";
+         str += "<input type='hidden' name='fileList["+i+"].uploadPath' value='"+jli.data("uploadpath")+"'>";
+         str += "<input type='hidden' name='fileList["+i+"].id' value='"+id+"'>";
+      });
+      updateForm.append(str);
+      memberUpdateCheck();
+   });
 });   // ready end
    

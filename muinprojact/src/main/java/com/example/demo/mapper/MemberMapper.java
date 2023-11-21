@@ -14,4 +14,6 @@ public interface MemberMapper {
 	public int idCheck(String id); // 아이디 체크
 	public int login(MemberVO vo);
 	public List<MemberVO> memberList(String id);
+	public void memberUpdate(MemberVO vo);
+	public void memberDelete(String id);
 }

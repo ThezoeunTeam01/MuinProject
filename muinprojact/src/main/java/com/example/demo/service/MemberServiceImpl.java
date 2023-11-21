@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.demo.command.MemberFileVO;
 import com.example.demo.command.MemberVO;
 import com.example.demo.mapper.FileMapper;
 import com.example.demo.mapper.MemberMapper;
@@ -46,6 +47,32 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberVO> memberList(String id) {
 		List<MemberVO> memberList =  memberMapper.memberList(id);
 		return memberList;
+	}
+	
+	@Transactional
+	@Override
+	public void memberUpdate(MemberVO vo) {
+		
+		memberMapper.memberUpdate(vo);
+		
+		if(vo.getFileList()==null || vo.getFileList().size()<=0) {
+			return;
+		}
+		vo.getFileList().forEach(list -> {
+			fileMapper.fileUpdate(list);
+		});
+		
+	}
+	
+	@Override
+	public void memberDelete(String id,List<MemberFileVO> fileList) {
+				
+		if(fileList==null || fileList.size()<=0) {
+			return;
+		}
+		fileMapper.fileDelete(id);
+		
+		memberMapper.memberDelete(id);
 	}
 	
 }

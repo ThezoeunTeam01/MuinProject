@@ -6,7 +6,7 @@
 	<!-- 컨텐츠 -->
 	<div class="contents">
 	    <h2 class="tit">회원정보 수정</h2>
-	    <form action="modify" method="post" id="muinRegiForm" enctype="multipart/form-data">
+	    <form action="memberUpdate" method="post" id="memberUpdateForm" enctype="multipart/form-data">
 	        <!-- 마이 페이지 -->
 	        <div class="registerBox">
 	            <div class="regiFlex">
@@ -15,17 +15,17 @@
 	            </div>
 	            <div class="regiFlex">
 	                <label for="pw">비밀번호</label>
-	                <input type="password" name="pw" id="pw">
+	                <input type="password" name="pw" id="pw" value=${memberList[0].pw }>
 	            </div>
 	            <div class="regiFlex">
 	                <label for="pwCheck">비밀번호 확인</label>
-	                <input type="password" name="pwCheck" id="pwCheck">
+	                <input type="password" name="pwCheck" id="pwCheck" value=${memberList[0].pw }>
 	                <button type="button" class="checkBtn btn" id="checkPasswordBtn">
 	                    비밀번호 확인 체크
-	                </button>               
+	                </button>
 	            </div>
 	            <!-- 비밀번호 일치 불일치 여부 notice 노출 -->
-	            <div class="notice_red"  id="pwMatchStatus"></div>                             
+	            <div class="notice_red"  id="pwMatchStatus"></div>
 	
 	            <div class="regiFlex">
 	                <label for="name">이름</label>
@@ -47,7 +47,7 @@
 	            <!--  프로필 업로드 하는 부분 -->
 	            <div class="regiFlex uploadDiv profile-photo">
 	                <label for="profile">프로필 업로드</label>
-	                <input type="file" name="profile" id="profile">
+	                <input type="file" name="profile" id="profile" >
 	            </div>
 	            <!--  수정된 프로필이 노출되는 부분 -->
 	            <div class="showProfile">
@@ -61,7 +61,8 @@
 	        
 	        <div class="btnBox">
 	          <button type="button" class="backBtn btn">뒤로가기</button>
-     	      <button type="submit" class="submitBtn btn" id="register">회원정보 변경하기</button>
+     	      <button type="button" class="submitBtn btn" id="memberUpdate">회원정보 변경하기</button>
+     	      <button type="button" class="submitBtn btn" id="memberDelete" onclick="location.href='memberDelete'">회원 탈퇴</button>
 	        </div>
 	    </form>
 	</div><!-- // contents -->

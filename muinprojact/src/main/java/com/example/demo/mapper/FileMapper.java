@@ -10,4 +10,6 @@ import com.example.demo.command.MemberFileVO;
 public interface FileMapper {
 	public void fileInsert(MemberFileVO vo);
 	public List<MemberFileVO> fileList(String id);
+	public void fileUpdate(MemberFileVO vo);
+	public void fileDelete(String id);
 }

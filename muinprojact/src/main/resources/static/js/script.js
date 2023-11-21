@@ -104,7 +104,7 @@ $(document).ready(function() {
           alert("생년월일을 입력하세요!");
           $("#birth").focus();
       } else if ($("#address").val() === "") {
-          alert("프로필 파일을 업로드 하세요!");
+          alert("주소를 입력하세요!");
           $("#address").focus();
       } else if ($("#phone").val() === "") {
           alert("번호를 입력하세요!");
@@ -114,6 +114,29 @@ $(document).ready(function() {
           $("#profile").focus();
       }else  if (confirm("회원 가입을 하시겠습니까?")) {
               $("#muinRegiForm").submit();
+      }
+   };
+   // joinCheck 함수
+   function memberUpdateCheck() {
+	  if ($("#pw").val().length < 1) {
+          alert("비밀번호를 입력하세요!");
+      } else if ($("#pw").val() !== $("#pwCheck").val()) {
+          alert("비밀번호 확인란을 확인해 주세요!");
+          $("#pwCheck").focus();
+      } else if ($("#name").val().length < 1) {
+          alert("이름을 입력하세요!");
+          $("#name").focus();
+      } else if ($("#birth").val().length < 8) {
+          alert("생년월일을 입력하세요!");
+          $("#birth").focus();
+      } else if ($("#address").val() === "") {
+          alert("주소를 입력하세요!");
+          $("#address").focus();
+      } else if ($("#phone").val() === "") {
+          alert("번호를 입력하세요!");
+          $("#phone").focus();
+      }else  if (confirm("수정 하시겠습니까?")) {
+              $("#memberUpdateForm").submit();
       }
    };
  

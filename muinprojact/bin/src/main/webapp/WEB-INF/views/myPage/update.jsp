@@ -6,7 +6,7 @@
 	<!-- 컨텐츠 -->
 	<div class="contents">
 	    <h2 class="tit">회원정보 수정</h2>
-	    <form action="modify" method="post" id="muinRegiForm" enctype="multipart/form-data">
+	    <form action="memberUpdate" method="post" id="muinRegiForm" enctype="multipart/form-data">
 	        <!-- 마이 페이지 -->
 	        <div class="registerBox">
 	            <div class="regiFlex">

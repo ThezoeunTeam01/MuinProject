@@ -1,7 +1,10 @@
 package com.example.demo.controller;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -48,35 +51,52 @@ public class MemberController {
 	   
 	   
 	   List<MemberFileVO> fileList =  fileService.fileList(id);
-	   fileList.forEach(file -> file.setUploadPath(file.getUploadPath().replace("\\", "/")));
+//	   fileList.forEach(file -> file.setUploadPath(file.getUploadPath().replace("\\", "/")));
 	   
-	   List<MemberVO> memberList = memberService.memberList(id);	   
+	   try {
+	        for (MemberFileVO file : fileList) {
+	            String encodedPath = URLEncoder.encode(file.getUploadPath(), "UTF-8");
+	            file.setUploadPath(encodedPath);
+	        }
+	        
+	    } catch (UnsupportedEncodingException e) {
+	        // Handle the exception according to your requirements
+	        e.printStackTrace();
+	    }
 	   
+	   List<MemberVO> memberList = memberService.memberList(id);	   	   	   	   
 	   
-	   
-	   System.out.println("filelist~~~~~~~~~~~~~~~~~~~~~~");
-	   System.out.println(fileList);
-	   
-	   
-	   
-	   model.addAttribute("memberList", memberList);	   
-	   
+	   model.addAttribute("memberList", memberList);	   	   
 	   model.addAttribute("fileList",fileList);
-	   
-	   System.out.println("memberlist~~~~~~~~~~~~~~~~~~");
-	   System.out.println(memberList);
+
 	   return "myPage/update";
    }
    
-   
+   // 회원 수정
+   @PostMapping("/memberUpdate")
+   public String memberUpdate(MemberVO vo) {
+	   memberService.memberUpdate(vo);
+	   return "redirect:/";
+   }
+  
+   // 회원 등록
    @PostMapping("register")
-   public String muinRegister(MemberVO vo) {
-	   if(vo.getFileList()!=null) {
-		   vo.getFileList().forEach(list -> log.info(list));
-	   }	   
+   public String muinRegister(MemberVO vo) {	  	   
       memberService.register(vo);
       return "redirect:/login";
    }
+   
+   // 회원 탈퇴
+   @GetMapping("memberDelete")
+   public String memberDelete(HttpSession session) {
+	   
+	   String id = (String)session.getAttribute("id");	   
+	   List<MemberFileVO> fileList = fileService.fileList(id);
+	   
+	   memberService.memberDelete(id,fileList);
+	   return "redirect:/";
+   }
+   // 로그인
    @PostMapping("login")
    public String muinLogin(MemberVO vo, HttpSession session) {
       int result = memberService.login(vo);
@@ -86,7 +106,8 @@ public class MemberController {
       }else {         
          return "login/login";
       }
-    }
+   }
+   // 로그아웃
    @PostMapping("/logout")
    public String logout(HttpServletRequest request) {
        // 현재 요청의 세션을 가져옴	   
@@ -99,9 +120,9 @@ public class MemberController {
 	       System.out.println("로그아웃 실패: 세션이 이미 만료되었습니다.");
 	       return "";
 	   }
-       // 로그아웃 후 리다이렉션할 페이지나 뷰 이름을 반환
        
 }
+   // 디스플레이
    @GetMapping("/display")
    @ResponseBody
    public ResponseEntity<byte[]> getFile(String fileName){
@@ -112,26 +133,22 @@ public class MemberController {
        log.info("file : "+file);
 
        // ResponseEntity 객체 생성
-       ResponseEntity<byte[]> result = null;  // 반환값으로 전달할 빈 객체 생성
+       ResponseEntity<byte[]> result = null;  
 
        try {
-           // HTTP 응답의 헤더를 담당하는 HttpHeaders 객체 생성
            HttpHeaders headers = new HttpHeaders();
 
-           // 파일의 MIME 타입을 추론하여 Content-Type 헤더에 추가
            headers.add("Content-Type", Files.probeContentType(file.toPath()));
 
-           // 파일 데이터를 byte 배열로 복사하여 ResponseEntity에 담기
            result = new ResponseEntity<>(
-                   FileCopyUtils.copyToByteArray(file),  // 파일 데이터를 byte 배열로 복사
-                   headers,  // 설정한 헤더 정보 추가
-                   HttpStatus.OK);  // HTTP 상태 코드 지정 (200 OK)
+                   FileCopyUtils.copyToByteArray(file),
+                   headers,
+                   HttpStatus.OK);
 
        } catch (Exception e) {
            e.printStackTrace();
        }
-
-       return result;  // 완성된 ResponseEntity 반환
+       return result;  
    }
    
 }
