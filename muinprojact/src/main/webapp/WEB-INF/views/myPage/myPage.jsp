@@ -10,24 +10,64 @@
 	<!-- 컨텐츠 -->
 	<div class="contents">
 	<h2 class="tit">마이 페이지</h2>
-   	    <!-- 유저 프로필 -->
-		<div class="fileUpload">
-			<div class="mypageProfile">
-			   <div class="imgRatioBox">
-			        <img src="" class="" />
-			    </div>
-			</div>
-			<div class="mypageInfo"><span class="yourId">${sessionScope.id }</span> 님, 환영합니다!</div>
-		</div>
 	
-        <!--  로그아웃 버튼 임시 추가 처리 -->
-        <button type="button" name="logout" id="logout" class="backBtn btn">로그아웃</button>
-        
-        <div class="btnBox">
-        	<!-- <input type="button" name="logout" id="logout" value="로그아웃"  class="backBtn btn" /> -->
-        	<button type="button" name="" id="" class="backBtn btn" onclick="history.back()">뒤로가기</button>	
-     		<button type="button" name="update" id="update" class="submitBtn btn" onclick="location.href='memberUpdate'">수정</button>
-        </div>
+		<div class="mypageInfoBox">
+	   	    <!-- 유저 프로필 -->
+			<div class="fileUpload">
+				<div class="mypageProfile">
+				   <div class="imgRatioBox">
+				        <img src="" class="" />
+				    </div>
+				</div>
+				<div class="mypageInfo"><span class="yourId">${sessionScope.id }</span> 님, 환영합니다!</div>
+		        <!--  로그아웃 버튼 임시 추가 처리 -->
+	        	<button type="button" name="logout" id="logout" class="backBtn btn">로그아웃</button>
+			</div>
+	        <div class="btnBox">
+	        	<!-- <input type="button" name="logout" id="logout" value="로그아웃"  class="backBtn btn" /> -->
+	        	<button type="button" name="" id="" class="backBtn btn" onclick="history.back()">뒤로가기</button>	
+	     		<button type="button" name="update" id="update" class="submitBtn btn" onclick="location.href='memberUpdate'">내 정보 수정</button>
+	        </div>
+		</div>
+		
+		<div class="slick">
+	        <div class="slickWrapBox">
+              <div class="slickImgBox">
+                  <img src="" alt=""  />
+              </div>
+              <div class="slickContBox">
+                  <dl>
+                      <dt>컨텐츠 타이틀</dt>
+                      <dd>xxx원</dd>
+                      <dd>컨텐츠 텍스트</dd>
+                  </dl>
+              </div>
+	        </div>
+	        <div class="slickWrapBox">
+               <div class="slickImgBox">
+                   <img src="" alt=""  />
+               </div>
+               <div class="slickContBox">
+                   <dl>
+                       <dt>컨텐츠 타이틀</dt>
+                       <dd>xxx원</dd>
+                       <dd>컨텐츠 텍스트</dd>
+                   </dl>
+               </div>
+	        </div>
+	        <div class="slickWrapBox">
+              <div class="slickImgBox">
+                  <img src="" alt=""  />
+              </div>
+              <div class="slickContBox">
+                  <dl>
+                      <dt>컨텐츠 타이틀</dt>
+                      <dd>xxx원</dd>
+                      <dd>컨텐츠 텍스트</dd>
+                  </dl>
+              </div>
+	        </div>
+		</div>
        
     </div><!-- // contents -->
 
