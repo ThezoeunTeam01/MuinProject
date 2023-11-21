@@ -21,49 +21,11 @@
       <link rel="stylesheet" href="css/layout.css">
       
       <!-- Script -->
-       <%
-      String sessionId = (String)session.getAttribute("id");
-	   %>
-	   
-	   <script type="text/javascript">
-	   $(document).ready(function(){
-		   //세션을 이용한 로그인 확인	
-	       var session = '<%= sessionId %>';
-	       if(session === "null"){
-				//alert(session+"로그인 정보 없음");
-	           	$('#myPage').hide();
-	       } else {
-			   //alert(session+"로그인중");
-	           $('#login').hide();
-	       }
-		   
-	       $('#logout').click(function(){
-	    	    var session = '<%= sessionId %>';
-	    	    if(session === "null"){
-	    	       // alert(session + "로그인 정보 없음");
-	    	    } else {
-	    	       // alert(session + "로그인중");
-	    	        $.ajax({
-	    	            url: '/logout',
-	    	            method: 'POST',
-	    	            success: function(response) {
-	    	                console.log('로그아웃 성공');
-	    	                // 서버에서 리다이렉션을 수행하지 않고 클라이언트에서 직접 처리
-	    	                window.location.href = '/'; // 리다이렉션할 페이지의 URL로 수정
-	    	            },
-	    	            error: function(error) {
-	    	                console.error('로그아웃 실패', error);
-	    	            }
-	    	        });
-	    	    }
-    		});
-	   	  }); 
-	   
-	   </script>
+  
       <script src="../js/script.js"></script>
-      <!-- <script src="../js/file.js"></script> -->
-      <script src="../js/member.js"></script>
-      <script src="../js/board.js"></script>
+      <script src="../js/file.js"></script>
+     <!--  <script src="../js/member.js"></script>
+      <script src="../js/board.js"></script> -->
      
    </head>
    <body>

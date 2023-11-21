@@ -8,7 +8,7 @@
    $("input[type='file']").change(function(e){
       
       var form = new FormData();
-      var inputFile = $("input[name='profile']");
+      var inputFile = $("input[type='file']");
       
       var files = inputFile[0].files;
       
@@ -61,12 +61,12 @@
          alert("이미지 파일만 업로드 할 수 있습니다.");
          return false;
       }
-      return true;
+//      return true;
    }
    
    // 업로드 결과 보여주기
    function showList(list){
-      var uploadUL = $(".imgRatioBox ul");
+      var uploadUL = $(".showUploadfile div ul");
       var str = "";
       uploadUL.empty();
       
@@ -83,43 +83,6 @@
       });
       uploadUL.append(str);
    }
-   
-   var regiForm = $("#muinRegiForm");
-   
-   
-   $("#register").on("click", function(e){
-      
-      var id = $("#id").val();
-      var str = "";
-      
-      $(".imgRatioBox ul li").each(function(i, li){
-         var jli = $(li);
-         
-         str += "<input type='hidden' name='fileList["+i+"].fileName' value='"+jli.data("filename")+"'>";
-         str += "<input type='hidden' name='fileList["+i+"].uuid' value='"+jli.data("uuid")+"'>";
-         str += "<input type='hidden' name='fileList["+i+"].uploadPath' value='"+jli.data("uploadpath")+"'>";
-         str += "<input type='hidden' name='fileList["+i+"].id' value='"+id+"'>";
-      });
-      regiForm.append(str);
-      regiCheck();
-   });
-   
-   var updateForm = $("#memberUpdateForm");
-   
-   $("#memberUpdate").on("click", function(e){
-      var id = $("#id").val();
-      var str = "";
-      
-      $(".imgRatioBox ul li").each(function(i, li){
-         var jli = $(li);
-         
-         str += "<input type='hidden' name='fileList["+i+"].fileName' value='"+jli.data("filename")+"'>";
-         str += "<input type='hidden' name='fileList["+i+"].uuid' value='"+jli.data("uuid")+"'>";
-         str += "<input type='hidden' name='fileList["+i+"].uploadPath' value='"+jli.data("uploadpath")+"'>";
-         str += "<input type='hidden' name='fileList["+i+"].id' value='"+id+"'>";
-      });
-      updateForm.append(str);
-      memberUpdateCheck();
-   });
+
 });   // ready end
    

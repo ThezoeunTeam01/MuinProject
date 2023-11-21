@@ -21,8 +21,8 @@
                	<p class="notice_mini">* 이미지는 최대 3개까지 업로드 가능합니다!</p>
                
                <div class="uploadFlex">
-                  <label for="image2">사진 업로드</label>
-                  <input type="file" name="image2" id="image2" multiple="multiple">   
+                  <label for="boardImage">사진 업로드</label>
+                  <input type="file" name="boardImage" id="boardImage" multiple="multiple">   
                </div>
                <div class="uploadFlex">
                   <label for="category">카테고리</label>
