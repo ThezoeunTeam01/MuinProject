@@ -60,7 +60,7 @@
 	        </div><!-- // register_box -->
 	        
 	        <div class="btnBox">
-	          <button type="button" class="backBtn btn">뒤로가기</button>
+	          <button type="button" class="backBtn btn" onclick="history.back()">뒤로가기</button>
      	      <button type="button" class="submitBtn btn" id="memberUpdate">회원정보 변경하기</button>
      	      <button type="button" class="submitBtn btn" id="memberDelete" onclick="location.href='memberDelete'">회원 탈퇴</button>
 	        </div>

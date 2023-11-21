@@ -24,7 +24,7 @@
                 <label for="pw">비밀번호</label>
                 <input type="password" name="pw" id="pw">
             </div>
-           <div class="regiFlex">
+            <div class="regiFlex">
                 <label for="pwCheck">비밀번호 확인</label>
                 <input type="password" name="pwCheck" id="pwCheck">
                 <button type="button" class="checkBtn btn" id="checkPasswordBtn">
@@ -65,7 +65,7 @@
                         
         </div><!-- // register_box -->
         <div class="btnBox">
-            <button type="button" class="backBtn btn">뒤로가기</button>
+            <button type="button" class="backBtn btn" onclick="history.back()">뒤로가기</button>
             <!--서밋을 버튼으로 변경 -->
             <button type="button" class="submitBtn btn" id="register">회원가입</button>
         </div>
