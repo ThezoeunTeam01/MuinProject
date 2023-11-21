@@ -22,7 +22,7 @@
                
                <div class="uploadFlex">
                   <label for="boardImage">사진 업로드</label>
-                  <input type="file" name="boardImage" id="boardImage" multiple="multiple">   
+                  <input type="file" name="boardImage" id="fileFile" multiple="multiple">   
                </div>
                <div class="uploadFlex">
                   <label for="category">카테고리</label>

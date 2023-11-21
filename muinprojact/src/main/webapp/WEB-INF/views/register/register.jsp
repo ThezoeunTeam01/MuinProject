@@ -55,7 +55,7 @@
                 <label for="profile">프로필 업로드</label>
                 <input type="file" name="profile" id="profile">
             </div>
-            <div class="showProfile">
+            <div class="showUploadfile">
             	<div class="imgRatioBox">
            			<ul>
            			

@@ -6,7 +6,7 @@
    
    // change start
    $("input[type='file']").change(function(e){
-      
+      var uploadUL = $(".showUploadfile div ul");
       var form = new FormData();
       var inputFile = $("input[type='file']");
       
@@ -15,7 +15,9 @@
       for(var i=0;i<files.length;i++){
          
          if(!checkExtension(files[i].name, files[i].size)){
-            document.getElementById('profile').value = null;
+            $("input[type='file']").val("");
+            var uploadUL = $(".showUploadfile div ul");
+            uploadUL.empty();
             return false;
          }else{
             console.log(files[i]);
@@ -33,7 +35,7 @@
             if(result.length<=0){
                
                alert("이미지 파일을 업로드 해주세요");
-               document.getElementById('profile').value = null;
+               $("input[type='file']").val("");
             }
             console.log(result);
             showList(result);
@@ -61,7 +63,7 @@
          alert("이미지 파일만 업로드 할 수 있습니다.");
          return false;
       }
-//      return true;
+      return true;
    }
    
    // 업로드 결과 보여주기
