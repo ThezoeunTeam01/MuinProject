@@ -12,5 +12,5 @@ public class BoardVO {
    private String title;
    private int price;
    private String content;
-   private Timestamp contentDate;
+   private Timestamp contentDate; 
 }
