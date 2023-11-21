@@ -47,22 +47,9 @@ public class MemberController {
    @GetMapping("memberUpdate")
    public String update(HttpSession session, Model model) {
 	   
-	   String id = (String)session.getAttribute("id");
-	   
+	   String id = (String)session.getAttribute("id");	   
 	   
 	   List<MemberFileVO> fileList =  fileService.fileList(id);
-//	   fileList.forEach(file -> file.setUploadPath(file.getUploadPath().replace("\\", "/")));
-	   
-	   try {
-	        for (MemberFileVO file : fileList) {
-	            String encodedPath = URLEncoder.encode(file.getUploadPath(), "UTF-8");
-	            file.setUploadPath(encodedPath);
-	        }
-	        
-	    } catch (UnsupportedEncodingException e) {
-	        // Handle the exception according to your requirements
-	        e.printStackTrace();
-	    }
 	   
 	   List<MemberVO> memberList = memberService.memberList(id);	   	   	   	   
 	   

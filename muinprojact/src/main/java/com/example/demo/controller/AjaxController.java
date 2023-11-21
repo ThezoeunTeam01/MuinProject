@@ -56,7 +56,7 @@ public class AjaxController {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
 		String str = sdf.format(date);
-		return str.replace("-", File.separator);
+		return str.replace("-", "/");
 	}
    @PostMapping(value = "/uploadAjax", produces = MediaType.APPLICATION_JSON_VALUE)	// 기존은 responseBody가 있었음
    public ResponseEntity<List<MemberFileDTO>> uploadAjax(MultipartFile[] uploadFile) {

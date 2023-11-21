@@ -16,9 +16,9 @@
                         <div class="uploadFlex">
                            <label for="category">카테고리</label>
                            <select name="category">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
+                              <option value="digital">디지털</option>
+                              <option value="fashion">패션</option>
+                              <option value="etc">etc</option>
                            </select>
                         </div>
                         <div class="uploadFlex">
