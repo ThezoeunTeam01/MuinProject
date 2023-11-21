@@ -69,6 +69,7 @@
 	
 	/* notice */
 	.notice_red{color:red; font-size:16px;}
+	.notice_mini{color:red; font-size:14px; margin-bottom:10px;}
 	
 	/*align*/
 	.alignBoxRight{display:flex;  justify-content: flex-end; }
@@ -82,14 +83,19 @@
 	.showProfile2 .imgRatioBox{ width:100%; height:100%; width:150px; height:150px; /* display: grid; grid-template-column: repeat(auto-fill,minmax(150px,auto)); */ border-radius:50%;  overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6; }
 	.showProfile2 .imgRatioBox img{width: 100%; height: 100%; border:none; overflow: hidden; object-fit: cover;  border-radius: 50%;}
     
+    /**/
+    .showUploadfile{display: flex; justify-content: space-evenly; margin-bottom:20px; background-color:#fff; padding:15px; padding: 15px 8px;}
+    .showUploadfile .imgRatioBox{width:100%; height:100%; width:150px; height:150px; /* display: grid; grid-template-column: repeat(auto-fill,minmax(150px,auto)); */ border-radius:50%;  overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6; }
+	.showUploadfile .imgRatioBox img{width: 100%; height: 100%; border:none; overflow: hidden; object-fit: cover;  border-radius: 50%;}
+    
     /*이미지 업로드 시- 이미지 정사각형 비율 유지하면서 반응형 가능하도록 수정*/
 /*     .showProfile{border:3px solid blue;}
 	.imgRatioBox{border:1px solid red; width:100%; height:100%; width:150px; height:150px; display: grid; grid-template-column: repeat(auto-fill,minmax(150px,auto));}
 	.imgRatioBox img{width: 100%; height: auto;} */
 
     /*-- 마이페이지 --*/
-    .mypageInfoBox{margin-bottom:20px; background-color:#fff; padding:15px;}
-	.fileUpload{display: grid !important; grid-template-columns: 1fr 5fr 1fr; align-items: center; gap: 10px; margin:20px 0;}
+    .mypageInfoBox{margin-bottom:20px; background-color:#fff; padding:15px; padding: 15px 8px;}
+	.fileUpload{display: grid !important; grid-template-columns: 1fr 5fr 1fr; align-items: center; gap: 10px; margin:20px 0; }
 	.fileUpload .mypageProfile{padding:5px; margin-right:10px;}
 	.fileUpload .mypageProfile .imgRatioBox{ width:80px; height:80px; border-radius:50%; overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6;}
 	.fileUpload .mypageInfo{}
