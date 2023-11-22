@@ -8,4 +8,15 @@
 		insert into muinBoardImage (bno, id, filename, uuid, uploadPath, contentfiledate) 
 		values(#{bno}, #{id}, #{fileName}, #{uuid}, #{uploadPath}, sysdate)
 	</insert>
+	
+	<select id="boardFileList">
+		SELECT * 
+		FROM (
+		    SELECT * 
+		    FROM muinboardimage 
+		    where bno=#{bno}
+		    ORDER BY contentfiledate DESC
+		)
+		WHERE ROWNUM = 1
+	</select>
 </mapper>

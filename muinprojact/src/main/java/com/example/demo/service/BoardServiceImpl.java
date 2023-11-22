@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.demo.command.BoardFileVO;
 import com.example.demo.command.BoardVO;
 import com.example.demo.mapper.BoardFileMapper;
 import com.example.demo.mapper.BoardMapper;
@@ -37,9 +38,13 @@ public class BoardServiceImpl implements BoardService {
       
    }
    @Override
-   public List<BoardVO> getList() {
-      // TODO Auto-generated method stub
-      return null;
+   public List<BoardVO> boardList(String id) {     
+      return boardMapper.boardList(id);
    }
+   
+   @Override
+	public List<BoardFileVO> boardFileList(int bno) {
+		return boardFileMapper.boardFileList(bno);
+	}
   
 }

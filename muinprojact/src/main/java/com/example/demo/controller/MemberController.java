@@ -23,8 +23,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.command.BoardVO;
 import com.example.demo.command.MemberFileVO;
 import com.example.demo.command.MemberVO;
+import com.example.demo.service.BoardService;
 import com.example.demo.service.FileService;
 import com.example.demo.service.MemberService;
 
@@ -88,7 +90,7 @@ public class MemberController {
    public String muinLogin(MemberVO vo, HttpSession session) {
       int result = memberService.login(vo);
       if(result == 1) {
-         session.setAttribute("id", vo.getId());         
+         session.setAttribute("id", vo.getId());
          return "redirect:/";
       }else {         
          return "login/login";
@@ -108,7 +110,7 @@ public class MemberController {
 	       return "";
 	   }
        
-}
+  }
    // 디스플레이
    @GetMapping("/display")
    @ResponseBody

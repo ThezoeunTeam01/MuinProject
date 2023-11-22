@@ -6,7 +6,7 @@
    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<!-- 컨텐츠 -->
 	<div class="contents">
 	<h2 class="tit">마이 페이지</h2>
@@ -31,42 +31,24 @@
 		</div>
 		
 		<div class="slick">
+	     	<c:forEach var="board" items="${boardList }" >
 	        <div class="slickWrapBox">
-              <div class="slickImgBox">
-                  <img src="" alt=""  />
-              </div>
-              <div class="slickContBox">
-                  <dl>
-                      <dt>컨텐츠 타이틀</dt>
-                      <dd>xxx원</dd>
-                      <dd>컨텐츠 텍스트</dd>
-                  </dl>
-              </div>
-	        </div>
-	        <div class="slickWrapBox">
+	        
                <div class="slickImgBox">
-                   <img src="" alt=""  />
+                   <img src="/display?fileName=${fileList[0].uploadPath}/s_${fileList[0].uuid}_${fileList[0].fileName}">
+                   
                </div>
+               
                <div class="slickContBox">
                    <dl>
-                       <dt>컨텐츠 타이틀</dt>
-                       <dd>xxx원</dd>
-                       <dd>컨텐츠 텍스트</dd>
+                       <dt>${board.title }</dt>
+                       <dd>${board.price }</dd>
+                       <dd>${board.content }</dd>
                    </dl>
                </div>
+               
 	        </div>
-	        <div class="slickWrapBox">
-              <div class="slickImgBox">
-                  <img src="" alt=""  />
-              </div>
-              <div class="slickContBox">
-                  <dl>
-                      <dt>컨텐츠 타이틀</dt>
-                      <dd>xxx원</dd>
-                      <dd>컨텐츠 텍스트</dd>
-                  </dl>
-              </div>
-	        </div>
+	      </c:forEach>
 		</div>
        
     </div><!-- // contents -->

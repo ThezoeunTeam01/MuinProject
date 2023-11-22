@@ -11,5 +11,9 @@
 	</selectKey>
       insert into muinBoard(bno, id, category, title, price, content, contentDate) 
       values(#{bno}, #{id}, #{category}, #{title}, #{price}, #{content}, sysdate )
-   </insert>   
+   </insert>
+   
+   <select id="boardList">
+   		select * from muinBoard where id=#{id}
+   </select> 
 </mapper>
