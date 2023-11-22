@@ -14,7 +14,8 @@
 	a, a:hover,a:active,a:visited{text-decoration:none; }
 	img{border:0; vertical-align:top; width:100%;}
 	button{border:0; background-color:transparent; cursor:pointer; font-family:inherit; font-size:inherit; color:#000; vertical-align:middle; }
-	textarea{resize:none; width:100%; padding:5px; vertical-align:top; font-size:14px; font-family:inherit; color:#000}
+	textarea{resize:none; width:100%; padding:5px; vertical-align:top; font-size:14px; font-family:inherit; color:#000; border: 1px solid #ddd; border-radius: 10px;
+	font-size: 16px; padding: 10px 5px;}
 	em,address{font-style:normal}
 	table{width:100%; word-wrap:break-word; border-collapse:collapse; border-spacing: 0;}
 	caption{width:0; height:0; line-height:0; font-size:0; color:transparent;}
@@ -27,6 +28,9 @@
 	/*input select 초기 설정*/
 	input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active {transition: background-color 5000s ease-in-out 0s; -webkit-transition: background-color 9999s ease-out; -webkit-box-shadow: 0 0 0px 1000px white inset !important;}
 	select::-ms-expand {  display: none; /* IE */}
-	select { -webkit-appearance:none; -moz-appearance:none; -ms-appearance:none; appearance:none; outline:0; box-shadow:none; border:0!important; background: #f9f9f9; background-image: none; flex: 1; cursor:pointer;}
+	select { /* -webkit-appearance:none; -moz-appearance:none; -ms-appearance:none; appearance:none; */ outline:0; box-shadow:none; background: #f9f9f9; background-image: none; flex: 1; cursor:pointer;}
     /*인풋 리드온리에 백그라운드 회석 처리*/
-	input:read-only{background:#eee;}	
+	input:read-only{background:#eee;}
+	/*인풋 타입 파일일 경우 백그라운드 #fff 처리*/	
+	input[type="file"]{background:#fff;}
+	

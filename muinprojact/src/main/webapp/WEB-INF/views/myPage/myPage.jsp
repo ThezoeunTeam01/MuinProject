@@ -20,12 +20,14 @@
 				    </div>
 				</div>
 				<div class="mypageInfo"><span class="yourId">${sessionScope.id }</span> 님, 환영합니다!</div>
-		        <!--  로그아웃 버튼 임시 추가 처리 -->
-	        	<button type="button" name="logout" id="logout" class="backBtn btn">로그아웃</button>
+				<div style="display: flex; flex-direction: column; justify-content: space-evenly; gap: 10px;">
+  		        	<button type="button" name="logout" id="logout" class="backBtn btn">로그아웃</button>	
+	     			<button type="button" name="update" id="update" class="submitBtn btn" onclick="location.href='memberUpdate'">내 정보 수정</button>
+	     		</div>
 			</div>
 	        <div class="btnBox">
 	        	<!-- <input type="button" name="logout" id="logout" value="로그아웃"  class="backBtn btn" /> -->
-	        	<button type="button" name="" id="" class="backBtn btn" onclick="history.back()">뒤로가기</button>	
+	        	<button type="button" name="logout" id="logout" class="backBtn btn">로그아웃</button>		
 	     		<button type="button" name="update" id="update" class="submitBtn btn" onclick="location.href='memberUpdate'">내 정보 수정</button>
 	        </div>
 		</div>

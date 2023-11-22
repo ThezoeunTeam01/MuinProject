@@ -53,15 +53,17 @@
             </div>
             <div class="regiFlex uploadDiv profile-photo">
                 <label for="profile">프로필 업로드</label>
-                <input type="file" name="profile" id="profile">
+                <input type="file" name="profile" id="fileFile">
             </div>
-            <div class="showUploadfile">
-            	<div class="imgRatioBox">
-           			<ul>
-           			
-           			</ul>
-           		</div>
-            </div>
+				<!--  게시물 업로드 이미지 확인 -->
+				<div class="showUploadfileBox">
+					<div class="uploadFlexBox">
+						<ul class="active">
+							
+						</ul>
+						<div class=""> </div>
+					</div>
+				</div>
                         
         </div><!-- // register_box -->
         <div class="btnBox">
