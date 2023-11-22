@@ -5,7 +5,11 @@
    
 <mapper namespace="com.example.demo.mapper.BoardMapper">
    <insert id="boardRegister">
-      insert into muinBoard( id, category, title, price, content, contentDate) 
-      values(#{id}, #{category}, #{title}, #{price}, #{content}, sysdate )
+   
+   <selectKey keyProperty="bno" order="BEFORE" resultType="int">
+			select muinBoard_seq.nextval from dual
+	</selectKey>
+      insert into muinBoard(bno, id, category, title, price, content, contentDate) 
+      values(#{bno}, #{id}, #{category}, #{title}, #{price}, #{content}, sysdate )
    </insert>   
 </mapper>

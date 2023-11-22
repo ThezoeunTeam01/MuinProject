@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,10 +27,14 @@ public class BoardController {
    
    @PostMapping("/boardRegister")
    public String boardRegister(BoardVO vo) {
-      System.out.println(vo);
-      System.out.println("zzzzzzzzzzz");
+      
+      System.out.println("ddddddddddddddddddddddddddddddd");
+      System.out.println(vo.getBoardFileList());
+      // BoardVO에 boardFileList를 만들어 board.js에서 보낸 file을 잘 받아왔는지 확인
+      
       boardService.boardRegister(vo);
       
+      // 확인 후 잘 받아 왔으면 boardService의 boardRegister 실행
       return "redirect:/";
    }
    

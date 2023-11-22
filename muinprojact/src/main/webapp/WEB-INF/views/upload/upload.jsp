@@ -8,7 +8,7 @@
          <h2 class="tit">게시글 작성</h2>
          <form action="boardRegister" method="post" enctype="multipart/form-data" id="muinBoardForm">
             <div class="uploadBox">
-               <input type="hidden" name="id" value="${sessionScope.id}" >
+               <input type="hidden" name="id" id="id" value="${sessionScope.id}" >
                
 				<!--  게시물 업로드 이미지 확인 -->
 				<div class="showUploadfile">

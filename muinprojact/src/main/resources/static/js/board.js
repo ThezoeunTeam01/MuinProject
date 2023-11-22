@@ -10,11 +10,13 @@ $("#boardRegister").on("click", function(e){
       
       $(".showUploadfile div ul li").each(function(i, li){
          var jli = $(li);
+         str += "<input type='hidden' name='boardFileList["+i+"].id' value='"+id+"'>";
+         str += "<input type='hidden' name='boardFileList["+i+"].fileName' value='"+jli.data("filename")+"'>";
+         str += "<input type='hidden' name='boardFileList["+i+"].uuid' value='"+jli.data("uuid")+"'>";
+         str += "<input type='hidden' name='boardFileList["+i+"].uploadPath' value='"+jli.data("uploadpath")+"'>";
+         console.log("asfbiwleofbuwaeiufgwebfuiwebiufwfiuweufbiwebfuie");
+         console.log(str);
          
-         str += "<input type='hidden' name='fileList["+i+"].fileName' value='"+jli.data("filename")+"'>";
-         str += "<input type='hidden' name='fileList["+i+"].uuid' value='"+jli.data("uuid")+"'>";
-         str += "<input type='hidden' name='fileList["+i+"].uploadPath' value='"+jli.data("uploadpath")+"'>";
-         str += "<input type='hidden' name='fileList["+i+"].id' value='"+id+"'>";
       });
       boardForm.append(str);
       boardCheck();

@@ -1,6 +1,7 @@
 package com.example.demo.command;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import lombok.Data;
 
@@ -12,5 +13,7 @@ public class BoardVO {
    private String title;
    private int price;
    private String content;
-   private Timestamp contentDate; 
+   private Timestamp contentDate;
+   
+   private List<BoardFileVO> boardFileList;
 }
