@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.command.BoardFileVO;
 import com.example.demo.command.BoardVO;
 import com.example.demo.command.DTO;
+import com.example.demo.command.MemberFileVO;
 import com.example.demo.service.BoardService;
+import com.example.demo.service.FileService;
+import com.example.demo.service.MemberService;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -27,6 +30,10 @@ public class BoardController {
    
    @Autowired
    BoardService boardService;
+   
+   
+   @Autowired
+   FileService fileService;
    
    @GetMapping("/categoryPage")
    public String categoryPage() {
@@ -53,8 +60,14 @@ public class BoardController {
    @GetMapping("myPage")
    public String myPage(HttpSession session,Model model) {
 	   
-	   List<BoardVO> boardList = boardService.boardList((String)session.getAttribute("id"));
+	   String id = (String)session.getAttribute("id");
+	   
+	   List<BoardVO> boardList = boardService.boardList(id);
 	   System.out.println(boardList );
+	   
+	   List<MemberFileVO> profile = fileService.fileList(id);
+	   System.out.println("vcvvvvvvvvvvvvvvvvvvvvvvvvvv");
+	   System.out.println(profile);
 	   
 	   List<DTO> dtos = new ArrayList<DTO>();
 	   
@@ -67,6 +80,7 @@ public class BoardController {
 		   dtos.add(boards);
 
 	   }
+	   System.out.println("dddddddddddddddddddddddddddd"+dtos);
 	   
 	   
 	   model.addAttribute("boardList", dtos);

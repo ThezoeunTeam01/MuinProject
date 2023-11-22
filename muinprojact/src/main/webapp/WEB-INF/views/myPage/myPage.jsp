@@ -37,15 +37,15 @@
 	        <div class="slickWrapBox">
 	        
                <div class="slickImgBox">
-                   <img src="/display?fileName=${fileList[0].uploadPath}/s_${fileList[0].uuid}_${fileList[0].fileName}">
+                   <img src="/display?fileName=${board.fileVOs[0].uploadPath}/s_${board.fileVOs[0].uuid}_${board.fileVOs[0].fileName}">
                    
                </div>
                
                <div class="slickContBox">
                    <dl>
-                       <dt>${board.title }</dt>
-                       <dd>${board.price }</dd>
-                       <dd>${board.content }</dd>
+                       <dt>${ board.boardVO.title}</dt>
+                       <dd>${board.boardVO.price }</dd>
+                       <dd>${board.boardVO.content }</dd>
                    </dl>
                </div>
                
