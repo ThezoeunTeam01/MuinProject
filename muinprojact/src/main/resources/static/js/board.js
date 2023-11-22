@@ -8,15 +8,12 @@ $("#boardRegister").on("click", function(e){
       var id = $("#id").val();
       var str = "";
       
-      $(".showUploadfile div ul li").each(function(i, li){
+      $(".showUploadfileBox div ul li").each(function(i, li){
          var jli = $(li);
          str += "<input type='hidden' name='boardFileList["+i+"].id' value='"+id+"'>";
          str += "<input type='hidden' name='boardFileList["+i+"].fileName' value='"+jli.data("filename")+"'>";
          str += "<input type='hidden' name='boardFileList["+i+"].uuid' value='"+jli.data("uuid")+"'>";
          str += "<input type='hidden' name='boardFileList["+i+"].uploadPath' value='"+jli.data("uploadpath")+"'>";
-         console.log("asfbiwleofbuwaeiufgwebfuiwebiufwfiuweufbiwebfuie");
-         console.log(str);
-         
       });
       boardForm.append(str);
       boardCheck();

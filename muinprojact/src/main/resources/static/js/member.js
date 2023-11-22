@@ -6,7 +6,7 @@
       var id = $("#id").val();
       var str = "";
       
-      $(".showUploadfile div ul li").each(function(i, li){
+      $(".showUploadfileBox div ul li").each(function(i, li){
          var jli = $(li);
          
          str += "<input type='hidden' name='fileList["+i+"].fileName' value='"+jli.data("filename")+"'>";
@@ -25,7 +25,7 @@
       var id = $("#id").val();
       var str = "";
       
-      $(".showUploadfile div ul li").each(function(i, li){
+      $(".showUploadfileBox div ul li").each(function(i, li){
          var jli = $(li);
          
          str += "<input type='hidden' name='fileList["+i+"].fileName' value='"+jli.data("filename")+"'>";

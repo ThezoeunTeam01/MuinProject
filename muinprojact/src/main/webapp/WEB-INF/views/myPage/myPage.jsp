@@ -16,7 +16,7 @@
 			<div class="fileUpload">
 				<div class="mypageProfile">
 				   <div class="imgRatioBox">
-				        <img src="" class="" />
+				        <img src="/display?fileName=${ memberFileVO[0].uploadPath}/s_${ memberFileVO[0].uuid}_${ memberFileVO[0].fileName}">
 				    </div>
 				</div>
 				<div class="mypageInfo"><span class="yourId">${sessionScope.id }</span> 님, 환영합니다!</div>

@@ -65,9 +65,9 @@ public class BoardController {
 	   List<BoardVO> boardList = boardService.boardList(id);
 	   System.out.println(boardList );
 	   
-	   List<MemberFileVO> profile = fileService.fileList(id);
-	   System.out.println("vcvvvvvvvvvvvvvvvvvvvvvvvvvv");
-	   System.out.println(profile);
+	   List<MemberFileVO> memberFileVO = fileService.fileList(id);
+	   
+	   
 	   
 	   List<DTO> dtos = new ArrayList<DTO>();
 	   
@@ -82,7 +82,7 @@ public class BoardController {
 	   }
 	   System.out.println("dddddddddddddddddddddddddddd"+dtos);
 	   
-	   
+	   model.addAttribute("memberFileVO", memberFileVO);
 	   model.addAttribute("boardList", dtos);
 	   
 	   return "myPage/myPage";
