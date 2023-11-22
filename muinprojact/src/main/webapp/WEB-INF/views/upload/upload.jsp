@@ -6,7 +6,7 @@
     <div class="contents">
 		<!-- 게시물 업로드 박스 -->
          <h2 class="tit">게시글 작성</h2>
-         <form action="boardRegister" method="post" enctype="multipart/form-data">
+         <form action="boardRegister" method="post" enctype="multipart/form-data" id="muinBoardForm">
             <div class="uploadBox">
                <input type="hidden" name="id" value="${sessionScope.id}" >
                
@@ -22,7 +22,7 @@
                
                <div class="uploadFlex">
                   <label for="boardImage">사진 업로드</label>
-                  <input type="file" name="boardImage" id="fileFile" multiple="multiple">   
+                  <input type="file" name="boardImage"  multiple="multiple">   
                </div>
                <div class="uploadFlex">
                   <label for="category">카테고리</label>
@@ -48,7 +48,7 @@
             </div><!-- // uploadBox -->
             <div class="btnBox">
                <button type="button" class="backBtn btn" >뒤로가기</button>               
-               <button type="submit" class="submitBtn btn" id="boardRegister">등록하기</button>
+               <button type="button" class="submitBtn btn" id="boardRegister">등록하기</button>
             </div>
          </form>
 	</div><!-- // contents -->
