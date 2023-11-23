@@ -18,7 +18,7 @@
             </ul>
         </div>
         <!-- 컨텐츠 -->
-        <div class="mypageInfoBox">
+        <div class="CateContBox">
 		<div class="slick">
 	     	<c:forEach var="board" items="${boardList }" >
 	        <div class="slickWrapBox">
