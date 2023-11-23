@@ -1,25 +1,15 @@
 package com.example.demo.controller;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.command.BoardFileVO;
 import com.example.demo.command.BoardVO;
-import com.example.demo.command.DTO;
-import com.example.demo.command.MemberFileVO;
 import com.example.demo.service.BoardService;
 import com.example.demo.service.FileService;
-import com.example.demo.service.MemberService;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -29,16 +19,10 @@ import lombok.extern.log4j.Log4j2;
 public class BoardController {
    
    @Autowired
-   BoardService boardService;
-   
+   BoardService boardService;   
    
    @Autowired
    FileService fileService;
-   
-   @GetMapping("/categoryPage")
-   public String categoryPage() {
-      return "cate/categoryPage";
-   }
    
    @PostMapping("/boardRegister")
    public String boardRegister(BoardVO vo) {
@@ -50,42 +34,6 @@ public class BoardController {
       
       // 확인 후 잘 받아 왔으면 boardService의 boardRegister 실행
       return "redirect:/";
-   }
-   
-   @GetMapping("/upload")
-   public String upload() {
-      return "upload/upload";
-   }
-   
-   @GetMapping("myPage")
-   public String myPage(HttpSession session,Model model) {
-	   
-	   String id = (String)session.getAttribute("id");
-	   
-	   List<BoardVO> boardList = boardService.boardList(id);
-	   System.out.println(boardList );
-	   
-	   List<MemberFileVO> memberFileVO = fileService.fileList(id);
-	   
-	   
-	   
-	   List<DTO> dtos = new ArrayList<DTO>();
-	   
-	   for(BoardVO file : boardList) {
-		   List<BoardFileVO> boardFileList = boardService.boardFileList(file.getBno());
-		   System.out.println(boardFileList);
-		   DTO boards = new DTO();
-		   boards.setBoardVO(file);
-		   boards.setFileVOs(boardFileList);
-		   dtos.add(boards);
-
-	   }
-	   System.out.println("dddddddddddddddddddddddddddd"+dtos);
-	   
-	   model.addAttribute("memberFileVO", memberFileVO);
-	   model.addAttribute("boardList", dtos);
-	   
-	   return "myPage/myPage";
    }
 
 }

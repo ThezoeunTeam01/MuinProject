@@ -5,10 +5,10 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class DTO {
-	
+public class BoardDTO {
+	private List<MemberFileVO> memberFileVO;
 	private BoardVO boardVO;
-	private List<BoardFileVO> fileVOs;
+	private List<BoardFileVO> boardFileVO;
 	
 
 }

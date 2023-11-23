@@ -1,10 +1,7 @@
 package com.example.demo.controller;
 
 import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,17 +13,14 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.demo.command.BoardVO;
 import com.example.demo.command.MemberFileVO;
 import com.example.demo.command.MemberVO;
-import com.example.demo.service.BoardService;
 import com.example.demo.service.FileService;
 import com.example.demo.service.MemberService;
 
@@ -45,21 +39,6 @@ public class MemberController {
    
    @Value("${upload.path}") // application.properties의 변수
    private String uploadFolder;
-   
-   @GetMapping("memberUpdate")
-   public String update(HttpSession session, Model model) {
-	   
-	   String id = (String)session.getAttribute("id");	   
-	   
-	   List<MemberFileVO> fileList =  fileService.fileList(id);
-	   
-	   List<MemberVO> memberList = memberService.memberList(id);	   	   	   	   
-	   
-	   model.addAttribute("memberList", memberList);	   	   
-	   model.addAttribute("fileList",fileList);
-
-	   return "myPage/update";
-   }
    
    // 회원 수정
    @PostMapping("/memberUpdate")
