@@ -9,7 +9,7 @@ import com.example.demo.command.MemberVO;
 
 @Service
 public interface MemberService {
-	public int register(MemberVO vo);
+	public void register(MemberVO vo);
 	public int idCheck(String id);
 	public int login(MemberVO vo);
 	public List<MemberVO> memberList(String id);

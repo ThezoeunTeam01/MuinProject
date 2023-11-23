@@ -155,7 +155,7 @@ $(document).ready(function() {
       } else if ($("#phone").val() === "") {
           alert("번호를 입력하세요!");
           $("#phone").focus();
-      } else if ($("#profile").val() === "") {
+      } else if ($("#fileFile").val() === "") {
           alert("프로필 파일을 업로드 하세요!");
           $("#profile").focus();
       }else  if (confirm("회원 가입을 하시겠습니까?")) {
@@ -209,7 +209,7 @@ $(document).ready(function() {
       } else if ($("#phone").val() === "") {
           alert("번호를 입력하세요!");
           $("#phone").focus();
-      } else if ($("#profile").val() === "") {
+      } else if ($("#fileFile").val() === "") {
           alert("프로필 파일을 업로드 하세요!");
           $("#profile").focus();
       }else  if (confirm("회원 가입을 하시겠습니까?")) {

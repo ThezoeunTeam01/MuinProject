@@ -21,7 +21,7 @@
       <link rel="stylesheet" href="css/layout.css">
       
       <!-- Script -->
-  
+  	  
       <script src="../js/script.js"></script>
       <script src="../js/file.js"></script>
       <script src="../js/member.js"></script>
@@ -51,7 +51,7 @@
 			</ul>
 			<button id="closeModalBtn"><i class="fas fa-times"></i></button>
 		</div>
-   
+
 		<!-- 헤더 -->
          <header>
             <div class="headerBox" id="ddd">

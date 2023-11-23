@@ -10,7 +10,7 @@ import com.example.demo.command.MemberVO;
 @ResponseBody
 @Mapper
 public interface MemberMapper {
-	public int register(MemberVO vo);	//회원가입
+	public void register(MemberVO vo);	//회원가입
 	public int idCheck(String id); // 아이디 체크
 	public int login(MemberVO vo);
 	public List<MemberVO> memberList(String id);

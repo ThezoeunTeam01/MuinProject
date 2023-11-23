@@ -11,6 +11,9 @@ import com.example.demo.command.MemberVO;
 import com.example.demo.mapper.FileMapper;
 import com.example.demo.mapper.MemberMapper;
 
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
 @Service("memberService")
 public class MemberServiceImpl implements MemberService {
 	
@@ -22,23 +25,24 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Transactional
 	@Override
-	public int register(MemberVO vo) {
+	public void register(MemberVO vo) {
 		
 		memberMapper.register(vo);
 		
 		if(vo.getFileList()==null || vo.getFileList().size()<=0) {
-			return 1;
+			return;
 		}
 		vo.getFileList().forEach(list -> {
+			log.info("list의 id값 확인 : "+list.getId());
+			log.info("list의 id값 확인 : "+list.getFileName());
+			list.setId(vo.getId());
 			fileMapper.fileInsert(list);
-		});
-		
-		return 1;
+		});		
 	}
 	@Override
-	   public int idCheck(String id) {
+	public int idCheck(String id) {
 	      return memberMapper.idCheck(id);
-	   }
+	}
 	@Override
 	public int login(MemberVO vo) {
 		return memberMapper.login(vo);

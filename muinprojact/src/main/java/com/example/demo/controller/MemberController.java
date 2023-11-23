@@ -49,7 +49,8 @@ public class MemberController {
   
    // 회원 등록
    @PostMapping("register")
-   public String muinRegister(MemberVO vo) {	  	   
+   public String muinRegister(MemberVO vo) {
+	   log.info("--------register-----------");
       memberService.register(vo);
       return "redirect:/login";
    }
