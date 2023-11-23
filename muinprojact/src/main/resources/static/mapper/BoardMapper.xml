@@ -15,5 +15,15 @@
    
    <select id="boardList">
    		select * from muinBoard where id=#{id}
-   </select> 
+   </select>
+   
+   <select id="indexBoardList">
+   	SELECT *
+	FROM (
+	    SELECT *
+	    FROM muinBoard
+	    ORDER BY contentdate DESC
+	)
+	WHERE 5 >= ROWNUM 
+   </select>
 </mapper>

@@ -46,5 +46,10 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardFileVO> boardFileList(int bno) {
 		return boardFileMapper.boardFileList(bno);
 	}
+   
+   @Override
+	public List<BoardVO> indexBoardList() {
+		return boardMapper.indexBoardList();
+	}
   
 }

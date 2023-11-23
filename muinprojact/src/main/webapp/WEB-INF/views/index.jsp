@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<!-- Include header.html -->
     <jsp:include page="include/header.jsp" />
 	<!-- 컨텐츠 -->
@@ -10,7 +11,7 @@
 				<c:forEach var="board" items="${boardList }" >
 					<div class="slickWrapBox">
 						<div class="slickImgBox">
-							<img src="/display?fileName=${board.fileVOs[0].uploadPath}/s_${board.fileVOs[0].uuid}_${board.fileVOs[0].fileName}">
+							<img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}">
 						</div>
 						<div class="slickContBox">
 							<dl>

@@ -4,7 +4,7 @@ import java.util.List;
 
 import lombok.Data;
 
-@Data
+@Data	
 public class BoardDTO {
 	private List<MemberFileVO> memberFileVO;
 	private BoardVO boardVO;
