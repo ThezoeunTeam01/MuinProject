@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 	<!-- Include header.html -->
     <jsp:include page="../include/header.jsp" />
+    <div class="contents">
         <!-- 카테고리메뉴 -->
         <div>
             <ul>
@@ -17,25 +18,29 @@
             </ul>
         </div>
         <!-- 컨텐츠 -->
-        <div>
-            <h2>컨텐츠 <span>타이틀</span><img alt="" src=""></h2>
-            <ul>
-                <li>
-                    <a>
-                        <div>
-                            <img alt="" src="">
-                        </div>
-                        <div>
-                            <dl>
-                                <dt>컨텐츠 타이틀</dt>
-                                <dd>xxx원</dd>
-                                <dd>컨텐츠 텍스트</dd>
-                            </dl>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <div class="mypageInfoBox">
+		<div class="slick">
+	     	<c:forEach var="board" items="${boardList }" >
+	        <div class="slickWrapBox">
+	        
+               <div class="slickImgBox">
+                   <img src="/display?fileName=${board.fileVOs[0].uploadPath}/s_${board.fileVOs[0].uuid}_${board.fileVOs[0].fileName}">
+                   
+               </div>
+               
+               <div class="slickContBox">
+                   <dl>
+                       <dt>${ board.boardVO.title}</dt>
+                       <dd>${board.boardVO.price }</dd>
+                       <dd>${board.boardVO.content }</dd>
+                   </dl>
+               </div>
+               
+	        </div>
+	      </c:forEach>
+		</div>
+		</div>
+		</div>
 	<!-- Include footer.html -->
     <jsp:include page="../include/footer.jsp" />
 	 
