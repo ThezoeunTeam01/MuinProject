@@ -6,7 +6,6 @@
 	<!-- 컨텐츠 -->
 	<div class="contents">
 		<h2>컨텐츠 <span>타이틀</span><img alt="" src=""></h2>
-		<div class="indexContBox">
 			<div class="slick">
 				<c:forEach var="board" items="${boardList }" >
 					<div class="slickWrapBox">
@@ -23,7 +22,6 @@
 					</div>
 				</c:forEach>
 			</div>
-		</div>
 	</div><!-- // contents -->
 	<!-- Include footer.html -->
     <jsp:include page="include/footer.jsp" />

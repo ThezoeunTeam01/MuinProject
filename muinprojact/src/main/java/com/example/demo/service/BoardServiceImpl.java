@@ -48,8 +48,14 @@ public class BoardServiceImpl implements BoardService {
 	}
    
    @Override
-	public List<BoardVO> indexBoardList() {
-		return boardMapper.indexBoardList();
+	public List<BoardVO> boardIndexList() {
+		return boardMapper.boardIndexList();
+	}
+   
+   @Override
+	public List<BoardVO> boardDgitalList() {
+		
+		return boardMapper.boardDigitalList();
 	}
   
 }

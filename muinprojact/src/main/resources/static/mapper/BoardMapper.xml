@@ -17,7 +17,7 @@
    		select * from muinBoard where id=#{id}
    </select>
    
-   <select id="indexBoardList">
+   <select id="boardIndexList">
    	SELECT *
 	FROM (
 	    SELECT *
@@ -25,5 +25,9 @@
 	    ORDER BY contentdate DESC
 	)
 	WHERE 5 >= ROWNUM 
+   </select>
+   
+   <select id="boardDigitalList">
+   	select * from muinBoard where category='digital'
    </select>
 </mapper>

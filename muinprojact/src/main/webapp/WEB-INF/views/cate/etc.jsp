@@ -19,7 +19,6 @@
             </ul>
         </div>
         <!-- 컨텐츠 -->
-        <div class="CateContBox">
 		<div class="slick">
 	     	<c:forEach var="board" items="${boardList }" >
 	        <div class="slickWrapBox">
@@ -39,7 +38,6 @@
                
 	        </div>
 	      </c:forEach>
-		</div>
 		</div>
 		</div>
 	<!-- Include footer.html -->
