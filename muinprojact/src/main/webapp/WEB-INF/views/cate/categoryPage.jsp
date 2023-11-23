@@ -24,7 +24,7 @@
 	        <div class="slickWrapBox">
 	        
                <div class="slickImgBox">
-                   <img src="/display?fileName=${board.fileVOs[0].uploadPath}/s_${board.fileVOs[0].uuid}_${board.fileVOs[0].fileName}">
+                   <img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}">
                    
                </div>
                

@@ -11,4 +11,5 @@ import com.example.demo.command.BoardVO;
 public interface BoardMapper {
    public void boardRegister(BoardVO vo);
    public List<BoardVO> boardList(String id);
+   public List<BoardVO> indexBoardList();
 }

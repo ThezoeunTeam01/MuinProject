@@ -28,10 +28,26 @@ public class mainController {
 	
    // 홈페이지
    @GetMapping("/")
-   public String index(){
+   public String index(Model model){
 	   
-//	  List<BoardVO> boardList = 
+	  List<BoardVO> boardList = boardService.indexBoardList();
 	  
+	  System.out.println(boardList);
+	  
+	  List<BoardDTO> dtos = new ArrayList<BoardDTO>();
+	   
+	   for(BoardVO board : boardList) {
+		   List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
+		   System.out.println(boardFileList);
+		   BoardDTO boards = new BoardDTO();
+		   boards.setBoardVO(board);
+		   boards.setBoardFileVO(boardFileList);
+		   dtos.add(boards);
+	   }
+	   System.out.println("----------------dtos--------------");
+	   System.out.println(dtos);
+	  
+	  model.addAttribute("boardList", dtos);
       return "index";
       }
    
@@ -45,7 +61,7 @@ public class mainController {
    @GetMapping("memberUpdate")
    public String update(HttpSession session, Model model) {
 	   
-	   String id = (String)session.getAttribute("id");	   
+	   String id = (String)session.getAttribute("id");
 	   
 	   List<MemberFileVO> fileList =  fileService.fileList(id);
 	   
@@ -84,7 +100,6 @@ public class mainController {
 	   String id = (String)session.getAttribute("id");
 	   
 	   List<BoardVO> boardList = boardService.boardList(id);
-	   System.out.println(boardList );
 	   
 	   List<MemberFileVO> memberFileVO = fileService.fileList(id);	   	   
 	   
@@ -99,7 +114,6 @@ public class mainController {
 		   dtos.add(boards);
 
 	   }
-	   System.out.println("dddddddddddddddddddddddddddd"+dtos);
 	   
 	   model.addAttribute("memberFileVO", memberFileVO);
 	   model.addAttribute("boardList", dtos);

@@ -9,4 +9,6 @@ public interface BoardService {
    public void boardRegister(BoardVO vo);
    public List<BoardVO> boardList(String id);
    public List<BoardFileVO> boardFileList(int bno);
+   public List<BoardVO> indexBoardList();
+//   public List<BoardVO> categoryViewBoatdList(String category);
 }
