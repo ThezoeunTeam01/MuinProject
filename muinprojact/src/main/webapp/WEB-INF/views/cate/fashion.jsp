@@ -20,7 +20,7 @@
         </div>
         <!-- 컨텐츠 -->
 		<div class="slick">
-	     	<c:forEach var="board" items="${boardList }" >
+	     	<c:forEach var="board" items="${boardFashionList }" >
 	        <div class="slickWrapBox">
 	        
                <div class="slickImgBox">

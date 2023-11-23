@@ -11,4 +11,6 @@ public interface BoardService {
    public List<BoardFileVO> boardFileList(int bno);
    public List<BoardVO> boardIndexList();
    public List<BoardVO> boardDgitalList();
+   public List<BoardVO> boardFashionList();
+   public List<BoardVO> boardETCList();
 }

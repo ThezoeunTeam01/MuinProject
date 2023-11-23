@@ -30,4 +30,12 @@
    <select id="boardDigitalList">
    	select * from muinBoard where category='digital'
    </select>
+   
+   <select id="boardFashionList">
+   	select * from muinBoard where category='fashion'
+   </select>
+   
+   <select id="boardETCList">
+   	select * from muinBoard where category='etc'
+   </select>
 </mapper>

@@ -57,5 +57,15 @@ public class BoardServiceImpl implements BoardService {
 		
 		return boardMapper.boardDigitalList();
 	}
+   
+   @Override
+	public List<BoardVO> boardFashionList() {		
+		return boardMapper.boardFashionList();
+	}
+   
+   @Override
+	public List<BoardVO> boardETCList() {		
+		return boardMapper.boardETCList();
+	}
   
 }

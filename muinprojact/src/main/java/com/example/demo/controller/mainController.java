@@ -117,45 +117,45 @@ public class mainController {
       return "cate/digital";
    }
    
-//   @GetMapping("/fashion")
-//   public String fashion(Model model) {
-//	   List<BoardVO> boardDigitalList = boardService.boardFashionList();
-//		  
-//		  List<BoardDTO> dtos = new ArrayList<BoardDTO>();
-//		   
-//		   for(BoardVO board : boardDigitalList) {
-//			   List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
-//			   System.out.println(boardFileList);
-//			   BoardDTO boards = new BoardDTO();
-//			   boards.setBoardVO(board);
-//			   boards.setBoardFileVO(boardFileList);
-//			   dtos.add(boards);
-//		   }
-//		   
-//		  model.addAttribute("boardDigitalList", dtos);
-//	   
-//      return "cate/fashion";
-//   }
-//   
-//   @GetMapping("/etc")
-//   public String etc(Model model) {
-//	   
-//	   List<BoardVO> boardDigitalList = boardService.boardETCList();
-//		  
-//		  List<BoardDTO> dtos = new ArrayList<BoardDTO>();
-//		   
-//		   for(BoardVO board : boardDigitalList) {
-//			   List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
-//			   System.out.println(boardFileList);
-//			   BoardDTO boards = new BoardDTO();
-//			   boards.setBoardVO(board);
-//			   boards.setBoardFileVO(boardFileList);
-//			   dtos.add(boards);
-//		   }
-//		   
-//		  model.addAttribute("boardDigitalList", dtos);
-//      return "cate/etc";
-//   }
+   @GetMapping("/fashion")
+   public String fashion(Model model) {
+	   List<BoardVO> boardFashionList = boardService.boardFashionList();
+		  
+		  List<BoardDTO> dtos = new ArrayList<BoardDTO>();
+		   
+		   for(BoardVO board : boardFashionList) {
+			   List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
+			   System.out.println(boardFileList);
+			   BoardDTO boards = new BoardDTO();
+			   boards.setBoardVO(board);
+			   boards.setBoardFileVO(boardFileList);
+			   dtos.add(boards);
+		   }
+		   
+		  model.addAttribute("boardFashionList", dtos);
+	   
+      return "cate/fashion";
+   }
+   
+   @GetMapping("/etc")
+   public String etc(Model model) {
+	   
+	   List<BoardVO> boardETCList = boardService.boardETCList();
+		  
+		  List<BoardDTO> dtos = new ArrayList<BoardDTO>();
+		   
+		   for(BoardVO board : boardETCList) {
+			   List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
+			   System.out.println(boardFileList);
+			   BoardDTO boards = new BoardDTO();
+			   boards.setBoardVO(board);
+			   boards.setBoardFileVO(boardFileList);
+			   dtos.add(boards);
+		   }
+		   
+		  model.addAttribute("boardETCList", dtos);
+      return "cate/etc";
+   }
    
    // 카테고리 뷰 페이지
    @GetMapping("/view")

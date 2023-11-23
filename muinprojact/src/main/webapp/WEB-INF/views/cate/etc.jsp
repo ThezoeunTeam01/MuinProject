@@ -11,7 +11,7 @@
                     <a href="/digital">디지털</a>
                 </li>
                 <li>
-                    <a href="fashion">패션</a>
+                    <a href="/fashion">패션</a>
                 </li>
                 <li>
                     <a href="/etc">etc</a>
@@ -20,7 +20,7 @@
         </div>
         <!-- 컨텐츠 -->
 		<div class="slick">
-	     	<c:forEach var="board" items="${boardList }" >
+	     	<c:forEach var="board" items="${boardETCList }" >
 	        <div class="slickWrapBox">
 	        
                <div class="slickImgBox">
