@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
    <!-- Include header.html -->
     <jsp:include page="../include/header.jsp" />
     
@@ -8,172 +9,41 @@
    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 	<!-- 컨텐츠 -->
-		<div class="contents">
+	<div class="contents">
 		<h2 class="tit">콘텐츠 페이지</h2>
-
-        <!-- 슬릭 슬라이드 start -->
-        <div>
-           <h3 class="contTit">나의 매물 - 슬릭 슬라이드 추가</h3>
-
-           <h4 class="contSubTit">디지털</h4>
-		   <div class="slick">
-		        <div class="slickWrapBox">
-                     <div class="slickImgBox">
-                         <img src="${pageContext.request.contextPath}/images/defaultImg/whiteKitty.jpg" alt=""  />
-                     </div>
-                     <div class="slickContBox">
-                         <dl>
-                             <dt>컨텐츠 타이틀 컨텐츠 타이틀 컨텐츠 타이틀 컨텐츠 타이틀 컨텐츠 타이틀 컨텐츠 타이틀 컨텐츠 타이틀 컨텐츠 타이틀 컨텐츠 타이틀</dt>
-                             <dd>xxx원</dd>
-                             <dd>컨텐츠 텍스트</dd>
-                         </dl>
-                     </div>
-		        </div>
-		        <div class="slickWrapBox">
-                     <div class="slickImgBox">
-                         <img src="${pageContext.request.contextPath}/images/defaultImg/cat.png" alt=""  />
-                     </div>
-                     <div class="slickContBox">
-                         <dl>
-                             <dt>컨텐츠 타이틀</dt>
-                             <dd>xxx원</dd>
-                             <dd>컨텐츠 텍스트</dd>
-                         </dl>
-                     </div>
-		        </div>
-		        <div class="slickWrapBox">
-                     <div class="slickImgBox">
-                         <img src="" alt=""  />
-                     </div>
-                     <div class="slickContBox">
-                         <dl>
-                             <dt>컨텐츠 타이틀</dt>
-                             <dd>xxx원</dd>
-                             <dd>컨텐츠 텍스트</dd>
-                         </dl>
-                     </div>
-		        </div>
-			</div><!-- // slick  -->
-			
-			<h4 class="contSubTit">패션</h4>
-			<div class="slick">
-		        <div class="slickWrapBox">
-                     <div class="slickImgBox">
-                         <img src="" alt=""  />
-                     </div>
-                     <div class="slickContBox">
-                         <dl>
-                             <dt>컨텐츠 타이틀</dt>
-                             <dd>xxx원</dd>
-                             <dd>컨텐츠 텍스트</dd>
-                         </dl>
-                     </div>
-		        </div>
-		        <div class="slickWrapBox">
-                     <div class="slickImgBox">
-                         <img src="" alt=""  />
-                     </div>
-                     <div class="slickContBox">
-                         <dl>
-                             <dt>컨텐츠 타이틀</dt>
-                             <dd>xxx원</dd>
-                             <dd>컨텐츠 텍스트</dd>
-                         </dl>
-                     </div>
-		        </div>
-		        <div class="slickWrapBox">
-                     <div class="slickImgBox">
-                         <img src="" alt=""  />
-                     </div>
-                     <div class="slickContBox">
-                         <dl>
-                             <dt>컨텐츠 타이틀</dt>
-                             <dd>xxx원</dd>
-                             <dd>컨텐츠 텍스트</dd>
-                         </dl>
-                     </div>
-		        </div>
-			</div><!-- // slick  -->
-			
-			<h4 class="contSubTit">E.T.C</h4>
-			<div class="slick">
-		        <div class="slickWrapBox">
-                     <div class="slickImgBox">
-                         <img src="" alt=""  />
-                     </div>
-                     <div class="slickContBox">
-                         <dl>
-                             <dt>컨텐츠 타이틀</dt>
-                             <dd>xxx원</dd>
-                             <dd>컨텐츠 텍스트</dd>
-                         </dl>
-                     </div>
-		        </div>
-		        <div class="slickWrapBox">
-                     <div class="slickImgBox">
-                         <img src="" alt=""  />
-                     </div>
-                     <div class="slickContBox">
-                         <dl>
-                             <dt>컨텐츠 타이틀</dt>
-                             <dd>xxx원</dd>
-                             <dd>컨텐츠 텍스트</dd>
-                         </dl>
-                     </div>
-		        </div>
-		        <div class="slickWrapBox">
-                     <div class="slickImgBox">
-                         <img src="" alt=""  />
-                     </div>
-                     <div class="slickContBox">
-                         <dl>
-                             <dt>컨텐츠 타이틀</dt>
-                             <dd>xxx원</dd>
-                             <dd>컨텐츠 텍스트</dd>
-                         </dl>
-                     </div>
-		        </div>
-			</div><!-- // slick  -->	   		   
-		    
-		   <script>
-		   $(function(){
-		        $('.slick').each(function() {
-	            	$(this).slick({
-				      slide: 'div',        //슬라이드될 태그
-				      infinite : true,     //무한 반복 옵션     
-				      slidesToShow : 1,        // 한 화면에 보여질 컨텐츠 개수
-				      slidesToScroll : 1,        //스크롤 한번에 움직일 컨텐츠 개수
-				      speed : 500,     // 다음 버튼 누르고 다음 화면 뜨는데까지 걸리는 시간(ms)
-				      arrows : true,         // 옆으로 이동하는 화살표 표시 여부
-				      dots : true,         // 스크롤바 아래 점으로 페이지네이션 여부
-				      autoplay : false,            // 자동 스크롤 사용 여부
-				      autoplaySpeed : 2000,         // 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
-				      pauseOnHover : true,        // 슬라이드 이동   시 마우스 호버하면 슬라이더 정지
-				      vertical : false,        // 세로 방향 슬라이드 옵션
-				      prevArrow : "<button type='button' class='slick-prev'><i class='fas fa-angle-left'></i></button>",
-				      nextArrow : "<button type='button' class='slick-next'><i class='fas fa-angle-right'></i></button>",
-				      draggable : true,     //드래그 가능 여부 
-				      responsive: [ // 반응형 웹 구현
-				        {  
-				          breakpoint: 960, //화면 사이즈
-				          settings: {
-				            slidesToShow: 1
-				          } 
-				        },
-				        { 
-				          breakpoint: 768, //화면 사이즈
-				          settings: {    
-				            slidesToShow: 1
-				          } 
-				        }
-				      ]
-			    	});
-				});
-		   });
-		   </script>        
-        </div>
-        <!-- // 슬릭 슬라이드 end -->
-        
+		<div>
+			<%-- <c:forEach var="board" items="${boardList }" > --%>
+            <!-- 슬릭 슬라이드 start -->
+		    <div>
+	            <div>
+	                <div class="slick" id="slick">
+	                    <div><img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}"></div>
+	                </div><!-- // slick  -->
+	            </div>
+		    </div>
+	        <!-- // 슬릭 슬라이드 end -->			
+			<div class="viewProfileBox">
+				<div class="mypageProfile">
+				   <div class="imgRatioBox">
+				        <img src="/display?fileName=${ memberFileVO[0].uploadPath}/s_${ memberFileVO[0].uuid}_${ memberFileVO[0].fileName}">
+				    </div>
+				</div>
+				<div class="mypageInfo"><span class="yourId">${sessionScope.id }</span></div>		
+			<div class="price">${board.boardVO.price }</div>
+			</div> 
+	        <div class="viewInfoBox">
+	            <dl>
+	                <dt>${board.boardVO.title}</dt>
+	                <dd>${board.boardVO.content }</dd>
+	            </dl>
+	        </div> 
+      		<%-- </c:forEach> --%>
+      		
+    	</div>			        
+		<div class="btnBox">
+		    <button type="button" class="backBtn btn" onclick="">글 목록</button>
+		    <button type="button" class="submitBtn btn" id="">구매하기</button>
+		</div>
     </div><!-- // contents -->
 
     <!-- Include footer.html -->
