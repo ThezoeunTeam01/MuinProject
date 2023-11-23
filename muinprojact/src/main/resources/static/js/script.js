@@ -86,6 +86,18 @@ $(document).ready(function() {
       
       
    });
+   
+    // 카테고리 메뉴 모달창
+    // 모달 열기
+    $("#cateMenuOpenBtn").on("click", function () {
+        $("#cateMenuOpenBox").show();
+    });
+
+    // 모달 닫기
+    $("#closeModalBtn").on("click", function () {
+        $("#cateMenuOpenBox").hide();
+    });    
+   
 });
        
    // regiCheck 함수
@@ -169,6 +181,10 @@ $(document).ready(function() {
       }else  if (confirm("회원 가입을 하시겠습니까?")) {
               $("#muinRegiForm").submit();
       }
-   };     
+   };   
+   
+ 
+   
+   
    
  

@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  
-</div><!-- // contents -->
+		</div><!-- // contents -->
 		<!-- 풋터 -->
 		<footer>
 			<div class="footerNavbar">
-				<a href="#" class="footerBtnBg1">
+				<a href="#" class="footerBtnBg1" id="cateMenuOpenBtn">
 					<span><i class="fas fa-bars"></i></span>
 					<span>카테고리</span>
 				</a>

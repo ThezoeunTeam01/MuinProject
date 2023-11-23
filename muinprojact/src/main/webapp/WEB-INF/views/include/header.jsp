@@ -30,7 +30,29 @@
    </head>
    <body>
    
-<!-- 헤더 -->
+   		<!-- 카테고리 메뉴 박스 -->
+		<div class="cateContBox" id="cateMenuOpenBox">
+			<ul>
+				<li>
+					<a href="/digital">
+						디지털
+					</a>
+				</li>
+				<li>
+					<a href="/Fashion">
+						패션
+					</a>
+				</li>
+				<li>
+					<a href="etc">
+						etc
+					</a>
+				</li>
+			</ul>
+			<button id="closeModalBtn"><i class="fas fa-times"></i></button>
+		</div>
+   
+		<!-- 헤더 -->
          <header>
             <div class="headerBox" id="ddd">
                <!-- 로고 -->
@@ -46,7 +68,7 @@
                </div>
             </div>
          </header>         
-<!-- 헤더 -->
+		 <!-- 헤더 -->
          <!-- 컨텐츠 컨테이너 -->
          
          <div class="container">
