@@ -8,13 +8,13 @@
         <div>
             <ul>
                 <li>
-                    <a href="">디지털</a>
+                    <a href="/digital">디지털</a>
                 </li>
                 <li>
-                    <a href="">패션</a>
+                    <a href="fashion">패션</a>
                 </li>
                 <li>
-                    <a href="">etc</a>
+                    <a href="/etc">etc</a>
                 </li>
             </ul>
         </div>
