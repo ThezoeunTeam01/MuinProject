@@ -12,37 +12,40 @@
 	<div class="contents">
 		<h2 class="tit">콘텐츠 페이지</h2>
 		<div>
-			<%-- <c:forEach var="board" items="${boardList }" > --%>
             <!-- 슬릭 슬라이드 start -->
 		    <div>
-	            <div>
-	                <div class="slick" id="slick">
-	                    <div><img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}"></div>
-	                </div><!-- // slick  -->
+	            <div>     	
+		                <div class="slick" id="slick">
+		                <c:forEach var="boardFileList" items="${boardViewList[0].boardFileVO }">
+		                    <div>
+		                   		 <img src="/display?fileName=${boardFileList.uploadPath}/${boardFileList.uuid}_${boardFileList.fileName}">
+		                    </div>
+		                    
+		                    </c:forEach>
+		                </div><!-- // slick  -->	                
 	            </div>
 		    </div>
 	        <!-- // 슬릭 슬라이드 end -->			
 			<div class="viewProfileBox">
 				<div class="mypageProfile">
 				   <div class="imgRatioBox">
-				        <img src="/display?fileName=${ memberFileVO[0].uploadPath}/s_${ memberFileVO[0].uuid}_${ memberFileVO[0].fileName}">
+				        <img src="/display?fileName=${ boardViewList[0].memberFileVO[0].uploadPath}/s_${ boardViewList[0].memberFileVO[0].uuid}_${ boardViewList[0].memberFileVO[0].fileName}">
 				    </div>
 				</div>
-				<div class="mypageInfo"><span class="yourId">${sessionScope.id }</span></div>		
-			<div class="price">${board.boardVO.price }</div>
+				<div class="mypageInfo"><span class="yourId">${boardViewList[0].boardVO.id }</span></div>		
+			<div class="price">${boardViewList[0].boardVO.price }</div>
 			</div> 
 	        <div class="viewInfoBox">
 	            <dl>
-	                <dt>${board.boardVO.title}</dt>
-	                <dd>${board.boardVO.content }</dd>
+	                <dt>${boardViewList[0].boardVO.title}</dt>
+	                <dd>${boardViewList[0].boardVO.content }</dd>
 	            </dl>
 	        </div> 
-      		<%-- </c:forEach> --%>
       		
     	</div>			        
 		<div class="btnBox">
-		    <button type="button" class="backBtn btn" onclick="">글 목록</button>
-		    <button type="button" class="submitBtn btn" id="">구매하기</button>
+		    <button type="button" class="backBtn btn" onclick="history.go(-1)">글 목록</button>
+		    <button type="button" class="submitBtn btn" onclick="history.go(-1)">구매하기</button>
 		</div>
     </div><!-- // contents -->
 

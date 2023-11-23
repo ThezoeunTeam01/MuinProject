@@ -38,4 +38,8 @@
    <select id="boardETCList">
    	select * from muinBoard where category='etc'
    </select>
+   
+   <select id="boardViewList">
+   	select * from muinBoard where bno=#{bno}
+   </select>
 </mapper>

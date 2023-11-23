@@ -17,6 +17,6 @@
 		    where bno=#{bno}
 		    ORDER BY contentfiledate DESC
 		)
-		WHERE ROWNUM = 1
 	</select>
+	
 </mapper>

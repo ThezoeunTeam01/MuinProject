@@ -97,11 +97,10 @@ public class MemberController {
    @ResponseBody
    public ResponseEntity<byte[]> getFile(String fileName){
        log.info("fileName : "+fileName);
-       System.out.println("가나다라마사아ㅏ라자자잦자자자잦");
+       System.out.println("-------------display------------");
        System.out.println(fileName);
        // 파일 경로를 지정하여 File 객체 생성
        File file = new File(uploadFolder+"/"+fileName);
-       System.out.println("가나다라마사아ㅏ라자자잦자자자잦");
        log.info("file : "+file);
 
        // ResponseEntity 객체 생성

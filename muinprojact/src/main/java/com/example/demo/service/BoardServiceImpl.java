@@ -67,5 +67,10 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardVO> boardETCList() {		
 		return boardMapper.boardETCList();
 	}
+   
+   @Override
+	public List<BoardVO> boardViewList(int bno) {
+		return boardMapper.boardViewList(bno);
+	}
   
 }

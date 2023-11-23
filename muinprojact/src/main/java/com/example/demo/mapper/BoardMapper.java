@@ -15,4 +15,5 @@ public interface BoardMapper {
    public List<BoardVO> boardDigitalList();
    public List<BoardVO> boardFashionList();
    public List<BoardVO> boardETCList();
+   public List<BoardVO> boardViewList(int bno);
 }

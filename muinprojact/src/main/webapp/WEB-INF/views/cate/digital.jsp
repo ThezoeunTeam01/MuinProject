@@ -21,22 +21,26 @@
         <!-- 컨텐츠 -->
 		<div class="slick">
 	     	<c:forEach var="board" items="${boardDigitalList }" >
+	     	
+	     
 	        <div class="slickWrapBox">
-	        
                <div class="slickImgBox">
-                   <img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}">
-                   
+              		 <a href="view?bno=${board.boardVO.bno }">
+                   		<img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}">
+                 	 </a> 
                </div>
                
                <div class="slickContBox">
-                   <dl>
-                       <dt>${ board.boardVO.title}</dt>
-                       <dd>${board.boardVO.price }</dd>
-                       <dd>${board.boardVO.content }</dd>
-                   </dl>
-               </div>
-               
+                  <a href="">
+	                   <dl>
+	                       <dt>${ board.boardVO.title}</dt>
+	                       <dd>${board.boardVO.price }</dd>
+	                       <dd>${board.boardVO.content }</dd>
+	                   </dl>
+                   </a>
+               </div>               
 	        </div>
+	        
 	      </c:forEach>
 		</div>
 		</div>

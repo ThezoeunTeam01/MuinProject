@@ -39,12 +39,12 @@
 					</a>
 				</li>
 				<li>
-					<a href="/Fashion">
+					<a href="/fashion">
 						패션
 					</a>
 				</li>
 				<li>
-					<a href="etc">
+					<a href="/etc">
 						etc
 					</a>
 				</li>

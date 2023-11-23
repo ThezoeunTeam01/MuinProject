@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.command.BoardFileVO;
 import com.example.demo.command.BoardVO;
@@ -19,6 +20,9 @@ import com.example.demo.service.BoardService;
 import com.example.demo.service.FileService;
 import com.example.demo.service.MemberService;
 
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
 @Controller
 public class mainController {
 	
@@ -159,7 +163,25 @@ public class mainController {
    
    // 카테고리 뷰 페이지
    @GetMapping("/view")
-   public String content() {
+   public String content(Model model, @RequestParam("bno") int bno) {
+	  List<BoardVO> boardViewList = boardService.boardViewList(bno);	  	  	  
+	  
+	  List<BoardDTO> dtos = new ArrayList<BoardDTO>();
+	   
+	   for(BoardVO board : boardViewList) {
+		   List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
+		   List<MemberFileVO> memberViewProfile = fileService.fileList(board.getId());
+		   
+		   BoardDTO boards = new BoardDTO();
+		   boards.setMemberFileVO(memberViewProfile);
+		   boards.setBoardVO(board);
+		   boards.setBoardFileVO(boardFileList);
+		   dtos.add(boards);
+	   }
+	  
+	  log.info("boardViewList = "+dtos);
+	  
+	  model.addAttribute("boardViewList", dtos);
       return "cate/view";
    }
    
@@ -176,6 +198,6 @@ public class mainController {
    @GetMapping("/register")
    public String register() {
 	   return "register/register";
-   }      
+   }
    
 }
