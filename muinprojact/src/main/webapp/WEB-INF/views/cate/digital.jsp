@@ -31,7 +31,7 @@
                </div>
                
                <div class="slickContBox">
-                  <a href="">
+                  <a href="view?bno=${board.boardVO.bno }">
 	                   <dl>
 	                       <dt>${ board.boardVO.title}</dt>
 	                       <dd>${board.boardVO.price }</dd>

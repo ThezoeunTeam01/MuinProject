@@ -11,6 +11,8 @@ import com.example.demo.command.BoardVO;
 import com.example.demo.mapper.BoardFileMapper;
 import com.example.demo.mapper.BoardMapper;
 
+import lombok.extern.log4j.Log4j2;
+@Log4j2
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
    
@@ -27,10 +29,12 @@ public class BoardServiceImpl implements BoardService {
 	   boardMapper.boardRegister(vo);
 	   System.out.println("bno : "+vo.getBno());
       if(vo.getBoardFileList()==null || vo.getBoardFileList().size()<=0) {
+    	 log.info("파일 없음");
     	  return;
       }	// 파일에 아무것도 없으면 리턴 있으면 아래 실행
       
       vo.getBoardFileList().forEach(file ->{
+    	  log.info("파일 있음");
     	  file.setBno(vo.getBno());
     	  System.out.println(file);
     	  boardFileMapper.boardFileInsert(file);

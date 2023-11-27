@@ -26,8 +26,8 @@ public class BoardController {
    
    @PostMapping("/boardRegister")
    public String boardRegister(BoardVO vo) {
-      
-      System.out.println(vo.getBoardFileList());
+	  log.info("보드 레지스터 들어옴");
+	  log.info("파일 확인:"+vo.getBoardFileList());
       // BoardVO에 boardFileList를 만들어 board.js에서 보낸 file을 잘 받아왔는지 확인
       
       boardService.boardRegister(vo);
