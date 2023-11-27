@@ -7,39 +7,39 @@
    <insert id="boardRegister">
    
    <selectKey keyProperty="bno" order="BEFORE" resultType="int">
-			select muinBoard_seq.nextval from dual
-	</selectKey>
+         select muinBoard_seq.nextval from dual
+   </selectKey>
       insert into muinBoard(bno, id, category, title, price, content, contentDate) 
       values(#{bno}, #{id}, #{category}, #{title}, #{price}, #{content}, sysdate )
    </insert>
    
    <select id="boardList">
-   		select * from muinBoard where id=#{id}
+         select * from muinBoard where id=#{id}
    </select>
    
    <select id="boardIndexList">
-   	SELECT *
-	FROM (
-	    SELECT *
-	    FROM muinBoard
-	    ORDER BY contentdate DESC
-	)
-	WHERE 5 >= ROWNUM 
+      SELECT *
+   FROM (
+       SELECT *
+       FROM muinBoard
+       ORDER BY contentdate DESC
+   )
+   WHERE 5 >= ROWNUM 
    </select>
    
    <select id="boardDigitalList">
-   	select * from muinBoard where category='digital'
+      select * from muinBoard where category='digital' order by contentdate desc
    </select>
    
    <select id="boardFashionList">
-   	select * from muinBoard where category='fashion'
+      select * from muinBoard where category='fashion' order by contentdate desc
    </select>
    
    <select id="boardETCList">
-   	select * from muinBoard where category='etc'
+      select * from muinBoard where category='etc' order by contentdate desc
    </select>
    
    <select id="boardViewList">
-   	select * from muinBoard where bno=#{bno}
+      select * from muinBoard where bno=#{bno} order by contentdate desc  
    </select>
 </mapper>

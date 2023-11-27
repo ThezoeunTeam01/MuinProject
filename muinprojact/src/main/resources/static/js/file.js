@@ -17,6 +17,7 @@
 	uploadFlexBox.css('background-image', "url('../../images/defaultImg/plus.png')");
 	
 	// 파일 입력이 변경되었을 때
+	// change 부분 합치기
 	inputs.on("change", function() {
 	    var filled = $(this).filter(function() {
 	        // 파일이 선택되었을 때 true 반환
@@ -26,7 +27,7 @@
 	    uploadFlexBox.toggleClass('active', filled.length === 0);
 	});
 	
-	// 파일 입력이 클릭되었을 때
+	// 파일 입력이 되었을 때
 	inputs.change(function() {
 	    // 클릭 전에 파일이 선택되지 않았다면
 	    if (this.files.length === 0) {

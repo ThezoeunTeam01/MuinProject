@@ -6,7 +6,7 @@
     <div class="contents">
 		<!-- 게시물 업로드 박스 -->
          <h2 class="tit">게시글 작성</h2>
-         <form action="boardRegister" method="post" enctype="multipart/form-data" id="muinBoardForm">
+         <form action="boardRegister" method="post" enctype="multipart/form-data" id="muinBoardForm" class="formData">
             <div class="uploadBox">
                <input type="hidden" name="id" id="id" value="${sessionScope.id}" >
                
@@ -16,9 +16,9 @@
 						<ul class="active">
 							
 						</ul>
-						<div class=""> </div>
 					</div>
 				</div>
+				
                	<p class="notice_mini">* 이미지는 최대 3개까지 업로드 가능합니다!</p>
                
                <div class="uploadFlex">

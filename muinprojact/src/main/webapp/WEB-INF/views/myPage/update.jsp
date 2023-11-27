@@ -6,7 +6,7 @@
 	<!-- 컨텐츠 -->
 	<div class="contents">
 	    <h2 class="tit">회원정보 수정</h2>
-	    <form action="memberUpdate" method="post" id="memberUpdateForm" enctype="multipart/form-data">
+	    <form action="memberUpdate" method="post" id="memberUpdateForm" enctype="multipart/form-data" class="formData">
 	        <!-- 마이 페이지 -->
 	        <div class="registerBox">
 	            <div class="regiFlex">
@@ -47,16 +47,16 @@
 	            <!--  프로필 업로드 하는 부분 -->
 	            <div class="regiFlex uploadDiv profile-photo">
 	                <label for="profile">프로필 업로드</label>
-	                <input type="file" name="profile" id="profile" >
+	                <input type="file" name="profile" id="fileFile" >
 	            </div>
 	            <!--  수정된 프로필이 노출되는 부분 -->
-	            <div class="showProfile">
-	            	<div class="imgRatioBox">
-	           			<ul>
+				<div class="showUploadfileBox">
+					<div class="uploadFlexBox">
+						<ul class="active">
 	           				<img src="/display?fileName=${fileList[0].uploadPath}/s_${fileList[0].uuid}_${fileList[0].fileName}">
-	           			</ul>
-	           		</div>
-	            </div>
+						</ul>
+					</div>
+				</div>
 	        </div><!-- // register_box -->
 	        
 	        <div class="btnBox">
