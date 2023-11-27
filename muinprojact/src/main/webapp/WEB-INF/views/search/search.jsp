@@ -6,7 +6,7 @@
     <div class="contents">
         <!-- 컨텐츠 -->
       <div class="slick">
-           <c:forEach var="board" items="${boardDigitalList }" >
+           <c:forEach var="board" items="${searchList }" >
            
         
            <div class="slickWrapBox">

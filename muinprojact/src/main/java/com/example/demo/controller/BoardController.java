@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.command.BoardDTO;
 import com.example.demo.command.BoardFileVO;
 import com.example.demo.command.BoardVO;
+import com.example.demo.command.MemberVO;
 import com.example.demo.service.BoardService;
 import com.example.demo.service.FileService;
 
@@ -44,19 +46,23 @@ public class BoardController {
    }
    
    @PostMapping("/boardSearch")
-   public String search(@RequestParam("search") String search) {
+   public String search(@RequestParam("search") String search,Model model) {
       log.info("--------search--------------");
       log.info(search);
-      List<BoardVO> searchList = boardService.boardSearch(search);
+      List<BoardVO> searchList = boardService.boardSearch(search);      
       
-      List<BoardDTO> searchDto = new ArrayList<>();
+      List<BoardDTO> searchDtoList = new ArrayList<>();
       
       for(BoardVO board : searchList) {
          List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
-         
+         BoardDTO searchDto = new BoardDTO();
+         searchDto.setBoardVO(board);
+         searchDto.setBoardFileVO(boardFileList);
+         searchDtoList.add(searchDto);        
       }
+      model.addAttribute("searchList", searchDtoList);
       
-      return "redirect:/search";
+      return "search/search";
    }
 
 }

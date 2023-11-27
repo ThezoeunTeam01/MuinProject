@@ -211,4 +211,9 @@ public class mainController {
       return "register/register";
    }
    
+   @GetMapping("/boardSearch")
+   public String boardSearch() {
+	   return "search/search";
+   }
+   
 }
