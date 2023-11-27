@@ -211,9 +211,24 @@ public class mainController {
       return "register/register";
    }
    
-   @GetMapping("/boardSearch")
-   public String boardSearch() {
-	   return "search/search";
+   @GetMapping("/boardSearch")	   
+   public String search(@RequestParam("search") String search,Model model) {
+	      log.info("--------search--------------");
+	      log.info(search);
+	      List<BoardVO> searchList = boardService.boardSearch(search);      
+	      
+	      List<BoardDTO> searchDtoList = new ArrayList<>();
+	      
+	      for(BoardVO board : searchList) {
+	         List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
+	         BoardDTO searchDto = new BoardDTO();
+	         searchDto.setBoardVO(board);
+	         searchDto.setBoardFileVO(boardFileList);
+	         searchDtoList.add(searchDto);        
+	      }
+	      model.addAttribute("searchList", searchDtoList);
+   
+	      return "search/search";
    }
    
 }

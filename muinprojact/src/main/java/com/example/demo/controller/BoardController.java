@@ -44,25 +44,5 @@ public class BoardController {
       // 확인 후 잘 받아 왔으면 boardService의 boardRegister 실행
       return "redirect:/";
    }
-   
-   @PostMapping("/boardSearch")
-   public String search(@RequestParam("search") String search,Model model) {
-      log.info("--------search--------------");
-      log.info(search);
-      List<BoardVO> searchList = boardService.boardSearch(search);      
-      
-      List<BoardDTO> searchDtoList = new ArrayList<>();
-      
-      for(BoardVO board : searchList) {
-         List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
-         BoardDTO searchDto = new BoardDTO();
-         searchDto.setBoardVO(board);
-         searchDto.setBoardFileVO(boardFileList);
-         searchDtoList.add(searchDto);        
-      }
-      model.addAttribute("searchList", searchDtoList);
-      
-      return "search/search";
-   }
 
 }

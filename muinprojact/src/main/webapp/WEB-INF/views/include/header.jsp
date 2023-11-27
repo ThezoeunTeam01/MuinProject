@@ -63,7 +63,7 @@
                </div>
                <!-- 검색창 -->
                <div class="search_box">
-               <form action="boardSearch" method="post">
+               <form action="boardSearch" method="get">
                   <span><input type="search" name="search" placeholder="검색어를 입력해 주세요." /></span>
                   <span><button type="submit"><i class="fas fa-search"></i></button></span>
                </form>   

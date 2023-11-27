@@ -44,6 +44,6 @@
    </select>
    
    <select id="boardSearch">
-        select * from muinboard where id like '%${search}%' or title like '%${search}%' or content like '%${search}%'
+        select * from muinboard where title like '%${search}%' or content like '%${search}%'
    </select>
 </mapper>
