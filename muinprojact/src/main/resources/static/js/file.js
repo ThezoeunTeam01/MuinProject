@@ -17,7 +17,7 @@
 	uploadFlexBox.css('background-image', "url('../../images/defaultImg/plus.png')");
 	
 	// 파일 입력이 변경되었을 때
-	inputs.change(function() {
+	inputs.on("change", function() {
 	    var filled = $(this).filter(function() {
 	        // 파일이 선택되었을 때 true 반환
 	        return this.files.length > 0;
@@ -27,7 +27,7 @@
 	});
 	
 	// 파일 입력이 클릭되었을 때
-	inputs.click(function() {
+	inputs.change(function() {
 	    // 클릭 전에 파일이 선택되지 않았다면
 	    if (this.files.length === 0) {
 	        // 파일 선택을 처리하기 위해 'change' 이벤트 트리거
