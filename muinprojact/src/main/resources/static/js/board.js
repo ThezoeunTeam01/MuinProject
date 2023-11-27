@@ -2,7 +2,7 @@
  * 
  */
  console.log("board.js 접속");
- $(document).ready(function(e){
+$(document).ready(function() {
 	
 	$("#boardRegister").on("click", function (e) {
 	  boardCheck();
@@ -29,6 +29,24 @@
  	    $("#muinBoardForm").submit();
       }
    };
+   
+	  function updateFileList() {
+		var form = $(".formData");
+		var id = $("#id").val();
+		var str = "";
+		var fileList = $("#fileList")
+		
+		$(".showUploadfileBox div ul li").each(function (i, li) {
+		    var jli = $(li);
+		    str += "<div id='fileList'>"
+		    str += "<input type='hidden' name='fileList[" + i + "].fileName' value='" + jli.data("filename") + "'>";
+		    str += "<input type='hidden' name='fileList[" + i + "].uuid' value='" + jli.data("uuid") + "'>";
+		    str += "<input type='hidden' name='fileList[" + i + "].uploadPath' value='" + jli.data("uploadpath") + "'>";
+		    str += "<input type='hidden' name='fileList[" + i + "].id' value='" + id + "'>";
+		    str += "</div>"
+		});
+		form.append(str);
+	}
 	
 
 /*$("#boardRegister").on("click", function(e){
