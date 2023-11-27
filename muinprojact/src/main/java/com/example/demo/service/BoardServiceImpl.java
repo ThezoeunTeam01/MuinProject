@@ -11,8 +11,6 @@ import com.example.demo.command.BoardVO;
 import com.example.demo.mapper.BoardFileMapper;
 import com.example.demo.mapper.BoardMapper;
 
-import lombok.extern.log4j.Log4j2;
-@Log4j2
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
    
@@ -22,23 +20,21 @@ public class BoardServiceImpl implements BoardService {
    @Autowired
    BoardFileMapper boardFileMapper;
    
-   @Transactional	
+   @Transactional   
    @Override
    public void boardRegister(BoardVO vo) {
-	   
-	   boardMapper.boardRegister(vo);
-	   System.out.println("bno : "+vo.getBno());
+      
+      boardMapper.boardRegister(vo);
+      System.out.println("bno : "+vo.getBno());
       if(vo.getBoardFileList()==null || vo.getBoardFileList().size()<=0) {
-    	 log.info("파일 없음");
-    	  return;
-      }	// 파일에 아무것도 없으면 리턴 있으면 아래 실행
+         return;
+      }   // 파일에 아무것도 없으면 리턴 있으면 아래 실행
       
       vo.getBoardFileList().forEach(file ->{
-    	  log.info("파일 있음");
-    	  file.setBno(vo.getBno());
-    	  System.out.println(file);
-    	  boardFileMapper.boardFileInsert(file);
-      });	// 파일 하나씩 boardFileMapper랑 연결해서 insert 실행 interface를 통해 xml로 이동
+         file.setBno(vo.getBno());
+         System.out.println(file);
+         boardFileMapper.boardFileInsert(file);
+      });   // 파일 하나씩 boardFileMapper랑 연결해서 insert 실행 interface를 통해 xml로 이동
       
    }
    @Override
@@ -47,34 +43,39 @@ public class BoardServiceImpl implements BoardService {
    }
    
    @Override
-	public List<BoardFileVO> boardFileList(int bno) {
-		return boardFileMapper.boardFileList(bno);
-	}
+   public List<BoardFileVO> boardFileList(int bno) {
+      return boardFileMapper.boardFileList(bno);
+   }
    
    @Override
-	public List<BoardVO> boardIndexList() {
-		return boardMapper.boardIndexList();
-	}
+   public List<BoardVO> boardIndexList() {
+      return boardMapper.boardIndexList();
+   }
    
    @Override
-	public List<BoardVO> boardDgitalList() {
-		
-		return boardMapper.boardDigitalList();
-	}
+   public List<BoardVO> boardDgitalList() {
+      
+      return boardMapper.boardDigitalList();
+   }
    
    @Override
-	public List<BoardVO> boardFashionList() {		
-		return boardMapper.boardFashionList();
-	}
+   public List<BoardVO> boardFashionList() {      
+      return boardMapper.boardFashionList();
+   }
    
    @Override
-	public List<BoardVO> boardETCList() {		
-		return boardMapper.boardETCList();
-	}
+   public List<BoardVO> boardETCList() {      
+      return boardMapper.boardETCList();
+   }
    
    @Override
-	public List<BoardVO> boardViewList(int bno) {
-		return boardMapper.boardViewList(bno);
-	}
+   public List<BoardVO> boardViewList(int bno) {
+      return boardMapper.boardViewList(bno);
+   }
+   
+   @Override
+   public List<BoardVO> boardSearch(String search) {
+      return boardMapper.boardSearch(search);
+   }
   
 }

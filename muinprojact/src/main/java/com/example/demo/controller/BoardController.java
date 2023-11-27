@@ -2,11 +2,18 @@ package com.example.demo.controller;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.command.BoardDTO;
+import com.example.demo.command.BoardFileVO;
 import com.example.demo.command.BoardVO;
 import com.example.demo.service.BoardService;
 import com.example.demo.service.FileService;
@@ -26,14 +33,30 @@ public class BoardController {
    
    @PostMapping("/boardRegister")
    public String boardRegister(BoardVO vo) {
-	  log.info("보드 레지스터 들어옴");
-	  log.info("파일 확인:"+vo.getBoardFileList());
+      
+      System.out.println(vo.getBoardFileList());
       // BoardVO에 boardFileList를 만들어 board.js에서 보낸 file을 잘 받아왔는지 확인
       
       boardService.boardRegister(vo);
       
       // 확인 후 잘 받아 왔으면 boardService의 boardRegister 실행
       return "redirect:/";
+   }
+   
+   @PostMapping("/boardSearch")
+   public String search(@RequestParam("search") String search) {
+      log.info("--------search--------------");
+      log.info(search);
+      List<BoardVO> searchList = boardService.boardSearch(search);
+      
+      List<BoardDTO> searchDto = new ArrayList<>();
+      
+      for(BoardVO board : searchList) {
+         List<BoardFileVO> boardFileList = boardService.boardFileList(board.getBno());
+         
+      }
+      
+      return "redirect:/search";
    }
 
 }

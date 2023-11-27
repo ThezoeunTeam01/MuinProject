@@ -42,4 +42,8 @@
    <select id="boardViewList">
       select * from muinBoard where bno=#{bno} order by contentdate desc  
    </select>
+   
+   <select id="boardSearch">
+        select * from muinboard where id like '%${search}%' or title like '%${search}%' or content like '%${search}%'
+   </select>
 </mapper>

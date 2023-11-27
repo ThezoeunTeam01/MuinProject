@@ -14,4 +14,5 @@ public interface BoardService {
    public List<BoardVO> boardDgitalList();
    public List<BoardVO> boardFashionList();
    public List<BoardVO> boardETCList();
+   public List<BoardVO> boardSearch(String search);
 }
