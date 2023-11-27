@@ -14,7 +14,7 @@
    </insert>
    
    <select id="boardList">
-         select * from muinBoard where id=#{id}
+         select * from muinBoard where id=#{id} order by contentdate desc
    </select>
    
    <select id="boardIndexList">
