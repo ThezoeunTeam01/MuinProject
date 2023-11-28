@@ -65,7 +65,7 @@ $(document).ready(function() {
 	        $("#phone").focus();
 	    } else if ($("#fileFile").val() === "") {
 			$("#ProfileNotice").html("프로필 파일을 업로드해 주세요!");
-	        $("#profile").focus();
+	        $("#fileFile").focus();
 	    }else if (confirm("회원 가입을 하시겠습니까?")) {
 	        updateFileList();
 	        $("#muinRegiForm").submit();
