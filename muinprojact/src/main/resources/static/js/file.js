@@ -17,7 +17,9 @@ $(document).ready(function() {
       var files = inputFile[0].files;
       
       if(inputFile.val() == ""){
+		 uploadFlexBox.css('background-image', "url('../../images/defaultImg/plus.png')");
 		 $("input[type='file']").val("");
+		 uploadFlexBox.addClass('active');
          uploadUL.empty();
          return false;
 	 }
