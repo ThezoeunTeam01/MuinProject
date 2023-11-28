@@ -42,27 +42,13 @@ $(document).ready(function() {
    });
    
    console.log("script.js 접속")
-      
-   // 비밀번호 일치 여부 확인
-   $('#checkPasswordBtn').click(function(){
-      
-      var pw = $('#pw').val();
-      var pwCheck = $('#pwCheck').val();
-      
-      if(pw==''){
-         alert("비밀번호를 입력해주세요");                 
-        }else if (pw === pwCheck) {
-         $('#pwMatchStatus').text('비밀번호 일치');                 
-      } else {
-          $('#pwMatchStatus').text('비밀번호 불일치');
-             $("#pwCheck").focus();                 
-      }                                            
-   });
+         
     // id 체크
      $('#idCheck').click(function(){
    
          var id = $("#id").val();
          var userid = {"id":id};
+         
          $.ajax({
             url:'../ajax/idCheck',
             type:'post',
@@ -73,15 +59,15 @@ $(document).ready(function() {
             success:function(result){
                if(id==''){
                   alert("아이디를 입력해주세요");
-               }                  
-               else if(result==1){
+               } else if(result==1){
+                 // console.log(id)
+          	    $("#idNotice").html("이미 사용중인 아이디 입니다.");
+          	    $("#id").focus(); 
+               } else{
                   console.log(id)
-                  alert("중복되었습니다.");
-               }else{
-                  console.log(id)
-                  alert("사용가능한 아이디 입니다.")
                   $("#id").attr("readonly", true);
                   $("#id").css("opacity","0.5");
+                  $("#idNotice").html("사용 가능한 아이디입니다.");
                }
             }
          });
@@ -144,7 +130,7 @@ $(document).ready(function() {
   
    
    
-   // boardRegiCheck 함수 - 임시 설정
+/*   // boardRegiCheck 함수 - 임시 설정
    function boardRegiCheck() {
       if (!$("#id").attr("readonly")) {
           alert("아이디 중복체크를 해야 합니다.");
@@ -171,7 +157,7 @@ $(document).ready(function() {
       }else  if (confirm("회원 가입을 하시겠습니까?")) {
               $("#muinRegiForm").submit();
       }
-   };   
+   };   */
 
 
    

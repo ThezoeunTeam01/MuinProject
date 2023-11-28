@@ -2,7 +2,7 @@
  * 
  */
  console.log("file.js 접속");
- $(document).ready(function(e){
+$(document).ready(function() {
 
 	/* 임시 추가 - 강한별 */
 	// 인풋 파일 영역에 이미지 업로드 되어 있으면 클래스 active 토글 클래스 삭제처리
@@ -29,6 +29,7 @@
 	
 	// 파일 입력이 되었을 때
 	inputs.change(function() {
+		alert("위치확인");
 	    // 클릭 전에 파일이 선택되지 않았다면
 	    if (this.files.length === 0) {
 	        // 파일 선택을 처리하기 위해 'change' 이벤트 트리거

@@ -33,4 +33,9 @@
 	input:read-only{background:#eee;}
 	/*인풋 타입 파일일 경우 백그라운드 #fff 처리*/	
 	input[type="file"]{background:#fff;}
+	/*인풋 placeholder */
+	::placeholder { color: #aaa; opacity: 1; /* Firefox */ }
+	::-ms-input-placeholder { /* Edge 12 -18 */ color: #aaa; }
+	
+	
 	
