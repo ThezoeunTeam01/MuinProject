@@ -3,50 +3,11 @@
  */
  console.log("file.js 접속");
 $(document).ready(function() {
-
-	/* 임시 추가 - 강한별 */
-	// 인풋 파일 영역에 이미지 업로드 되어 있으면 클래스 active 토글 클래스 삭제처리
-	// 파일 재선택을 위해 클릭 시 클래스 다시 이전으로 토글되는 것 방지 처리
-	// 인풋 파일 선택하기 전 백그라운드 이미지 설정하기
-	// 인풋 파일 선택 취소 시에는 클래스 초기화
-	/* 20231128 주석처리 */
-	/*var inputs = $("#fileFile");
-	var uploadFlexBox = $('.uploadFlexBox > ul');
-	var initialInputValue = inputs.val();
 	
 	// 파일을 선택하기 전에 배경 이미지 설정
+	var uploadFlexBox = $('.uploadFlexBox > ul');
 	uploadFlexBox.css('background-image', "url('../../images/defaultImg/plus.png')");
 	
-	// 파일 입력이 변경되었을 때
-	// change 부분 합치기
-	inputs.on("change", function() {
-	    var filled = $(this).filter(function() {
-	        // 파일이 선택되었을 때 true 반환
-	        return this.files.length > 0;
-	    });
-	    // 파일이 선택되었는지 여부에 따라 'active' 클래스 토글
-	    uploadFlexBox.toggleClass('active', filled.length === 0);
-	});
-	
-	// 파일 입력이 되었을 때
-	inputs.change(function() {
-	    // 클릭 전에 파일이 선택되지 않았다면
-	    if (this.files.length === 0) {
-	        // 파일 선택을 처리하기 위해 'change' 이벤트 트리거
-	        $(this).val('').trigger('change');
-	    } else if (!initialInputValue) {
-	        // 파일이 선택되었고 처음 선택인 경우, 배경 이미지 제거
-	        initialInputValue = $(this).val();
-	        uploadFlexBox.css('background-image', "none");
-	    } else {
-	        // 파일이 선택되었고 처음 선택이 아닌 경우, 입력값 초기화
-	        $(this).val('');
-	        uploadFlexBox.removeClass('active');
-	        uploadFlexBox.css('background-image', "none");
-	    }
-	});*/
-	
-
    // change start
    $("input[type='file']").change(function(e){
       var uploadUL = $(".showUploadfileBox div ul");
@@ -54,6 +15,12 @@ $(document).ready(function() {
       var inputFile = $("input[type='file']");
 
       var files = inputFile[0].files;
+      
+      if(inputFile.val() == ""){
+		 $("input[type='file']").val("");
+         uploadUL.empty();
+         return false;
+	 }
       
       for(var i=0;i<files.length;i++){
          
@@ -65,13 +32,16 @@ $(document).ready(function() {
          }else{
             console.log(files[i]);
             form.append("uploadFile",files[i]);
+            // file이 선택되어 업로드된 경우에 active 클래스 제거
+            uploadFlexBox.removeClass('active');
          }                                                   
       }
+      
       
       $.ajax({
          url:'../ajax/uploadAjax',
          processData: false,
-           contentType: false,
+         contentType: false,
          data: form,
          type: 'POST',
          dataType: 'json',
@@ -93,7 +63,7 @@ $(document).ready(function() {
                      
       });
    });   // change end
-   
+      
    // 업로드 제한
    var regex =  new RegExp("(.*?)\.(exe|sh|zip|alz)$");
    var maxSize = 10000000;
@@ -127,7 +97,10 @@ $(document).ready(function() {
          console.log("showList str");
          console.log(str);
       });
+      // 이미지 결과 보여지면서 백그라운드 이미지 삭제 처리
+      uploadFlexBox.css('background-image', "none");
       uploadUL.append(str);
+      
    }
 
 });   // ready end
