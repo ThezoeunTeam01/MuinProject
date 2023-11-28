@@ -52,12 +52,12 @@ public class AjaxController {
       return result;
    }
    // 1. 년월일 폴더 생성을 위한 함수생성... 
-	private String getFolder() {
+   private String getFolder() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
 		String str = sdf.format(date);
 		return str.replace("-", "/");
-	}
+   }
    @PostMapping(value = "/uploadAjax", produces = MediaType.APPLICATION_JSON_VALUE)	// 기존은 responseBody가 있었음
    public ResponseEntity<List<MemberFileDTO>> uploadAjax(MultipartFile[] uploadFile) {
 	   

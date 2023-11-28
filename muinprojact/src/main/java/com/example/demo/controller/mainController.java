@@ -207,7 +207,7 @@ public class mainController {
       return "login/login";
    }   
    @GetMapping("/register")
-   public String register() {
+   public String register() {  	  
       return "register/register";
    }
    
