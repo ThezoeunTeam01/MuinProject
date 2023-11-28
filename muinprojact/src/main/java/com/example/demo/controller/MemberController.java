@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -63,9 +65,37 @@ public class MemberController {
 	   List<MemberFileVO> fileList = fileService.fileList(id);
 	   
 	   memberService.memberDelete(id,fileList);
+	   deleteFile(fileList);
 	   session.invalidate();
 	   
 	   return "redirect:/";
+   }
+   
+   // 회원 탈퇴시 파일 삭제
+   private void deleteFile(List<MemberFileVO> memberFileList) {
+	   if(memberFileList == null || memberFileList.size()==0) {
+		   return;
+	   }
+	   log.info("-----delete file list-----");
+	   log.info(memberFileList);
+	   
+	   memberFileList.forEach(list ->{
+	   		try {
+				Path file = Paths.get("c:/muin/profile/"+list.getUploadPath()+"/"+list.getUuid()+"_"+list.getFileName());
+				Files.deleteIfExists(file);
+				
+				if(Files.probeContentType(file).startsWith("image")) {
+					Path thumbnail = Paths.get("c:/muin/profile/"+list.getUploadPath()+"/s_"+list.getUuid()+"_"+list.getFileName());
+					Files.deleteIfExists(thumbnail);
+				}
+				
+			} catch (Exception e) {
+				log.error("delete file error : "+e.getMessage());
+			}
+	   		
+	   		
+	   });
+	   
    }
    // 로그인
    @PostMapping("login")

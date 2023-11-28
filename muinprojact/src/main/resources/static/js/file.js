@@ -29,7 +29,6 @@ $(document).ready(function() {
 	
 	// 파일 입력이 되었을 때
 	inputs.change(function() {
-		alert("위치확인");
 	    // 클릭 전에 파일이 선택되지 않았다면
 	    if (this.files.length === 0) {
 	        // 파일 선택을 처리하기 위해 'change' 이벤트 트리거
