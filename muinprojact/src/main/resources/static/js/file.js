@@ -9,7 +9,8 @@ $(document).ready(function() {
 	// 파일 재선택을 위해 클릭 시 클래스 다시 이전으로 토글되는 것 방지 처리
 	// 인풋 파일 선택하기 전 백그라운드 이미지 설정하기
 	// 인풋 파일 선택 취소 시에는 클래스 초기화
-	var inputs = $("#fileFile");
+	/* 20231128 주석처리 */
+	/*var inputs = $("#fileFile");
 	var uploadFlexBox = $('.uploadFlexBox > ul');
 	var initialInputValue = inputs.val();
 	
@@ -43,7 +44,7 @@ $(document).ready(function() {
 	        uploadFlexBox.removeClass('active');
 	        uploadFlexBox.css('background-image', "none");
 	    }
-	});
+	});*/
 	
 
    // change start
