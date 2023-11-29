@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
    <!-- Include header.html -->
     <jsp:include page="../include/header.jsp" />
-	<!-- 컨텐츠 -->
+	<!-- 컨텐츠 --> 
     <div class="contents">
 		<!-- 게시물 업로드 박스 -->
          <h2 class="tit">게시글 작성</h2>

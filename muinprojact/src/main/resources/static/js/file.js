@@ -3,7 +3,7 @@
  */
  console.log("file.js 접속");
 $(document).ready(function() {
-	
+	 
 	// 파일을 선택하기 전에 배경 이미지 설정
 	var uploadFlexBox = $('.uploadFlexBox > ul');
 	uploadFlexBox.css('background-image', "url('../../images/defaultImg/plus.png')");

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 	<!-- Include header.html -->
     <jsp:include page="../include/header.jsp" />
-    
+     
 	<!-- 컨텐츠 -->
 	<div class="contents">
 	    <h2 class="tit">회원정보 수정</h2>

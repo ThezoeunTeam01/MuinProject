@@ -1,4 +1,4 @@
-
+ 
  console.log("member.js 접속");
 $(document).ready(function() {
 	

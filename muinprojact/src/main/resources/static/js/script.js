@@ -1,11 +1,5 @@
 $(document).ready(function() {
-	
-/*	//board 인터셉터 로직
-	var check = '${param.check}';
-   	if(check != '') {
-   	    alert("로그인이 필요한 서비스 입니다");
-   	}	*/
-      
+
    // 세션 id 가져오기
    $.getJSON("../ajax/getSessionId", function(data) {         
         const id = data.id; 

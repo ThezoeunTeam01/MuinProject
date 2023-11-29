@@ -2,7 +2,7 @@
 <!-- Include header.html -->
 <jsp:include page="../include/header.jsp" />
 
-<!-- 컨텐츠 -->
+<!-- 컨텐츠 --> 
 <div class="contents">
     <h2 class="tit">무인마켓 회원가입</h2>
     <form action="register" method="post" id="muinRegiForm" enctype="multipart/form-data"  class="formData">
