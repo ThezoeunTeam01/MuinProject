@@ -6,6 +6,7 @@
     <div class="contents">
         <!-- 컨텐츠 -->
       <div class="slick">
+      	<h2>무인마켓 <span class="testMainColor">검색 결과</span><img alt="" src="../images/icon/icon.png"></h2>
            <c:forEach var="board" items="${searchList }" >
            
         

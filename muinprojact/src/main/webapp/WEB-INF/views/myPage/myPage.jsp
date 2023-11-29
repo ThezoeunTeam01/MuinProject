@@ -31,7 +31,7 @@
 	     		<button type="button" name="update" id="update" class="submitBtn btn" onclick="location.href='memberUpdate'">내 정보 수정</button>
 	        </div>
 		</div>
-		
+		<h2>무인마켓 <span class="testMainColor">나의글보기</span><img alt="" src="../images/icon/icon.png"></h2>
 		<div class="slick">
 	     	<c:forEach var="board" items="${boardList }" >
 	        <div class="slickWrapBox">

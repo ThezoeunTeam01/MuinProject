@@ -5,7 +5,7 @@
     <jsp:include page="include/header.jsp" />
 	<!-- 컨텐츠 -->
 	<div class="contents">
-		<h2>컨텐츠 <span>타이틀</span><img alt="" src=""></h2>
+		<h2>무인마켓 <span class="testMainColor">최신매물</span><img alt="" src="../images/icon/icon.png"></h2>
 			<div class="slick">
 				<c:forEach var="board" items="${boardList }" >
 					<div class="slickWrapBox">

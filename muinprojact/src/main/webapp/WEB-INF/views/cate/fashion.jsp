@@ -19,6 +19,7 @@
             </ul>
         </div>
         <!-- 컨텐츠 -->
+        <h2>무인마켓 <span class="testMainColor">패션 카테고리</span><img alt="" src="../images/icon/icon.png"></h2>
 		<div class="slick">
 	     	<c:forEach var="board" items="${boardFashionList }" >
 	        <div class="slickWrapBox">

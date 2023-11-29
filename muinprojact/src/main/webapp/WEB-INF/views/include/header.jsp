@@ -58,7 +58,7 @@
                <!-- 로고 -->
                <div class="logo_box">
                   <a href="/" class="logo">
-                     <img src="" alt="logo" />
+                     <img src="../images/logo/logo.png" alt="logo" />
                   </a>
                </div>
                <!-- 검색창 -->

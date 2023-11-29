@@ -2,10 +2,18 @@
     pageEncoding="UTF-8"%>
 	<!-- Include header.html -->
     <jsp:include page="../include/header.jsp" />
+    <script type="text/javascript">
+    //로그인 페이지는 헤더를 숨깁니다. 
+    $(document).ready(function() {
+    	$("header").css("display","none")
+    	
+    })
+    
+	</script>
 	<!-- 컨텐츠 -->
 	 <!-- 로그인 로고 이미지 -->
         <div>
-            <img src="" alt="">
+            <a href="/"><img src="../images/logo/logo.png" alt="logo"></a>
         </div>
         <!-- 로그인 폼 -->
         <div>
