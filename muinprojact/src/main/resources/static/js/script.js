@@ -62,8 +62,13 @@ $(document).ready(function() {
                } else if(result==1){
                  // console.log(id)
           	    $("#idNotice").html("이미 사용중인 아이디 입니다.");
-          	    $("#id").focus(); 
-               } else{
+          	    $("#id").focus();  
+               }else if ($("#id").val().length < 6 || $("#id").val().length > 8) {
+	        	$("#idNotice").html("아이디는 최소 6자 이상 8자 이하 문자 및 숫자로 구성해 주세요!");
+	        	$("#idNotice").show();
+	        	$("#id").focus();
+	    	   }  
+               else{
                   console.log(id)
                   $("#id").attr("readonly", true);
                   $("#id").css("opacity","0.5");

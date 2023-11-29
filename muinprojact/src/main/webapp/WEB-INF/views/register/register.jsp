@@ -66,15 +66,17 @@
                 <input type="file" name="profile" id="fileFile">
             </div>
             <div class="notice_red" id="ProfileNotice"></div>
+
             
 			<!--  게시물 업로드 이미지 확인 -->
 			<div class="showUploadfileBox">
-				<div class="uploadFlexBox">
+				<div class="uploadFlexBox" id="uploadButton">
 					<ul class="active">
 						
 					</ul>
 				</div>
 			</div>
+			
         </div><!-- // register_box -->
         <div class="btnBox">
             <button type="button" class="backBtn btn" onclick="history.back()">뒤로가기</button>

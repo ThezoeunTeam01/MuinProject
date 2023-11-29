@@ -12,15 +12,15 @@
                
 				<!--  게시물 업로드 이미지 확인 -->
 				<div class="showUploadfileBox">
-					<div class="uploadFlexBox">
+					<div class="uploadFlexBox" id="uploadButton">
 						<ul class="active">
 							
 						</ul>
 					</div>
 				</div>
 				
-               	<p class="notice_mini">* 이미지는 최대 3개까지 업로드 가능합니다!</p>
-               
+               <p class="notice_mini">* 이미지는 최대 3개까지 업로드 가능합니다!</p>
+
                <div class="uploadFlex">
                   <label for="boardImage">사진 업로드</label>
                   <input type="file" name="boardImage" id="fileFile" multiple="multiple">   

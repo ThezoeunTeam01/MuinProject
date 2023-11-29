@@ -22,15 +22,22 @@ $(document).ready(function() {
 	  }                                            
 	});
 	
-	function regiCheck() {
+	// 인풋 파일과 파일 업로드 ul 연동
+    function setupFileInput() {
+        $('#uploadButton').on('click', function () {
+            $('#fileFile').click();
+        });
+    }
+
+    // 페이지 로드 시 함수 호출
+    setupFileInput();
+	
     // 정규 표현식: 영문 대소문자, 숫자, 특수문자 사용 가능하며, 최소 6자이상 최대 8이하 이어야 함
     var pwPattern = /^[a-zA-Z0-9!@#$%^&*()_+{}\[\]:;<>,.?~\\/]{6,8}$/;
+	
+	function regiCheck() {
 
-	   if ($("#id").val().length < 6 || $("#id").val().length > 8) {
-	        $("#idNotice").html("아이디는 최소 6자 이상 8자 이하 문자 및 숫자로 구성해 주세요!");
-	        $("#idNotice").show();
-	        $("#id").focus();
-	    } else if (!$("#id").attr("readonly")) {
+	   if (!$("#id").attr("readonly")) {
 	        alert("아이디 중복체크를 해야 합니다.");
 	    } else if ($("#id").val() === $("#pw").val()) {
 	        alert("아이디와 비밀번호는 동일할 수 없습니다!");
@@ -79,27 +86,35 @@ $(document).ready(function() {
 	});
 	
 	function updateCheck() {
-	      if($("#pw").val().length < 1) {
-	          alert("비밀번호를 입력하세요!");
+	      if ($("#pw").val().length < 6 || $("#pw").val().length > 8 || !pwPattern.test($("#pw").val())) {
+	        $("#pwNotice1").html("비밀번호는 영문 대소문자, 숫자, 특수문자 등으로 이루어진 6자 이상 8자 이하이어야 합니다.");
+	        $("#pwNotice1").show();
+	        $("#pw").focus(); 
 	      } else if ($("#pw").val() !== $("#pwCheck").val()) {
-	          alert("비밀번호 확인란을 확인해 주세요!");
-	          $("#pwCheck").focus();
+	        $("#pwNotice2").html("비밀번호 확인란을 확인해 주세요!");
+	        $("#pwNotice2").show();
+	        $("#pwCheck").focus();
 	      } else if ($("#name").val().length < 1) {
-	          alert("이름을 입력하세요!");
-	          $("#name").focus();
-	      } else if ($("#birth").val().length < 8) {
-	          alert("생년월일을 입력하세요!");
-	          $("#birth").focus();
-	      } else if ($("#address").val() === "") {
-	          alert("주소를 입력하세요!");
-	          $("#address").focus();
-	      } else if ($("#phone").val() === "") {
-	          alert("번호를 입력하세요!");
-	          $("#phone").focus();
-	      } else if ($("#fileFile").val() === "") {
-	          alert("프로필 파일을 업로드 하세요!");
-	          $("#profile").focus();
-	      }else  if (confirm("회원정보 수정을 하시겠습니까?")) {
+	        $("#nameNotice").html("이름을 입력해 주세요!");
+	        $("#name").focus();
+	    } else if ($("#birth").val().length !== 8) {
+	        $("#birthNotice").html("생년월일 8자를 정확히 입력해주세요!");
+	        $("#birthNotice").show();
+	        $("#birth").focus();
+	    } else if ($("#address").val() === "") {
+	        $("#addrNotice").html("주소를 입력해 주세요!");
+	        $("#address").focus();
+	    } else if ($("#phone").val() === "") {
+	        $("#phoneNotice").html("핸드폰 번호를 입력해 주세요!");
+	        $("#phone").focus();
+	    } else if (!/^\d+$/.test($("#phone").val())) {
+	        $("#phoneNotice").html("숫자만 입력 가능합니다!");
+	        $("#phoneNotice").show();
+	        $("#phone").focus();
+	    } /*else if ($("#fileFile").val() === "") {
+			$("#ProfileNotice").html("프로필 파일을 업로드해 주세요!");
+	        $("#fileFile").focus();
+	    }*/ else  if (confirm("회원정보 수정을 하시겠습니까?")) {
 	 	    updateFileList();
 	 	    $("#memberUpdateForm").submit();
 	      }
