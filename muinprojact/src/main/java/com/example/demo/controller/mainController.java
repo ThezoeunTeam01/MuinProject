@@ -230,5 +230,13 @@ public class mainController {
    
 	      return "search/search";
    }
+   @GetMapping("/boardUpdate")
+   public String boardUpdate(@RequestParam("bno") int bno, Model model) {
+	   BoardVO boardList = boardService.updateList(bno);
+	   
+	   model.addAttribute("boardList", boardList);
+	   
+	   return "cate/boardUpdate";
+   }
    
 }

@@ -46,4 +46,8 @@
    <select id="boardSearch">
         select * from muinboard where title like '%${search}%' or content like '%${search}%'
    </select>
+   
+   <select id="updateList">
+   		select * from muinboard where bno=#{bno}
+   </select>
 </mapper>

@@ -17,4 +17,5 @@ public interface BoardMapper {
    public List<BoardVO> boardETCList();
    public List<BoardVO> boardViewList(int bno);
    public List<BoardVO> boardSearch(String search);
+   public BoardVO updateList(int bno);
 }

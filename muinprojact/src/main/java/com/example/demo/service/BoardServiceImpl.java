@@ -77,5 +77,10 @@ public class BoardServiceImpl implements BoardService {
    public List<BoardVO> boardSearch(String search) {
       return boardMapper.boardSearch(search);
    }
+   
+   @Override
+	public BoardVO updateList(int bno) {
+		return boardMapper.updateList(bno);
+	}
   
 }

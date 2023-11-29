@@ -15,4 +15,5 @@ public interface BoardService {
    public List<BoardVO> boardFashionList();
    public List<BoardVO> boardETCList();
    public List<BoardVO> boardSearch(String search);
+   public BoardVO updateList(int bno);
 }

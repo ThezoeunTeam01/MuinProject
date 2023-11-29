@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.command.BoardVO;
 import com.example.demo.service.BoardService;
@@ -32,6 +33,13 @@ public class BoardController {
       
       // 확인 후 잘 받아 왔으면 boardService의 boardRegister 실행
       return "redirect:/";
+   }
+   @PostMapping("/boardUpdate")
+   public String boardUpdate(BoardVO vo) {
+	   
+	   
+	   
+	   return "redirect:/view?bno="+vo.getBno();
    }
 
 }
