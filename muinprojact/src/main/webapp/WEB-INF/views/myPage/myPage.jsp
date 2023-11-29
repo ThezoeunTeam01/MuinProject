@@ -4,10 +4,10 @@
 
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> 
 	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
 	<!-- 컨텐츠 -->
 	<div class="contents">
 	<h2 class="tit">마이 페이지</h2>
-	
 		<div class="mypageInfoBox">
 	   	    <!-- 유저 프로필 -->
 			<div class="fileUpload">
@@ -45,7 +45,6 @@
 	        </div>
 	      </c:forEach>
 		</div>
-       
     </div><!-- // contents -->
 
     <!-- Include footer.html -->

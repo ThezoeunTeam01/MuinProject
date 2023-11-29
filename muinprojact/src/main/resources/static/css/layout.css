@@ -1,7 +1,7 @@
 	/* 레이아웃 css 파일 */ 
 	
 	/*--  header --*/
-	header{max-width:800px; width:100%; height:100px; border-bottom:1px solid #eee; background-color:#fff; color:#fff; padding:15px; position:fixed; top:0; left:50%; transform: translateX(-50%); box-shadow: 0px 0px 0px 1px #c4c4c4; z-index:10;}
+	header{max-width:800px; width:100%; height:100px; border-bottom:1px solid #dedede; background-color:#fff; color:#fff; padding:15px; position:fixed; top:0; left:50%; transform: translateX(-50%); /* box-shadow: 0px 0px 0px 1px #c4c4c4; */ z-index:10;}
 	.headerBox{height: 100%; display:flex; justify-content: space-between; align-items: center;}
 	.logo_box{width:180px; height:40px;} 
 	.logo{display:block; box-sizing: border-box;}
@@ -12,10 +12,10 @@
 	.searchBox .searchBtnBox svg{color:#289158; font-size:18px;}
 	
 	/*--  footer --*/
-	footer{width: 100%; max-width: 800px; max-height:100px; height:auto; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); border: 1px solid #aaa; z-index:10;}
+	footer{width: 100%; max-width: 800px; max-height:100px; height:auto; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); border-top: 1px solid #dedede; z-index:10;}
 	.footerNavbar{ display: flex; flex-direction: row;}
 	.footerNavbar a{width:calc(100% / 3);}
-	.footerBtnBg1{ background: #f2f2f2;  color:#707070;}
+	.footerBtnBg1{ background: #f2f2f2;  color:#707070; transition: 0.3s ease;}
 	.footerBtnBg1:focus, .footerBtnBg1:hover{ background: #d7d7d7;}
 	.footerBtnBg2{ background: #289158; color:#fff; }
 	.footerBtnBg2:focus, .footerBtnBg2:hover{ background: #0b562d; color:#fff; }
@@ -24,31 +24,29 @@
 	.footerNavbar a span:nth-child(1) svg{font-size:25px;}
 	.footerNavbar a span:nth-child(2){font-size:16px;}
 	
-	/* 카테고리 메뉴 */
+	/*-- 카테고리 메뉴 --*/
 	.cateContBox{display: none; position: fixed; top: 100px; left: 50%; z-index: 9; max-width: 800px; width: 100%; height: 100%; transform: translateX(-50%); background-color: #fff; padding:20px;} 
   	.cateContBox ul{position: absolute; top: 200px; left: 50%; transform: translateX(-50%); }
 	.cateContBox ul li{margin-bottom:20px;}
 	.cateContBox ul li a{padding:10px; display:block; font-size: 28px; color: #000;}
-	.cateContBox ul li a:hover, .cateContBox ul li a:focus{color: #289158;}
+	.cateContBox ul li a:hover, .cateContBox ul li a:focus{color: #289158; transition: background-color 1s ease;}
 	#closeModalBtn{position:absolute; top:20px; right:20px;}
 	#closeModalBtn svg{font-size:30px; color:#289158;}	
-	
-	/**/
-	.contents{padding:20px 0;}
-	
+
+	/*-- container --*/
+	.container{max-width:800px; width:100%; /*  height:100%;  */ background-color:#fff; margin-top:100px; padding:25px; margin:0 auto; padding-top:100px; padding-bottom:100px; }	
 	/*-- contents --*/
-	/* container */
-	.container{max-width:800px; width:100%;  height:auto;  background-color:#f8f8f8; margin-top:100px; padding:15px; margin:0 auto; padding-top:100px; padding-bottom:100px;}
-	
+	.contents{padding:40px 0;}
+
 	/*-- 인덱스 --*/
 	.mainColorTxt{color:#289158; font-weight:700;}
-	.subTitBox{display:flex; align-items:center; font-size:18px; margin:20px 0;}
+	.subTitBox{display:flex; align-items:center; font-size:18px; margin:30px 0;}
 	.subTitBox img{width: 18px; height: 18px;}	
 	
     /*-- 로그인 페이지 --*/
     .loginLogoBox{margin-bottom:40px; max-width:480px;}
     .loginLogoBox img{width:100%; height:70px; }
-    .ContFixedBox{position: fixed; top:50%; left: 50%; z-index: 9; max-width: 800px; width: 100%; height: 100%; transform: translate(-50%, -50%);   padding: 20px;}
+    .ContFixedBox{position: fixed; top:50%; left: 50%; z-index: 9; max-width: 800px; width: 100%; height: 100%; transform: translate(-50%, -50%);   padding: 20px; background:#fff;}
     .loginFormBox{max-width:480px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); }
     .loginFormBox input { border: 1px solid #ddd; border-radius: 10px; height: 45px; width: 100%; cursor: pointer; font-size: 16px; padding: 5px; background-color: #fff; margin-bottom:15px;}
     .loginFormBox p{font-size:14px; text-align:center;}
@@ -58,15 +56,19 @@
 	.registerBox{max-width:600px; margin:0 auto;}
 	.regiFlex{display:flex; flex-direction: row; margin-bottom:15px;}
 	.regiFlex label{cursor:pointer; width:100%; max-width:120px; font-size:16px; display: flex; align-items: center; font-weight:700;}  
-	.regiFlex input{border:1px solid #dedede; border-radius:10px; height: 45px; width: 100%; cursor:pointer; font-size:16px; padding:5px 8px; font-weight:600;} 		
+	.regiFlex input{border:1px solid #dedede; border-radius:10px; height: 45px; width: 100%; cursor:pointer; font-size:16px; padding:5px 8px; font-weight:600; transition: 0.3s ease;} 		
 	.regiFlex input[type="file"]{background-color:#fff;}
+	.regiFlex input:focus{border:1px solid #289158;}
 	
 	/*-- 게시물 업로드 --*/
 	.uploadBox{border:0px solid red; max-width:600px; margin:0 auto;}
 	.uploadFlex{display:flex; flex-direction: row; margin-bottom:15px;}
 	.uploadFlex label{border:0px solid blue; cursor:pointer; width:100%; max-width:120px; font-size:16px; display: flex; align-items: center; font-weight:700;}  
-	.uploadFlex input{border:1px solid #ddd; border-radius:10px; height: 45px; width: 100%; cursor:pointer; font-size:16px; padding:5px; background-color:#fff;}
-	.uploadFlex select{border:1px solid #ddd; border-radius:10px; height: 45px; width: 100%; cursor:pointer; font-size:16px; padding:5px; background-color:#fff;}
+	.uploadFlex input{border:1px solid #ddd; border-radius:10px; height: 45px; width: 100%; cursor:pointer; font-size:16px; padding:5px; background-color:#fff; transition: 0.3s ease;}
+	.uploadFlex input:focus{border:1px solid #289158;}
+	.uploadFlex select{border:1px solid #ddd; border-radius:10px; height: 45px; width: 100%; cursor:pointer; font-size:16px; padding:5px; background-color:#fff; transition: 0.3s ease;}
+	.uploadFlex select:focus{border:1px solid #289158;}
+	textarea:focus{border:1px solid #289158;}
 	
     /*이미지 업로드 시- 이미지 정사각형 비율 유지하면서 반응형 가능하도록 수정*/
     .showUploadfileBox{border:0px solid blue; padding: 15px 8px; display: flex; justify-content: center; background-color:#fff; border: 0px solid #ddd; border-radius: 10px; margin-bottom:20px;}
@@ -83,7 +85,7 @@
     .active{width: 150px; height: 150px; border-radius: 50%; overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6; margin: 0 auto; background-color:#fff; background-size: contain;}		
 	 		
     /*-- 마이페이지 --*/
-    .mypageInfoBox{margin-bottom:20px; background-color:#fff; padding:15px; padding: 15px;}
+    .mypageInfoBox{margin-bottom:20px; background-color:#fff; padding:15px; border:1px solid #cfcfcf; border-radius:15px;}
 	.fileUpload{display: grid !important; grid-template-columns: 1fr 5fr 1fr; align-items: center; gap: 10px; margin:20px 0; }
 	.fileUpload .mypageProfile{padding:5px; margin-right:10px;}
 	.fileUpload .mypageProfile .imgRatioBox{ width:80px; height:80px; border-radius:50%; overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6;}
@@ -92,13 +94,14 @@
 	.fileUpload .mypageInfo .yourId{font-weight:700; color:#289158;}
 	/* 마이페이지 나의 매물 콘텐츠 영역 */
 	.slickContBox{height:auto; padding:20px 15px;}
-	.slickContBox dl{}
+	.slickContBox dl{word-break:break-all;}
 	.slickContBox dl dt{font-size:18px; height: 50px; line-height: 1.4; border: 1px solid red; margin-bottom:15px; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
 	.slickContBox dl dd:nth-child(2){font-size: 20px; font-weight: 700; margin-bottom:15px;}
 	.slickContBox dl dd:nth-child(3){font-size: 16px; margin-bottom:15px;}
 	
 	/*-- 콘텐츠 페이지 --*/
-	.viewProfileBox{display: grid !important; grid-template-columns: 1fr 5fr 1fr; align-items: center; gap: 10px; margin:20px 0; }
+	.viewContBox{ padding:0 30px;}
+	.viewProfileBox{display: grid !important; grid-template-columns: 1fr 5fr 1fr; align-items: center; gap: 10px; margin:30px 0; }
 	.viewProfileBox .mypageProfile{padding:5px; margin-right:10px;}
 	.viewProfileBox .mypageProfile .imgRatioBox{ width:80px; height:80px; border-radius:50%; overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6;}
 	.viewProfileBox .mypageProfile .imgRatioBox img{ width:100%; height:100%; overflow: hidden; object-fit: cover;}
@@ -106,21 +109,22 @@
 	.viewProfileBox .mypageInfo .yourId{font-weight:700; color:#289158;}
 	.viewProfileBox .price{font-size:22px; font-weight: 700; text-align: right;}
 	.viewInfoBox{}
-	.viewInfoBox dl{}
-	.viewInfoBox dl dt{font-size:20px; font-weight: 700; margin-bottom:20px;}
-	.viewInfoBox dl dd{font-size:16px;}
-		
-	/* content List 형식 css */
- 	.contListBox{margin-bottom:20px;}
-	.contListBox .contListWrapBox{display: grid !important; grid-template-columns: 1fr 2fr;  gap: 10px; grid-auto-rows: 280px; background: #fff;  border: 1px solid #cfcfcf; border-radius: 15px; margin-bottom:20px;}			
-	.contListBox .contListWrapBox .contListImgBox{width:250px !important; height:250px !important; margin: 15px; padding:15px; background:#f7f7f7;}
-	.contListBox .contListWrapBox .contListImgBox img{width:100%; height:100%; display: grid; grid-template-column: repeat(auto-fill,minmax(150px,auto));  overflow: hidden; object-fit:contain;}
-	.contListBox .contListWrapBox .contBox{height:auto; padding:20px 15px;}
-	.contListBox .contListWrapBox .contBox dl{}
-	.contListBox .contListWrapBox .contBox dl dt{font-size:18px; height: 50px; line-height: 1.4; border: 1px solid red; margin-bottom:15px; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
-	.contListBox .contListWrapBox .contBox dl dd:nth-child(2){font-size: 20px; font-weight: 700; margin-bottom:15px;}
-	.contListBox .contListWrapBox .contBox dl dd:nth-child(3){font-size: 16px; margin-bottom:15px;}
+	.viewInfoBox dl{word-break: break-all;}
+	.viewInfoBox dl dt{font-size:20px; font-weight: 700; margin-bottom:25px;}
+	.viewInfoBox dl dd{font-size:16px; margin-bottom:25px;}
 	
+		
+	/* content List 형식 css */ 
+ 	.contListBox{margin-bottom:20px; position:relative;}
+	.contListBox .contListWrapBox{display: grid !important; grid-template-columns: 1fr 2fr;  gap: 10px; grid-auto-rows: 280px; background: #fff;  border: 1px solid #cfcfcf; border-radius: 15px; margin-bottom:20px;}
+	.contListBox .contListWrapBox .contListImgBox{width:250px !important; height:250px !important; margin: 15px; padding:15px; background:#fff; border:1px solid #cfcfcf;}
+	.contListBox .contListWrapBox .contListImgBox img{width:100%; height:100%; display: grid; grid-template-column: repeat(auto-fill,minmax(150px,auto));  overflow: hidden; object-fit:contain;}
+	.contListBox .contListWrapBox .contBox{height:auto; padding: 25px 15px 25px 0;}
+	.contListBox .contListWrapBox .contBox a{color:#000; cursor:pointer;}
+	.contListBox .contListWrapBox .contBox dl{width:100%; word-break: break-all;}
+	.contListBox .contListWrapBox .contBox dl dt{font-size:18px; height: 50px; line-height: 1.4; border: 0px solid red; margin-bottom:15px; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+	.contListBox .contListWrapBox .contBox dl dd:nth-child(2){font-size: 20px; font-weight: 700; margin-bottom:15px;  height: 50px; line-height: 1.4; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+	.contListBox .contListWrapBox .contBox dl dd:nth-child(3){font-size: 16px; margin-bottom:15px; overflow: hidden; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4;}
 	
 	 /* 슬릭 슬라이드 */
 	.ContSlickBox{border:0px solid red;}
@@ -138,7 +142,6 @@
 	.slick-dots button { display: block; width: 8px; height: 8px; padding: 0; border: 1px solid #289158; border-radius: 100%; background-color: #fff; text-indent: -9999px;}
 	.slick-dots li.slick-active button {background-color: #289158;}
 
-	/* -- 공통으로 사용할 수 있는 부분 - 협의 필요 --*/
 	/*-- buttons --*/
 	.btn{cursor:pointer; font-size: 16px;}
 	.submitBtn{min-width: 120px; width: calc(100% - 10px); background:#289158; color:#fff; font-size:16px; border:0px solid transparent; padding:15px; }
@@ -152,10 +155,7 @@
 	.contSubTit{font-size:18px; margin:15px 0;}
 	.checkBtn{max-width:80px; height: 45px; width: calc(100% - 10px); background:#289158; color:#fff; border:0px solid transparent; padding: 5px;}
 	.checkBtn:hover, .checkBtn:focus{background:#0b562d;}
-	
-	/**/
-	.indexContBox{}
-	
+
 	/* notice */
 	.notice_red{color:red; font-size:14px; padding-left:120px; padding-bottom:5px;}
 	.notice_mini{color:red; font-size:14px; margin-bottom:10px;}
@@ -169,4 +169,8 @@
 	.showUploadfileBox .uploadFlexBox img{border-radius: 50%; overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6; background-color:#fff;}
 	.imgDelBtn{position:absolute; top:0; right:0;}	
     
+    
+    @media all and (max-width:400px) {
+    	.viewContBox{padding:0 10px;}
+    }
 	

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+	
    // 세션 id 가져오기
    $.getJSON("../ajax/getSessionId", function(data) {         
         const id = data.id; 
@@ -120,7 +120,20 @@ $(document).ready(function() {
 	        }
 	      ]
 		});
-	});    
+	});   
+	
+    // 숫자를 천단위로 콤마 처리하는 함수
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // 모든 페이지의 class가 'numComma'인 요소에 대해 숫자를 콤마 처리
+    $('.numComma').each(function() {
+        var currentText = $(this).text();
+        var formattedText = numberWithCommas(currentText);
+        $(this).text(formattedText);
+    });
+	 
    
 });
        

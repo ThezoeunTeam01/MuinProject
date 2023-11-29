@@ -14,8 +14,7 @@
 	a, a:hover,a:active,a:visited{text-decoration:none; }
 	img{border:0; vertical-align:top; width:100%;}
 	button{border:0; background-color:transparent; cursor:pointer; font-family:inherit; font-size:inherit; color:#000; vertical-align:middle; }
-	textarea{resize:none; width:100%; padding:5px; vertical-align:top; font-size:14px; font-family:inherit; color:#000; border: 1px solid #ddd; border-radius: 10px;
-	font-size: 16px; padding: 10px 5px;}
+	textarea{resize:none; width:100%; padding:5px; vertical-align:top; font-size:14px; font-family:inherit; color:#000; border: 1px solid #ddd; border-radius: 10px; font-size: 16px; padding: 10px 5px; transition: 0.3s ease;}
 	em,address{font-style:normal}
 	table{width:100%; word-wrap:break-word; border-collapse:collapse; border-spacing: 0;}
 	caption{width:0; height:0; line-height:0; font-size:0; color:transparent;}
@@ -36,6 +35,9 @@
 	/*인풋 placeholder */
 	::placeholder { color: #aaa; opacity: 1; /* Firefox */ }
 	::-ms-input-placeholder { /* Edge 12 -18 */ color: #aaa; }
-	
+	/*form 태그 내 입력 영역 focus시, border 디폴트 없도록 설정*/
+	input:focus {outline:none;}
+	select:focus{outline:none;}
+	textarea:focus{outline:none;}
 	
 	

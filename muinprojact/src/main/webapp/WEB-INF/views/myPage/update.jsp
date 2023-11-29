@@ -73,10 +73,11 @@
 	        <div class="btnBox">
 	          <button type="button" class="backBtn btn" id="memberDelete" onclick="location.href='memberDelete'">회원 탈퇴</button>
      	      <button type="button" class="submitBtn btn" id="memberUpdate">회원정보 변경하기</button>
-     	      
 	        </div>
+	        
 	    </form>
 	</div><!-- // contents -->
+	
 	<!-- Include footer.html -->	
     <jsp:include page="../include/footer.jsp" />
 	 

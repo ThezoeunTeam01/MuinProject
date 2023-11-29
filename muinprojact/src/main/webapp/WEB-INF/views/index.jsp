@@ -11,15 +11,15 @@
 			<c:forEach var="board" items="${boardList }" >
 				<div class="contListWrapBox"> <!-- slickWrapBox -->
 					<div class="contListImgBox"> <!-- slickImgBox -->
-					<a href="view?bno=${board.boardVO.bno }">
-						<img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}">
+						<a href="view?bno=${board.boardVO.bno }">
+							<img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}">
 						</a>
 					</div>
 					<div class="contBox"> <!-- slickContBox  -->
 						<a href="view?bno=${board.boardVO.bno }">
 							<dl>
 								<dt>${ board.boardVO.title}</dt>
-								<dd>${board.boardVO.price }</dd>
+								<dd class="numComma">${board.boardVO.price }<span>원</span></dd>
 								<dd>${board.boardVO.content }</dd>
 							</dl>
 						</a>
@@ -28,11 +28,6 @@
 			</c:forEach>
 		</div>
 	</div><!-- // contents -->
-	<style>
-
-		
-		.signatureColor{}
-	</style>
 	
 	<!-- Include footer.html -->
     <jsp:include page="include/footer.jsp" />
