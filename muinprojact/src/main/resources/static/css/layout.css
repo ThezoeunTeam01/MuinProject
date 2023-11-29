@@ -3,13 +3,13 @@
 	/*--  header --*/
 	header{max-width:800px; width:100%; height:100px; border-bottom:1px solid #eee; background-color:#fff; color:#fff; padding:15px; position:fixed; top:0; left:50%; transform: translateX(-50%); box-shadow: 0px 0px 0px 1px #c4c4c4; z-index:10;}
 	.headerBox{height: 100%; display:flex; justify-content: space-between; align-items: center;}
-	.logo_box{border:1px solid red; width:180px; height:40px;} 
+	.logo_box{width:180px; height:40px;} 
 	.logo{display:block; box-sizing: border-box;}
-	.search_box{border:1px solid red; position:relative; display:flex;}
-	.search_box span:nth-child(1){width:250px;}
-	.search_box span:nth-child(2){width:40px; display: flex; align-items: center; justify-content: center;}
-	.search_box span input{width:100%; border: 1px solid #ddd; border-radius: 10px; height: 40px; width: 100%; cursor: pointer; padding:5px; font-size:15px;}
-	.search_box span svg{color:#289158; font-size:18px;}
+	.searchBox form{position:relative; display:flex;}
+	.searchBox .searchInputBox{width:250px;}
+	.searchBox .searchInputBox input{width:100%; border: 1px solid #ddd; border-radius: 10px; height: 40px; width: 100%; cursor: pointer; padding:5px; font-size:15px;}
+	.searchBox .searchBtnBox{width:40px; display: flex; align-items: center; justify-content: center;}
+	.searchBox .searchBtnBox svg{color:#289158; font-size:18px;}
 	
 	/*--  footer --*/
 	footer{width: 100%; max-width: 800px; max-height:100px; height:auto; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); border: 1px solid #aaa; z-index:10;}
@@ -27,28 +27,32 @@
 	/* 카테고리 메뉴 */
 	.cateContBox{display: none; position: fixed; top: 100px; left: 50%; z-index: 9; max-width: 800px; width: 100%; height: 100%; transform: translateX(-50%); background-color: #fff; padding:20px;} 
   	.cateContBox ul{position: absolute; top: 200px; left: 50%; transform: translateX(-50%); }
-	.cateContBox ul li{}
-	.cateContBox ul li a{padding:10px; display:block; font-size: 24px;}
+	.cateContBox ul li{margin-bottom:20px;}
+	.cateContBox ul li a{padding:10px; display:block; font-size: 28px; color: #000;}
+	.cateContBox ul li a:hover, .cateContBox ul li a:focus{color: #289158;}
 	#closeModalBtn{position:absolute; top:20px; right:20px;}
 	#closeModalBtn svg{font-size:30px; color:#289158;}	
 	
 	/**/
 	.contents{padding:20px 0;}
-		
-	/*
-	.footerNavbar li{width:calc(100% / 3);}
-	.footerNavbar li a{width:100%; display:flex; flex-direction: column;  align-items:center;}
-	.footerNavbar li:nth-child(odd) a{ background: #f2f2f2;  color:#707070;}
-	.footerNavbar li:nth-child(odd) a:focus, .footerNavbar li:nth-child(odd) a:hover{ background: #d7d7d7;}
-	.footerNavbar li:nth-child(even) a{ background: #289158; color:#fff; }
-	.footerNavbar li:nth-child(even) a:focus, .footerNavbar li:nth-child(even) a:hover{ background: #0b562d; color:#fff; }
-	.footerNavbar li a span{padding:8px;}
-	.footerNavbar li a span:nth-child(1) svg{font-size:25px; }
-	*/
-
+	
 	/*-- contents --*/
 	/* container */
 	.container{max-width:800px; width:100%;  height:auto;  background-color:#f8f8f8; margin-top:100px; padding:15px; margin:0 auto; padding-top:100px; padding-bottom:100px;}
+	
+	/*-- 인덱스 --*/
+	.mainColorTxt{color:#289158; font-weight:700;}
+	.subTitBox{display:flex; align-items:center; font-size:18px; margin:20px 0;}
+	.subTitBox img{width: 18px; height: 18px;}	
+	
+    /*-- 로그인 페이지 --*/
+    .loginLogoBox{margin-bottom:40px; max-width:480px;}
+    .loginLogoBox img{width:100%; height:70px; }
+    .ContFixedBox{position: fixed; top:50%; left: 50%; z-index: 9; max-width: 800px; width: 100%; height: 100%; transform: translate(-50%, -50%);   padding: 20px;}
+    .loginFormBox{max-width:480px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); }
+    .loginFormBox input { border: 1px solid #ddd; border-radius: 10px; height: 45px; width: 100%; cursor: pointer; font-size: 16px; padding: 5px; background-color: #fff; margin-bottom:15px;}
+    .loginFormBox p{font-size:14px; text-align:center;}
+    .goRegisterBox{margin-top:20px; display:flex; justify-content: space-between;}	
 	
 	/*-- 회원가입 폼 --*/
 	.registerBox{max-width:600px; margin:0 auto;}
@@ -105,23 +109,24 @@
 	.viewInfoBox dl{}
 	.viewInfoBox dl dt{font-size:20px; font-weight: 700; margin-bottom:20px;}
 	.viewInfoBox dl dd{font-size:16px;}
+		
+	/* content List 형식 css */
+ 	.contListBox{margin-bottom:20px;}
+	.contListBox .contListWrapBox{display: grid !important; grid-template-columns: 1fr 2fr;  gap: 10px; grid-auto-rows: 280px; background: #fff;  border: 1px solid #cfcfcf; border-radius: 15px; margin-bottom:20px;}			
+	.contListBox .contListWrapBox .contListImgBox{width:250px !important; height:250px !important; margin: 15px; padding:15px; background:#f7f7f7;}
+	.contListBox .contListWrapBox .contListImgBox img{width:100%; height:100%; display: grid; grid-template-column: repeat(auto-fill,minmax(150px,auto));  overflow: hidden; object-fit:contain;}
+	.contListBox .contListWrapBox .contBox{height:auto; padding:20px 15px;}
+	.contListBox .contListWrapBox .contBox dl{}
+	.contListBox .contListWrapBox .contBox dl dt{font-size:18px; height: 50px; line-height: 1.4; border: 1px solid red; margin-bottom:15px; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+	.contListBox .contListWrapBox .contBox dl dd:nth-child(2){font-size: 20px; font-weight: 700; margin-bottom:15px;}
+	.contListBox .contListWrapBox .contBox dl dd:nth-child(3){font-size: 16px; margin-bottom:15px;}
 	
-	/**/
-	/* .ContSlickBox{border:1px solid red;}
-	.ContSlickBox>div{border:1px solid blue;} */
 	
-	
-	/* 슬릭 css */
-/* 	.slick{margin-bottom:20px;}
-	.slick .slickWrapBox{display: grid !important; grid-template-columns: 1fr 2fr;  gap: 10px; grid-auto-rows: 280px; background: #fff;  border: 1px solid #cfcfcf; border-radius: 15px; margin-bottom:20px;}			
-	.slick .slickWrapBox .slickImgBox{width:250px !important; height:250px !important; margin: 15px; padding:15px; background:#f7f7f7;}
-	.slick .slickWrapBox .slickImgBox img{width:100%; height:100%; display: grid; grid-template-column: repeat(auto-fill,minmax(150px,auto));  overflow: hidden; object-fit:contain;}
-	.slick .slickWrapBox .slickContBox{height:auto; padding:20px 15px;}
-	.slick .slickWrapBox .slickContBox dl{}
-	.slick .slickWrapBox .slickContBox dl dt{font-size:18px; height: 50px; line-height: 1.4; border: 1px solid red; margin-bottom:15px; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
-	.slick .slickWrapBox .slickContBox dl dd:nth-child(2){font-size: 20px; font-weight: 700; margin-bottom:15px;}
-	.slick .slickWrapBox .slickContBox dl dd:nth-child(3){font-size: 16px; margin-bottom:15px;}
-	.slick-slide{height:auto !important;} */
+	 /* 슬릭 슬라이드 */
+	.ContSlickBox{border:0px solid red;}
+   	.ContSlickBox .slick{border:0px solid blue;}
+	.ContSlickBox .slick .slickImgBox{border:0px solid green; width: 100%; height: 500px; background-color: #fff; border-radius:15px; padding: 30px 25px;}
+	.ContSlickBox .slick .slickImgBox img{border:0px solid orange; object-fit: contain; width: 100%; height: 100%;}
 	/*이전, 다음*/
 	.slick-arrow{position: absolute; top: 50%; transform: translateY(-50%); z-index: 5}
 	.slick-prev{left: 10px;}
@@ -150,7 +155,6 @@
 	
 	/**/
 	.indexContBox{}
-
 	
 	/* notice */
 	.notice_red{color:red; font-size:14px; padding-left:120px; padding-bottom:5px;}
@@ -162,6 +166,7 @@
 	/**/
 	.showUploadfileBox .uploadFlexBox>ul{cursor:pointer;}
 	.showUploadfileBox .uploadFlexBox>ul>li{position:relative; }
+	.showUploadfileBox .uploadFlexBox img{border-radius: 50%; overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6; background-color:#fff;}
 	.imgDelBtn{position:absolute; top:0; right:0;}	
     
 	

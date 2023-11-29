@@ -1,12 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-   <!-- Include header.html -->
-    <jsp:include page="../include/header.jsp" />
-    
-   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-   <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	<!-- Include header.html -->
+	<jsp:include page="../include/header.jsp" />
+
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> 
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<!-- 컨텐츠 -->
 	<div class="contents">
 	<h2 class="tit">마이 페이지</h2>
@@ -25,24 +22,18 @@
 	     			<button type="button" name="update" id="update" class="submitBtn btn" onclick="location.href='memberUpdate'">내 정보 수정</button>
 	     		</div>
 			</div>
-	        <div class="btnBox">
-	        	<!-- <input type="button" name="logout" id="logout" value="로그아웃"  class="backBtn btn" /> -->
-	        	<button type="button" name="logout" id="logout" class="backBtn btn">로그아웃</button>		
-	     		<button type="button" name="update" id="update" class="submitBtn btn" onclick="location.href='memberUpdate'">내 정보 수정</button>
-	        </div>
 		</div>
-		<h2>무인마켓 <span class="testMainColor">나의글보기</span><img alt="" src="../images/icon/icon.png"></h2>
-		<div class="slick">
+		 
+		<h2 class="subTitBox">무인마켓&nbsp;<span class="mainColorTxt">나의 글보기&nbsp;</span><a href="/"><img src="${pageContext.request.contextPath}/images/icon/icon.png" alt=""></a></h2>
+		<div class="contListBox">
 	     	<c:forEach var="board" items="${boardList }" >
-	        <div class="slickWrapBox">
-	        	
-               <div class="slickImgBox">
+	        <div class="contListWrapBox">
+               <div class="contListImgBox">
                <a href="view?bno=${board.boardVO.bno }">
                    <img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}">
                    </a>
                </div>
-               
-               <div class="slickContBox">
+               <div class="contBox">
                		<a href="view?bno=${board.boardVO.bno }">
                    <dl>
                        <dt>${ board.boardVO.title}</dt>
@@ -51,7 +42,6 @@
                    </dl>
                    </a>
                </div>
-               
 	        </div>
 	      </c:forEach>
 		</div>

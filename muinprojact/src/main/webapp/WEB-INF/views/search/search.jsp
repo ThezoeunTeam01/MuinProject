@@ -5,19 +5,19 @@
     <jsp:include page="../include/header.jsp" />
     <div class="contents">
         <!-- 컨텐츠 -->
-      <div class="slick">
-      	<h2>무인마켓 <span class="testMainColor">검색 결과</span><img alt="" src="../images/icon/icon.png"></h2>
+      <div class="contListBox">
+      	   <h2 class="subTitBox">검색 결과&nbsp;<span class="mainColorTxt">나의 글보기&nbsp;</span><a href="/"><img src="${pageContext.request.contextPath}/images/icon/icon.png" alt=""></a></h2>
            <c:forEach var="board" items="${searchList }" >
            
         
-           <div class="slickWrapBox">
-               <div class="slickImgBox">
+           <div class="contListWrapBox">
+               <div class="contListImgBox">
                      <a href="view?bno=${board.boardVO.bno }">
                          <img src="/display?fileName=${board.boardFileVO[0].uploadPath}/s_${board.boardFileVO[0].uuid}_${board.boardFileVO[0].fileName}">
                      </a> 
                </div>
                
-               <div class="slickContBox">
+               <div class="contBox">
                   <a href="view?bno=${board.boardVO.bno }">
                       <dl>
                           <dt>${ board.boardVO.title}</dt>

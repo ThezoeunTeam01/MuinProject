@@ -58,15 +58,15 @@
                <!-- 로고 -->
                <div class="logo_box">
                   <a href="/" class="logo">
-                     <img src="../images/logo/logo.png" alt="logo" />
+                     <img src="${pageContext.request.contextPath}/images/logo/logo.png" alt="logo" />
                   </a>
                </div>
                <!-- 검색창 -->
-               <div class="search_box">
-               <form action="boardSearch" method="get">
-                  <span><input type="search" name="search" placeholder="검색어를 입력해 주세요." /></span>
-                  <span><button type="submit"><i class="fas fa-search"></i></button></span>
-               </form>   
+               <div class="searchBox">
+	               <form action="boardSearch" method="get">
+	                  <div class="searchInputBox"><input type="search" name="search" placeholder="검색어를 입력해 주세요." /></div>
+	                  <div class="searchBtnBox"><button type="submit"><i class="fas fa-search"></i></button></div>
+	               </form>   
                </div>
             </div>
          </header>         
