@@ -19,4 +19,8 @@
 		)
 	</select>
 	
+	<delete id="deleteBoardFile">
+		delete from muinboardimage where bno=#{bno}
+	</delete>
+	
 </mapper>

@@ -9,6 +9,7 @@
          <h2 class="tit">게시글 작성</h2>
          <form action="boardUpdate" method="post" enctype="multipart/form-data" id="muinBoardForm" class="formData">
             <div class="uploadBox">
+            	<input type="hidden" name="bno" value="${boardList.vo.bno}">
                <input type="hidden" name="id" id="id" value="${sessionScope.id}" >
                
 				<!--  게시물 업로드 이미지 확인 -->
@@ -26,7 +27,7 @@
 					</div>
 				</div>
 				
-               	<p class="notice_mini">* 이미지는 최대 3개까지 업로드 가능합니다!</p>
+               <p class="notice_mini">* 이미지는 최대 3개까지 업로드 가능합니다!</p>
                
                <div class="uploadFlex">
                   <label for="boardImage">사진 업로드</label>

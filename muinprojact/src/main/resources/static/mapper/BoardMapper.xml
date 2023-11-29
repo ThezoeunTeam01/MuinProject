@@ -17,6 +17,10 @@
          select * from muinBoard where id=#{id} order by contentdate desc
    </select>
    
+   <update id="updateBoard">
+   		update muinboard set category=#{category}, title=#{title}, price=#{price}, content=#{content} where bno=#{bno} 
+   </update>
+   
    <select id="boardIndexList">
       SELECT *
    FROM (

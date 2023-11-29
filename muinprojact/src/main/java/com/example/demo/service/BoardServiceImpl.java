@@ -37,6 +37,23 @@ public class BoardServiceImpl implements BoardService {
       });   // 파일 하나씩 boardFileMapper랑 연결해서 insert 실행 interface를 통해 xml로 이동
       
    }
+   @Transactional
+   @Override
+	public void updateBoard(BoardVO vo) {
+		boardMapper.updateBoard(vo);
+		if(vo.getBoardFileList()==null || vo.getBoardFileList().size()<=0) {
+	         return;
+	    }
+		
+		boardFileMapper.deleteBoardFile(vo.getBno());
+		
+		 vo.getBoardFileList().forEach(file ->{
+	         file.setBno(vo.getBno());
+	         System.out.println(file);
+	         boardFileMapper.boardFileInsert(file);
+	     });
+		
+	}
    @Override
    public List<BoardVO> boardList(String id) {     
       return boardMapper.boardList(id);

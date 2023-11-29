@@ -10,4 +10,5 @@ import com.example.demo.command.BoardFileVO;
 public interface BoardFileMapper {
 	public void boardFileInsert(BoardFileVO vo);
 	public List<BoardFileVO> boardFileList(int id);
+	public void deleteBoardFile(int bno);
 }
