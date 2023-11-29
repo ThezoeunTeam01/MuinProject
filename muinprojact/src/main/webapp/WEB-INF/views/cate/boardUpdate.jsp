@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
    <!-- Include header.html -->
     <jsp:include page="../include/header.jsp" />
 	<!-- 컨텐츠 -->
@@ -14,7 +15,13 @@
 				<div class="showUploadfileBox">
 					<div class="uploadFlexBox">
 						<ul class="active">
-							
+							<c:forEach var="updateFileList" items="${boardList.fileVo }">
+							<li>
+								<div>
+									<img src="/display?fileName=${updateFileList.uploadPath}/s_${updateFileList.uuid}_${updateFileList.fileName}">
+								</div>
+							</li>
+							</c:forEach>
 						</ul>
 					</div>
 				</div>
@@ -35,23 +42,23 @@
                </div>
                <script>
     				// 서버에서 받아온 값을 가정
-				    var category = "${boardList.category}";
+				    var category = "${boardList.vo.category}";
 				
 				    // 받아온 값에 해당하는 option을 선택 상태로 만듦
-				    document.getElementById("category").value = category;
+				    document.getElementById("category").value = category	;
 				</script>
 				
                <div class="uploadFlex">
                   <label for="title">타이틀</label>
-                  <input type="text" name="title" value=${boardList.title } >   
+                  <input type="text" name="title" value=${boardList.vo.title } >   
                </div>
                <div class="uploadFlex">
                   <label for="price">가격</label>
-                  <input type="number" name="price" value=${boardList.price } >   
+                  <input type="number" name="price" value=${boardList.vo.price } >   
                </div>
                <div class="uploadFlex">
                   <label for="content">글작성</label>
-                  <textarea id="content" name="content" rows="5" cols="50">boardList.content</textarea>
+                  <textarea id="content" name="content" rows="5" cols="50">boardList.vo.content</textarea>
                </div>      
             </div><!-- // uploadBox -->
             <div class="btnBox">

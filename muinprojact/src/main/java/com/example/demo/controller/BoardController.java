@@ -37,7 +37,7 @@ public class BoardController {
    @PostMapping("/boardUpdate")
    public String boardUpdate(BoardVO vo) {
 	   
-	   
+//	   boardService.updateBoard(vo);
 	   
 	   return "redirect:/view?bno="+vo.getBno();
    }

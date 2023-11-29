@@ -49,7 +49,3 @@ $(document).ready(function() {
 	}
 	
 });   // ready end
-// 카테고리 값 받아오기
-    var category = "${boardList.category}";
-	console.log(category);
-	document.getElementById("category").value = category;

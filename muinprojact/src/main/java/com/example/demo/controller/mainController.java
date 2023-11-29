@@ -16,6 +16,7 @@ import com.example.demo.command.BoardVO;
 import com.example.demo.command.BoardDTO;
 import com.example.demo.command.MemberFileVO;
 import com.example.demo.command.MemberVO;
+import com.example.demo.command.UpdateBoardDTO;
 import com.example.demo.service.BoardService;
 import com.example.demo.service.FileService;
 import com.example.demo.service.MemberService;
@@ -232,9 +233,17 @@ public class mainController {
    }
    @GetMapping("/boardUpdate")
    public String boardUpdate(@RequestParam("bno") int bno, Model model) {
-	   BoardVO boardList = boardService.updateList(bno);
 	   
-	   model.addAttribute("boardList", boardList);
+	   UpdateBoardDTO updateBoardDto = new UpdateBoardDTO();
+	   
+	   BoardVO boardList = boardService.updateList(bno);
+	   updateBoardDto.setVo(boardList);
+	   
+	   List<BoardFileVO> updateFileList = boardService.boardFileList(bno);
+	   updateBoardDto.setFileVo(updateFileList);
+	   log.info("----------dtocheck----------"+updateBoardDto);
+	   
+	   model.addAttribute("boardList", updateBoardDto);
 	   
 	   return "cate/boardUpdate";
    }

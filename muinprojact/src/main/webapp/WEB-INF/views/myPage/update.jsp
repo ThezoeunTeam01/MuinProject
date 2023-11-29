@@ -77,7 +77,6 @@
 	        </div>
 	    </form>
 	</div><!-- // contents -->
-
-	<!-- Include footer.html -->
+	<!-- Include footer.html -->	
     <jsp:include page="../include/footer.jsp" />
 	 
