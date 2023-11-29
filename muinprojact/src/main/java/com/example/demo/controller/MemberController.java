@@ -54,6 +54,7 @@ public class MemberController {
    public String muinRegister(MemberVO vo) {
 	   log.info("--------register-----------");
       memberService.register(vo);
+      
       return "redirect:/login";
    }
    
