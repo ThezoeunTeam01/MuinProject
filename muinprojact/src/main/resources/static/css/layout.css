@@ -48,7 +48,8 @@
     .loginLogoBox img{width:100%; height:70px; }
     .ContFixedBox{position: fixed; top:50%; left: 50%; z-index: 9; max-width: 800px; width: 100%; height: 100%; transform: translate(-50%, -50%);   padding: 20px; background:#fff;}
     .loginFormBox{max-width:480px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); }
-    .loginFormBox input { border: 1px solid #ddd; border-radius: 10px; height: 45px; width: 100%; cursor: pointer; font-size: 16px; padding: 5px; background-color: #fff; margin-bottom:15px;}
+    .loginFormBox input { border: 1px solid #ddd; border-radius: 10px; height: 45px; width: 100%; cursor: pointer; font-size: 16px; padding: 5px; background-color: #fff; margin-bottom:15px; transition: 0.3s ease;}
+    .loginFormBox input:focus{border:1px solid #289158;}
     .loginFormBox p{font-size:14px; text-align:center;}
     .goRegisterBox{margin-top:20px; display:flex; justify-content: space-between;}	
 	
