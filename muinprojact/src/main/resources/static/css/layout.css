@@ -156,6 +156,8 @@
 	.submitBtn:hover, .submitBtn:focus{background:#0b562d;}
 	.modifyBtn{min-width: 120px; width: calc(100% - 10px); background:#32b56e; color:#fff; font-size:16px; border:0px solid transparent; padding:15px; }
 	.modifyBtn:hover, .modifyBtn:focus{background:#0b562d;}
+	.deleteBtn{min-width: 120px; width: calc(100% - 10px); background:#818181; color:#fff; font-size:16px; border:0px solid transparent; padding:15px; }
+	.deleteBtn:hover, .deleteBtn:focus{background:#606060;}
 	.backBtn{ min-width: 120px; width: calc(100% - 10px);  background:#ccc; color:#000; font-size:16px; border:0px solid transparent; padding:15px; }
 	.backBtn:hover{background:#aaa;}
 	.backBtn:focus{background:#aaa;}
