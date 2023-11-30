@@ -37,7 +37,7 @@
                		<a href="view?bno=${board.boardVO.bno }">
                    <dl>
                        <dt>${ board.boardVO.title}</dt>
-                       <dd>${board.boardVO.price }</dd>
+                       <dd class="numComma">${board.boardVO.price }<span>원</span></dd>
                        <dd>${board.boardVO.content }</dd>
                    </dl>
                    </a>
