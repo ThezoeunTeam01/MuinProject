@@ -19,7 +19,7 @@
 	                    <div class="slickImgBox">
 	                   		 <img src="/display?fileName=${boardFileList.uploadPath}/${boardFileList.uuid}_${boardFileList.fileName}">
 	                    </div>
-	                    </c:forEach>
+	                    </c:forEach> 
 	                </div><!-- // slick  -->	                
 	            </div>
 		    </div>

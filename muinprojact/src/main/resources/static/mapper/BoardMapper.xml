@@ -56,7 +56,7 @@
    </select>
    
    <delete id="deleteBoard">
-   		delete from muinboard where bno=#{bno}
+   		delete from muinboard where bno=#{bno} 
    </delete>
    
 </mapper>

@@ -61,7 +61,7 @@
                <div class="uploadFlex">
                   <label for="content">글작성</label>
                   <textarea id="content" name="content" rows="5" cols="50">${boardList.vo.content }</textarea>
-               </div>      
+               </div>       
             </div><!-- // uploadBox -->
             <div class="btnBox">
                <button type="button" class="backBtn btn" onclick="history.go(-1)">뒤로가기</button>               

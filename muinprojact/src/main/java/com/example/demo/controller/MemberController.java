@@ -133,7 +133,7 @@ public class MemberController {
        System.out.println(fileName);
        // 파일 경로를 지정하여 File 객체 생성
        File file = new File(uploadFolder+"/"+fileName);
-       log.info("file : "+file);
+       log.info("file : "+file); 
 
        // ResponseEntity 객체 생성
        ResponseEntity<byte[]> result = null;  

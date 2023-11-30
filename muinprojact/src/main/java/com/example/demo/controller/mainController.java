@@ -95,7 +95,7 @@ public class mainController {
          boards.setBoardVO(file);
          boards.setBoardFileVO(boardFileList);
          dtos.add(boards);
-
+ 
       }
       
       model.addAttribute("memberFileVO", memberFileVO);

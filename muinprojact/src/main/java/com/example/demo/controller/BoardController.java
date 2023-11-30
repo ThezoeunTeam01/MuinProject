@@ -21,7 +21,7 @@ public class BoardController {
    @Autowired
    BoardService boardService;   
    
-   @Autowired
+   @Autowired 
    FileService fileService;
    
    @PostMapping("/boardRegister")

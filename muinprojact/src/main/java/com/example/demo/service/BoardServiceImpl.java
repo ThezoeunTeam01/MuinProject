@@ -102,7 +102,7 @@ public class BoardServiceImpl implements BoardService {
    @Override
 	public void deleteBoard(int bno) {		
 		boardFileMapper.deleteBoardFile(bno);
-		boardMapper.deleteBoard(bno);
+		boardMapper.deleteBoard(bno); 
 		
 		
 	}
