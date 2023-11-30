@@ -54,4 +54,9 @@
    <select id="updateList">
    		select * from muinboard where bno=#{bno}
    </select>
+   
+   <delete id="deleteBoard">
+   		delete from muinboard where bno=#{bno}
+   </delete>
+   
 </mapper>

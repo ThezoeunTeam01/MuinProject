@@ -66,6 +66,7 @@
             <div class="btnBox">
                <button type="button" class="backBtn btn" >뒤로가기</button>               
                <button type="button" class="submitBtn btn" id="boardRegister">수정하기</button>
+               <button type="button" class="submitBtn btn" onclick="location.href='boardDelete?bno=${boardList.vo.bno}'">삭제하기</button>
             </div>
          </form>
 	</div><!-- // contents -->

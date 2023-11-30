@@ -99,5 +99,12 @@ public class BoardServiceImpl implements BoardService {
 	public BoardVO updateList(int bno) {
 		return boardMapper.updateList(bno);
 	}
+   @Override
+	public void deleteBoard(int bno) {		
+		boardFileMapper.deleteBoardFile(bno);
+		boardMapper.deleteBoard(bno);
+		
+		
+	}
   
 }

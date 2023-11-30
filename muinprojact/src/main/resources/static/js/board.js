@@ -4,6 +4,8 @@
  console.log("board.js 접속");
 $(document).ready(function() {
 	
+	
+	
 	$("#boardRegister").on("click", function (e) {
 	  boardCheck();
 	});

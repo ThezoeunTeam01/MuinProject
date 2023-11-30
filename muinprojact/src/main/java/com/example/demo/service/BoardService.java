@@ -17,4 +17,5 @@ public interface BoardService {
    public List<BoardVO> boardSearch(String search);
    public BoardVO updateList(int bno);
    public void updateBoard(BoardVO vo);
+   public void deleteBoard(int bno);
 }

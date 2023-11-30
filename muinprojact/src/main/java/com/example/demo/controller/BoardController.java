@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,6 +42,11 @@ public class BoardController {
 	   
 	   
 	   return "redirect:/view?bno="+vo.getBno();
+   }
+   @GetMapping("boardDelete")
+   public String boardDelete(@RequestParam("bno")int bno) {
+	   boardService.deleteBoard(bno);
+	   return "redirect:/myPage";
    }
 
 }
