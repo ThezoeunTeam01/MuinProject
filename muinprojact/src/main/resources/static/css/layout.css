@@ -8,8 +8,14 @@
 	.searchBox form{position:relative; display:flex;}
 	.searchBox .searchInputBox{width:250px;}
 	.searchBox .searchInputBox input{width:100%; border: 1px solid #ddd; border-radius: 10px; height: 40px; width: 100%; cursor: pointer; padding:5px; font-size:15px;}
+	.searchBox .searchInputBox input:focus{border:1px solid #289158;}
 	.searchBox .searchBtnBox{width:40px; display: flex; align-items: center; justify-content: center;}
 	.searchBox .searchBtnBox svg{color:#289158; font-size:18px;}
+	/*검색 결과 없을 경우*/
+	.noResultSearchBox{position: absolute; top: 50%; left: 50%; position: fixed; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%); padding: 20px;}
+	.noResultSearchBox>div{display:flex; flex-direction: column; align-items: center;}
+	.noResultSearchBox>div svg{font-size:70px; color:#c4c4c4;}
+	.noResultSearchBox>div p{font-size:18px; color:#000; margin-top:20px;}
 	
 	/*--  footer --*/
 	footer{width: 100%; max-width: 800px; max-height:100px; height:auto; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); border-top: 1px solid #dedede; z-index:10;}
@@ -34,7 +40,7 @@
 	#closeModalBtn svg{font-size:30px; color:#289158;}	
 
 	/*-- container --*/
-	.container{max-width:800px; width:100%; /*  height:100%;  */ background-color:#fff; margin-top:100px; padding:25px; margin:0 auto; padding-top:100px; padding-bottom:100px; }	
+	.container{max-width:800px; width:100%;  /* height:100%; */  background-color:#fff; margin-top:100px; padding:25px; margin:0 auto; padding-top:100px; padding-bottom:100px; }	
 	/*-- contents --*/
 	.contents{padding:40px 0;}
 
@@ -51,7 +57,8 @@
     .loginFormBox input { border: 1px solid #ddd; border-radius: 10px; height: 45px; width: 100%; cursor: pointer; font-size: 16px; padding: 5px; background-color: #fff; margin-bottom:15px; transition: 0.3s ease;}
     .loginFormBox input:focus{border:1px solid #289158;}
     .loginFormBox p{font-size:14px; text-align:center;}
-    .goRegisterBox{margin-top:20px; display:flex; justify-content: space-between;}	
+    .goRegisterBox{margin-top:20px; display:flex; justify-content: space-between;}
+    .goRegisterBox a{color:#32b56e;}	
 	
 	/*-- 회원가입 폼 --*/
 	.registerBox{max-width:600px; margin:0 auto;}
@@ -125,7 +132,7 @@
 	.contListBox .contListWrapBox .contBox dl{width:100%; word-break: break-all;}
 	.contListBox .contListWrapBox .contBox dl dt{font-size:18px; height: 50px; line-height: 1.4; border: 0px solid red; margin-bottom:15px; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
 	.contListBox .contListWrapBox .contBox dl dd:nth-child(2){font-size: 20px; font-weight: 700; margin-bottom:15px;  height: 50px; line-height: 1.4; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-	.contListBox .contListWrapBox .contBox dl dd:nth-child(3){font-size: 16px; margin-bottom:15px; overflow: hidden; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4;}
+	.contListBox .contListWrapBox .contBox dl dd:nth-child(3){font-size: 16px; margin-bottom:15px; overflow: hidden; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; color:#818181;}
 	
 	 /* 슬릭 슬라이드 */
 	.ContSlickBox{border:0px solid red;}
@@ -144,7 +151,7 @@
 	.slick-dots li.slick-active button {background-color: #289158;}
 
 	/*-- buttons --*/
-	.btn{cursor:pointer; font-size: 16px;}
+	.btn{cursor:pointer; font-size: 16px; transition: 0.3s ease;}
 	.submitBtn{min-width: 120px; width: calc(100% - 10px); background:#289158; color:#fff; font-size:16px; border:0px solid transparent; padding:15px; }
 	.submitBtn:hover, .submitBtn:focus{background:#0b562d;}
 	.backBtn{ min-width: 120px; width: calc(100% - 10px);  background:#ccc; color:#000; font-size:16px; border:0px solid transparent; padding:15px; }

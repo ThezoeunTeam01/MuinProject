@@ -16,7 +16,7 @@
 				<!--  게시물 업로드 이미지 확인 -->
 				<div class="showUploadfileBox">
 					<div class="uploadFlexBox">
-						<ul class="active">
+						<ul class="">
 							<c:forEach var="updateFileList" items="${boardList.fileVo }">
 							<li>
 								<div>
@@ -52,15 +52,15 @@
 				
                <div class="uploadFlex">
                   <label for="title">타이틀</label>
-                  <input type="text" name="title" value=${boardList.vo.title } >   
+                  <input type="text" name="title" value="${boardList.vo.title }" >   
                </div>
                <div class="uploadFlex">
                   <label for="price">가격</label>
-                  <input type="number" name="price" value=${boardList.vo.price } >   
+                  <input type="number" name="price" value="${boardList.vo.price }" >   
                </div>
                <div class="uploadFlex">
                   <label for="content">글작성</label>
-                  <textarea id="content" name="content" rows="5" cols="50">boardList.vo.content</textarea>
+                  <textarea id="content" name="content" rows="5" cols="50">${boardList.vo.content }</textarea>
                </div>      
             </div><!-- // uploadBox -->
             <div class="btnBox">

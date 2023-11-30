@@ -30,26 +30,26 @@
 	
 	            <div class="regiFlex">
 	                <label for="name">이름</label>
-	                <input type="text" name="name" id="name" value=${memberList[0].name }>
+	                <input type="text" name="name" id="name" value="${memberList[0].name }">
 	            </div>
             	<div class="notice_red" id="nameNotice"></div>	            
 	            
 	            <div class="regiFlex">
 	                <label for="birth">생년월일</label>
-	                <input type="text" name="birth" id="birth" value=${memberList[0].birth }>
+	                <input type="text" name="birth" id="birth" value="${memberList[0].birth }">
 	            </div>
             	<div class="notice_red" id="birthNotice"></div>	            
 	            
 	            <div class="regiFlex">
 	                <label for="address">주소</label>
-	                <input type="text" name="address" id="address" value=${memberList[0].address }>
+	                <input type="text" name="address" id="address" value="${memberList[0].address }">
 	            </div>
             	<div class="notice_red" id="addrNotice"></div>	            
 	            
 	            <!-- 핸드폰 설정 시 - 사용할 건지? 확인 필요 -->
 	            <div class="regiFlex">
 	                <label for="phone">핸드폰</label>
-	                <input type="text" name="phone" id="phone" value=${memberList[0].phone }>
+	                <input type="text" name="phone" id="phone" value="${memberList[0].phone }">
 	            </div>
             	<div class="notice_red" id="phoneNotice"></div>  	            
 	            

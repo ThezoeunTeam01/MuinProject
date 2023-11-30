@@ -3,7 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
    <!-- Include header.html -->
     <jsp:include page="../include/header.jsp" />
-    
+    <style>
+	 	/* .container {height: auto !important;} */
+    </style>
 	<!-- 컨텐츠 -->
 	<div class="contents">
 	  <div class="contListBox">
@@ -26,7 +28,18 @@
 	           </div>               
 	       </div>
 	     </c:forEach>
+	     
+	     <!-- 검색 결과 없을 경우 -->
+	     <!-- 
+	     <div class="noResultSearchBox">
+		    <div>
+		    	<i class="fas fa-exclamation-triangle"></i>
+	     		<p>검색 결과가 없습니다.</p>
+	     	</div>
+	     </div>
 	   </div>
+	    -->
+	   
 	</div><!-- // contents -->
 
 	<!-- Include footer.html -->

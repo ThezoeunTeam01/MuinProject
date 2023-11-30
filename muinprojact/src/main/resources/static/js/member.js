@@ -120,7 +120,7 @@ $(document).ready(function() {
 	      }
 	   };	
 	   
-	   
+/*	   
 	$("#boardRegister").on("click", function (e) {
 	  boardCheck();
 	});
@@ -145,7 +145,7 @@ $(document).ready(function() {
  	    updateFileList();
  	    $("#muinBoardForm").submit();
       }
-   };	   
+   };	   */
 	
    function updateFileList() {
 		var form = $(".formData");

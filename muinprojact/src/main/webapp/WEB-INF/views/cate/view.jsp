@@ -46,6 +46,7 @@
     	</div>			        
 		<div class="btnBox">
 		    <button type="button" class="backBtn btn" onclick="history.go(-1)">글 목록</button>
+		    <button type="button" class="submitBtn btn" onclick="location.href='boardUpdate?bno=${boardViewList[0].boardVO.bno}'">수정하기</button>
 		    <button type="button" class="submitBtn btn" onclick="history.go(-1)">구매하기</button>
 		</div>
     </div><!-- // contents -->

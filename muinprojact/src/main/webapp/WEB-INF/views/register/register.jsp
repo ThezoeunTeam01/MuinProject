@@ -54,7 +54,7 @@
 	            <!-- 핸드폰 설정 시 - 숫자만 입력하도록 pattern 추가 -->
 	            <div class="regiFlex">
 	                <label for="phone">핸드폰</label>
-	                <input type="text" name="phone" id="phone" pattern="[0-9]+">
+	                <input type="number" name="phone" id="phone" pattern="[0-9]+" maxlength="11">
 	            </div>
 	            <div class="notice_red" id="phoneNotice"></div>            
 	            
