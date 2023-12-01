@@ -7,7 +7,7 @@
 	.logo{display:block; box-sizing: border-box;}
 	.searchBox form{position:relative; display:flex;}
 	.searchBox .searchInputBox{width:250px;}
-	.searchBox .searchInputBox input{width:100%; border: 1px solid #ddd; border-radius: 10px; height: 40px; width: 100%; cursor: pointer; padding:5px; font-size:15px;}
+	.searchBox .searchInputBox input{width:100%; border: 1px solid #ddd; border-radius: 10px; height: 40px; width: 100%; cursor: pointer; padding:5px; font-size:16px;}
 	.searchBox .searchInputBox input:focus{border:1px solid #289158;}
 	.searchBox .searchBtnBox{width:40px; display: flex; align-items: center; justify-content: center;}
 	.searchBox .searchBtnBox svg{color:#289158; font-size:18px;}
@@ -42,11 +42,11 @@
 	/*-- container --*/
 	.container{max-width:800px; width:100%;  /* height:100%; */  background-color:#fff; margin-top:100px; padding:25px; margin:0 auto; padding-top:100px; padding-bottom:100px; }	
 	/*-- contents --*/
-	.contents{padding:40px 0;}
+	.contents{padding:30px 0;}
 
 	/*-- 인덱스 --*/
 	.mainColorTxt{color:#289158; font-weight:700;}
-	.subTitBox{display:flex; align-items:center; font-size:18px; margin:30px 0;}
+	.subTitBox{display:flex; align-items:center; font-size:22px; margin:30px 0;}
 	.subTitBox img{width: 18px; height: 18px;}	
 	
     /*-- 로그인 페이지 --*/
@@ -94,7 +94,7 @@
 	 		
     /*-- 마이페이지 --*/
     .mypageInfoBox{margin-bottom:20px; background-color:#fff; padding:15px; border:1px solid #cfcfcf; border-radius:15px;}
-	.fileUpload{display: grid !important; grid-template-columns: 1fr 5fr 1fr; align-items: center; gap: 10px; margin:20px 0; }
+	.fileUpload{display: grid !important; grid-template-columns: 1fr 4fr 2fr; align-items: center; gap: 10px; margin:20px 0; }
 	.fileUpload .mypageProfile{padding:5px; margin-right:10px;}
 	.fileUpload .mypageProfile .imgRatioBox{ width:80px; height:80px; border-radius:50%; overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6;}
 	.fileUpload .mypageProfile .imgRatioBox img{    width: 100%; height: 100%;}
@@ -114,25 +114,25 @@
 	.viewProfileBox .mypageProfile .imgRatioBox{ width:80px; height:80px; border-radius:50%; overflow: hidden; box-shadow: inset 0px 0px 2px 2px #aec0b6;}
 	.viewProfileBox .mypageProfile .imgRatioBox img{ width:100%; height:100%; overflow: hidden; object-fit: cover;}
 	.viewProfileBox .mypageInfo{}
-	.viewProfileBox .mypageInfo .yourId{font-weight:700; color:#289158;}
-	.viewProfileBox .price{font-size:22px; font-weight: 700; text-align: right;}
+	.viewProfileBox .mypageInfo .yourId{font-weight:700; color:#289158; font-size:20px;}
+	.viewProfileBox .price{font-size:22px; font-weight: 700; text-align: right; }
 	.viewInfoBox{}
 	.viewInfoBox dl{word-break: break-all;}
-	.viewInfoBox dl dt{font-size:20px; font-weight: 700; margin-bottom:25px;}
-	.viewInfoBox dl dd{font-size:16px; margin-bottom:35px;}
+	.viewInfoBox dl dt{font-size:22px; font-weight: 700; margin-bottom:25px;}
+	.viewInfoBox dl dd{font-size:20px; margin-bottom:35px;}
 	
 		
 	/* content List 형식 css */ 
  	.contListBox{margin-bottom:20px; position:relative;}
-	.contListBox .contListWrapBox{display: grid !important; grid-template-columns: 1fr 2fr;  gap: 10px; grid-auto-rows: 280px; background: #fff;  border: 1px solid #cfcfcf; border-radius: 15px; margin-bottom:20px;}
-	.contListBox .contListWrapBox .contListImgBox{width:250px !important; height:250px !important; margin: 15px; padding:15px; background:#fff; border:1px solid #cfcfcf;}
-	.contListBox .contListWrapBox .contListImgBox img{width:100%; height:100%; display: grid; grid-template-column: repeat(auto-fill,minmax(150px,auto));  overflow: hidden; object-fit:contain;}
-	.contListBox .contListWrapBox .contBox{height:auto; padding: 25px 15px 25px 0;}
+	.contListBox .contListWrapBox{display: grid !important; grid-template-columns: 1fr 2fr;  gap: 10px; grid-auto-rows: 280px; background: #fff;  border: 0px solid #cfcfcf; border-radius: 15px; margin-bottom:20px;}
+	.contListBox .contListWrapBox .contListImgBox{width:250px !important; height:250px !important; margin: 15px; /* padding:15px; */ background:#fff; border:0px solid #cfcfcf;}
+	.contListBox .contListWrapBox .contListImgBox img{width:100%; height:100%; display: grid; grid-template-column: repeat(auto-fill,minmax(150px,auto));  overflow: hidden; object-fit:cover;}
+	.contListBox .contListWrapBox .contBox{height:auto; padding: 25px 15px 25px 0; display:flex; align-items: flex-end;}
 	.contListBox .contListWrapBox .contBox a{color:#000; cursor:pointer;}
 	.contListBox .contListWrapBox .contBox dl{width:100%; word-break: break-all;}
-	.contListBox .contListWrapBox .contBox dl dt{font-size:18px; height: 50px; line-height: 1.4; border: 0px solid red; margin-bottom:15px; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
-	.contListBox .contListWrapBox .contBox dl dd:nth-child(2){font-size: 20px; font-weight: 700; margin-bottom:15px;  height: 50px; line-height: 1.4; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-	.contListBox .contListWrapBox .contBox dl dd:nth-child(3){font-size: 16px; margin-bottom:15px; overflow: hidden; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; color:#818181;}
+	.contListBox .contListWrapBox .contBox dl dt{font-size:20px; line-height: 1.4; border: 0px solid red; margin-bottom:15px; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; font-weight:700;}
+	.contListBox .contListWrapBox .contBox dl dd:nth-child(2){font-size: 20px; font-weight: 700; margin-bottom:15px;  /* height: 50px; */ line-height: 1.4; max-height: 50px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+	.contListBox .contListWrapBox .contBox dl dd:nth-child(3){font-size: 16px; margin-bottom:15px; overflow: hidden; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; color:#818181;}
 	
 	 /* 슬릭 슬라이드 */
 	.ContSlickBox{border:0px solid red;}
@@ -151,21 +151,21 @@
 	.slick-dots li.slick-active button {background-color: #289158;}
 
 	/*-- buttons --*/
-	.btn{cursor:pointer; font-size: 16px; transition: 0.3s ease;}
-	.submitBtn{min-width: 120px; width: calc(100% - 10px); background:#289158; color:#fff; font-size:16px; border:0px solid transparent; padding:15px; }
+	.btn{cursor:pointer; font-size: 18px; transition: 0.3s ease;}
+	.submitBtn{min-width: 120px; width: calc(100% - 10px); background:#289158; color:#fff; font-size:18px; border:0px solid transparent; padding:15px; }
 	.submitBtn:hover, .submitBtn:focus{background:#0b562d;}
-	.modifyBtn{min-width: 120px; width: calc(100% - 10px); background:#32b56e; color:#fff; font-size:16px; border:0px solid transparent; padding:15px; }
+	.modifyBtn{min-width: 120px; width: calc(100% - 10px); background:#32b56e; color:#fff; font-size:18px; border:0px solid transparent; padding:15px; }
 	.modifyBtn:hover, .modifyBtn:focus{background:#0b562d;}
-	.deleteBtn{min-width: 120px; width: calc(100% - 10px); background:#818181; color:#fff; font-size:16px; border:0px solid transparent; padding:15px; }
+	.deleteBtn{min-width: 120px; width: calc(100% - 10px); background:#818181; color:#fff; font-size:18px; border:0px solid transparent; padding:15px; }
 	.deleteBtn:hover, .deleteBtn:focus{background:#606060;}
-	.backBtn{ min-width: 120px; width: calc(100% - 10px);  background:#ccc; color:#000; font-size:16px; border:0px solid transparent; padding:15px; }
+	.backBtn{ min-width: 120px; width: calc(100% - 10px);  background:#ccc; color:#000; font-size:18px; border:0px solid transparent; padding:15px; }
 	.backBtn:hover{background:#aaa;}
 	.backBtn:focus{background:#aaa;}
 	.btnBox{border:0px solid red; display:flex; flex-direction: row; align-items: center; justify-content: space-evenly; width:100%; max-width:600px; margin:20px auto auto auto;}
 	.tit{font-size:22px;  text-align:center; font-weight:700; margin-top:25px; margin-bottom:25px; }
 	.contTit{font-size:20px; margin:15px 0; }
 	.contSubTit{font-size:18px; margin:15px 0;}
-	.checkBtn{max-width:80px; height: 45px; width: calc(100% - 10px); background:#289158; color:#fff; border:0px solid transparent; padding: 5px;}
+	.checkBtn{max-width:80px; height: 45px; width: calc(100% - 10px); background:#289158; color:#fff; border:0px solid transparent; padding: 5px; font-size:16px;}
 	.checkBtn:hover, .checkBtn:focus{background:#0b562d;}
 
 	/* notice */

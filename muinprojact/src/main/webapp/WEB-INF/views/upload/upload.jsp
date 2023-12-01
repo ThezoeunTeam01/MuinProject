@@ -47,7 +47,7 @@
                </div>      
             </div><!-- // uploadBox -->
             <div class="btnBox">
-               <button type="button" class="backBtn btn" >뒤로가기</button>               
+               <button type="button" class="backBtn btn" onclick="history.go(-1)">뒤로가기</button>               
                <button type="button" class="submitBtn btn" id="boardRegister">등록하기</button>
             </div>
          </form>
